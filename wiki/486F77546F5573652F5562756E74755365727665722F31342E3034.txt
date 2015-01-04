@@ -1,0 +1,42 @@
+#contents
+
+*Prerequisite [#uf636442]
+-VirtualBox installation (You can refer [[HowToUse/VirtualBox/4.3]])
+
+*Install&Setup [#s990983d]
+**Install UbuntuServer [#y1537319]
+(TBD)
+
+**Setup Network Adapter [#r932f14b]
+:Step.1|
+Edit network adapter definition file.
+
+ # vi /etc/network/interfaces
+
+ # The loopback network interface
+ auto lo
+ iface lo inet loopback
+  
+ # The primary network interface
+ auto eth0
+ allow-hotplug eth0
+ iface eth0 inet dhcp
+  
+ # The secondary network interface
+ auto eth1
+ allow-hotplug eth1
+ iface eth1 inet static
+ address 192.168.56.101
+ netmask 255.255.255.0
+
+:Step.2|
+restart networking module
+
+ # /etc/init.d/networking restart
+
+*HowToUse [#tbb3cdad]
+:Step.1|
+xxx
+
+*Author [#u947b459]
+S.Yatsuzuka

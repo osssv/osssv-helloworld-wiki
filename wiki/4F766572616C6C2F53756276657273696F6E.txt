@@ -1,0 +1,26 @@
+#contents
+
+*Overall Feature [#tb1a605f]
+>Developers use Subversion to maintain current and historical versions of files such as source code, web pages, and documentation. Its goal is to be a mostly compatible successor to the widely used Concurrent Versions System (CVS).
+<
+RIGHT:
+refered from [[Wikipedia - Apache Subversion:http://en.wikipedia.org/wiki/Apache_Subversion]]
+
+:Data Flow|
+#ref(overall_fig1.png,,500x344,)
+
+*Specification [#z3f47320]
+|LEFT:100|LEFT:200|c
+|CENTER:ITEM|CENTER:DESCRIPTION|h
+|Main Developer|Apache Software Foundation|
+|License|Apache License|
+|OS|Cross-platform|
+|Written In|C|
+|Official Site|http://subversion.apache.org/|
+
+
+*HowToUse [#c3fae7e9]
+#ls2(HowToUse/Subversion)
+
+*Author [#pa171784]
+S.Yatsuzuka

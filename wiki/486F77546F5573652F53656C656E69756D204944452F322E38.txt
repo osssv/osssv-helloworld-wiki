@@ -1,0 +1,69 @@
+#contents
+
+*Prerequisite [#uebea2c7]
+-Firefox
+
+*Install&Setup [#scce3281]
+:Step.1|
+Click the download link for Selenium IDE from the following URL.
+[[Selenium HQ - IDE:http://docs.seleniumhq.org/download/]]
+
+*HowToUse [#s46d25c1]
+**Record Test Case [#k1583467]
+:Step.1|
+In Firefox browser window, select "Tool" -> "Selenium IDE" and Selenium IDE window will show up.
+#ref(InstallSetup_fig1.png,,500x473,)
+
+:Step.2|
+Click the Record button.
+
+:Step.3|
+Launch new browser window and access to http://www.virago.sakura.ne.jp/osssv/public/index.php.
+
+:Step.4|
+Click "Search" link.
+
+:Step.5|
+Input "StudySession" in the text field and click "Search" button.
+
+:Step.6|
+Right click the "MenuBar" link and choose "assertText link=MenuBar MenuBar".
+#ref(RecordTestCase_fig1.png)
+
+:Step.7|
+Click "Stop" button in Selenium IDE window and save test case file (html).
+
+**Execute test case [#zd20e5d5]
+:Step.1|
+Load test case file.
+#ref(ExecuteTestCase_fig1.png,,500x473,)
+
+:Step.2|
+Click the execution button.
+#ref(ExecuteTestCase_fig2.png)
+
+If there is no error, all of commands show in green color.
+#ref(ExecuteTestCase_fig3.png,,500x473,)
+
+
+**Create Test Suite [#j45b2bfe]
+:Step.1|
+Select "File"->"Open Test Case" and choose your a test case file. You can use [[sample code - osssv.html:https://github.com/osssv/osssv-helloworld/blob/master/selenium_ide/2.8/selenium_testcase/osssv.html]]
+#ref(CreateTestSuite_fig1.png)
+
+:Step.2|
+Select "File"->"Add Test Case" and choose your another test case file. You can use [[sample code - ossnews.html:https://github.com/osssv/osssv-helloworld/blob/master/selenium_ide/2.8/selenium_testcase/ossnews.html]]
+#ref(CreateTestSuite_fig2.png)
+
+
+:Step.3|
+Select "File"->"Save Test Suite" and you can run test case sequentially.
+#ref(CreateTestSuite_fig3.png,,500x473,)
+
+As you can see the following file, the test suite file is also html and it has relative paths to test case files, so if you change the location of test case files, you need to modify test suite, too.
+
+[[sample code - testsuite.html:https://github.com/osssv/osssv-helloworld/blob/master/selenium_ide/2.8/testsuite.html]]
+
+
+*Author [#if690d29]
+S.Yatsuzuka

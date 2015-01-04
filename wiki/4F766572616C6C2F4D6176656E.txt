@@ -1,0 +1,34 @@
+#contents
+
+*Overall Feature [#wdcddd17]
+>Maven is a build automation tool used primarily for Java projects. Maven addresses two aspects of building software: First, it describes how software is built, and second, it describes its dependencies. Contrary to preceding tools like Apache Ant it uses conventions for the build procedure, and only exceptions need to be written down. An XML file describes the software project being built, its dependencies on other external modules and components, the build order, directories, and required plug-ins.
+<
+RIGHT:
+refered from [[Wikipedia - Apache Maven:http://en.wikipedia.org/wiki/Apache_Maven]]
+
+
+:Data Flow|
+#ref(overall_fig1.png,,500x183,)
+The composition of created directories and pom.xml is depending on the "archetype" specified in the command option.
+There are several archetypes. For the detail information of each archetype, please refer [[Maven Official site:http://maven.apache.org/guides/introduction/introduction-to-archetypes.html]].
+
+:Configuration File (pom.xml)|
+#ref(overall_fig2.png,,500x315,)
+
+[[Sample code - POM.xml:https://github.com/osssv/osssv-helloworld/blob/master/maven/3.2/maven/pom.xml]]
+
+*Specification [#jb014253]
+|LEFT:100|LEFT:200|c
+|CENTER:ITEM|CENTER:DESCRIPTION|h
+|Main Developer|Apache Software Foundation|
+|License|Apache License 2.0|
+|OS|Cross platform|
+|Written In|Java|
+|Official Site|http://maven.apache.org/|
+
+
+*HowToUse [#f9eded94]
+#ls2(HowToUse/Maven/)
+
+*Author [#vf81e6cd]
+S.Yatsuzuka

@@ -1,0 +1,22 @@
++#contents
+ 
++*Install&Setup [#tba846df]
++:Step.1|
++xxx
++
++*HowToUse [#c53ceac8]
++**Access Database [#dc7ddd84]
++:Step.1|
++Connect to Database
++ $ cd <APP_PATH>
++ $ rails dbconsole
++
++:Step.2|
++Execute commands.
++
++ sqlite> .table
++ sqlite> .schema
++&#12288;sqlite> .quit
++
++*Author [#w2589d98]
++S.Yatsuzuka

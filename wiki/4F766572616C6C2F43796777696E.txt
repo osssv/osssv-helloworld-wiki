@@ -1,0 +1,31 @@
+#contents
+
+*Overall Feature [#yeda7af4]
+>
+Cygwin is a Unix-like environment and command-line interface for Microsoft Windows. Cygwin provides native integration of Windows-based applications, data, and other system resources with applications, software tools, and data of the Unix-like environment. Thus it is possible to launch Windows applications from the Cygwin environment, as well as to use Cygwin tools and applications within the Windows operating context.
+<
+RIGHT:
+refered from [[Wikipedia - Cygwin:http://en.wikipedia.org/wiki/Cygwin]]
+
+
+:File Composition|
+#ref(Overall_fig2.png)
+
+:Window Image|
+#ref(Overall_fig1.png,,500x275,)
+
+*Specification [#gb886f8d]
+|LEFT:100|LEFT:200|c
+|CENTER:ITEM|CENTER:DESCRIPTION|h
+|Main Developer|Cygwin Solutions|
+|License|GNU GPLv3|
+|OS|Windows|
+|Written In|C/C++|
+|Official Site|http://www.cygwin.com|
+
+
+*HowToUse [#j527fdaf]
+#ls2(HowToUse/Cygwin/)
+
+*Author [#w50ef824]
+S.Yatsuzuka

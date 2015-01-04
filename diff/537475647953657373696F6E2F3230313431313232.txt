@@ -1,0 +1,26 @@
+ #contents
+ 
+ *Date [#r447c335]
+-The 22th of November
++The 22th of November 14:00-17:00
+ 
+ *Location [#q6a34e58]
+ [http://www.hackerdojo.com/ Hacker Dojo]
+ 
+ *Registration [#idfb5ee0]
+ Free [[Facebook Event:https://www.facebook.com/events/1497260537189979/]]
+ 
+ *Table of Contents [#we367cd9]
+ +Introduction & News [14:00-14:15]
+ +Lightening Talk [14:15-14:45]
+ +Study Session [14:45 - 16:00]
+ ++How to Use JUnit [[Overall/JUnit]] (S.Yatsuzuka)
+ ++How to Use Selenium IDE [[Overall/Selenium IDE]] (S.Yatsuzuka)
+ ++How to Use Selenium Web Driver [[Overall/Selenium Web Driver]] (S.Yatsuzuka)
+ +Moku-Moku [16:00-17:00]
+ 
+ *Materials [#y4135b96]
+-#ref(OSSSV_StudySession_3_ver0.1.odp)
+-#ref(OSSSV_StudySession_3_ver0.1.pdf)
++#ref(OSSSV_StudySession_3_ver1.0.odp)
++#ref(OSSSV_StudySession_3_ver1.0.pdf)

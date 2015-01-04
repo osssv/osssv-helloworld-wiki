@@ -1,0 +1,28 @@
+#contents
+
+*Install&Setup [#gf970ee7]
+:Step.1|Install Git Daemon modules.
+ # yum install git git-daemon git-all
+
+:Step.2|Edit xinetd configuration for git
+ # vi /etc/xinetd.d/git
+(Before)
+        disable         = yes
+(After)
+        disable         = no
+
+:Step.3|Reboot xinetd
+ # /etc/inet.d/xinetd restart
+
+:Step.4|Initiate git repository
+ # mkdir <Repository Directory>
+ # cd <Repository Directory>
+ # git init --bare
+(Example)
+ # mkdir test.git
+ # cd test.git
+ # git init --bare
+
+
+*Author [#t5fb8a5a]
+S.Yatsuzuka

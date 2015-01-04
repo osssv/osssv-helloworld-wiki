@@ -1,0 +1,43 @@
+ #contents
+ 
+ *Install&Setup [#b0509996]
+ **Install Java SDK [#y11c5628]
+ :Step.1|
+ Check if the Java SDK has already been installed.
+ If you are Windows User, you can check it by the following command.
+ 
+  > javac.exe -version
+ 
+ :Step.2|
+ Download Java SDK installer from the following URL and execute it.
+ 
+ http://www.oracle.com/technetwork/java/javase/downloads/index.html
+ 
+ :Step.3|
+ Setup environment variable as follows.
+ 
+ |LEFT:150|LEFT:300|LEFT:200|c
+ |CENTER:Item|CENTER:Description|CENTER:Example|h
+ |JAVA_HOME|Install path for Java SDK|C:\Program Files\Java\jdk1.7.0_67|
+ |PATH|The path for executables|append ";%JAVA_HOME%\bin" at the end of the string|
+ |CLASSPATH|The path for Java library files|%JAVA_HOME%\jre\lib;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar;|
+ 
+ :Step.4|
+ Check if the java command is recognized from terminal again.
+ #ref(InstallJDK_fig1.png)
+ 
+ **Install Eclipse [#o8b2b909]
+ :Step.1|
+ Download file for Eclipse from the following URL.
+ https://eclipse.org/downloads/packages/release/Kepler/SR2
+ 
+ :Step.2|
+ Unzip the downloaded file and move it to the folder you like.
+ 
+ *HowToUse [#r9583105]
+ :Step.1|
+ TBD
+ 
+-*Contributer [#md2d83f5]
++*Author [#md2d83f5]
+ S.Yatsuzuka

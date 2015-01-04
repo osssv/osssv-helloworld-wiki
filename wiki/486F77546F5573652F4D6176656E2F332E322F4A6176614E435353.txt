@@ -1,0 +1,29 @@
+#contents
+
+*Prerequisite [#qfb8291a]
+-Maven (You can refer [[HowToUse/Maven/3.2]])
+
+*Install&Setup [#a363ce0a]
+:Step.1|
+-
+
+*HowToUse [#h1844e7b]
+:Step.1|
+Create Maven project.
+
+:Step.2|
+Add the following description in POM.xml
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>javancss-maven-plugin</artifactId>
+        <version>2.1</version>
+      </plugin>
+
+:Step.3|
+Execute the following command. Then you can see coverage info from javancss-raw-report.xml.
+
+ $ mvn javancss:report
+
+*Author [#c05cdb94]
+S.Yatsuzuka

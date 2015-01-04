@@ -1,0 +1,139 @@
+#contents
+
+*Prerequisite [#o693f181]
+-Java SDK installation
+-Eclipse installation (You can refer [[HowToUse/Eclipse/4.3]])
+-Maven installation (You can refer [[HowToUse/Maven/3.2]])
+-Cygwin instattion (You can refer [[HowToUse/Cygwin/2.850]])
+
+*Install&Setup [#dd76bdf3]
+:Step.1|
+(We use maven here)
+
+*HowToUse [#v42b8a3e]
+**Create project. [#vf5660d2]
+
+:Step.1|
+Launch Cygwin.
+
+:Step.2|
+Create the most simple maven project.
+
+ $ mvn archetype:create \
+  -DgroupId=org.test \
+  -DartifactId=junit
+#ref(CreateMavenProject_fig1.png,,500x275,)
+
+:Step.3|
+Sample production code App.java and AppTest.java will be created.
+You can execute testing by the following command.
+
+ $ mvn test
+#ref(CreateMavenProject_fig2.png,,500x275,)
+
+**Import mvn project to eclipse [#q7164746]
+:Step.1|
+Luanch eclipse.
+
+:Step.2|
+Select File -> Import.
+#ref(ImportMavenProject_fig1.png,,500x620,)
+
+:Step.3|
+Select "Existing Maven Projects" and click "next" button.
+#ref(ImportMavenProject_fig2.png,,500x285,)
+
+:Step.4|
+Click "Browse" button and select created maven project folder.
+#ref(ImportMavenProject_fig3.png,,500x349,)
+#ref(ImportMavenProject_fig4.png,,500x349,)
+
+:Step.5|
+Click "Finish" button. And you have imported eclipse project.
+#ref(ImportMavenProject_fig5.png,,500x266,)
+
+**Prepare source code. [#z664953c]
+:Step.1|
+Create sample production code, "Calc" as follows.
+#ref(CreateCode_fig1.png,,500x361,)
+
+For the source code, you can refer [[sample code - Calc:https://github.com/osssv/osssv-helloworld/blob/master/junit/4.8/junit/src/main/java/org/test/Calc.java]]
+
+
+:Step.2|
+Next, create test code. Choose src/test/java package folder and select "File"->"New"->"JUnit Test Case" (lower one).
+#ref(CreateCode_fig2.png,,500x364,)
+
+JUnit4 is 4 phase testing framework and we can use the following annotation.
+
+|LEFT:100|LEFT:300|c
+|CENTER:ANNOTATION|CENTER:DESCRIPTION|h
+|@Test|Test Case|
+|@Ignore|Ignore this method from test Case|
+|@Before (SetUp)|Before each Test Case, this method will be called out.|
+|@After (TearDown)|After each Test Case, this method will be called out.|
+|@BeforeClass SetUpBeforeClass)|Before all of the Test Cases in this Class, this method will be called once.|
+|@AfterClass (TearDownAfterClass)|After all of the Test Cases are finished, this method will be called once.|
+|@RunWith|This is required for test suite program.|
+
+
+
+:Step.3|
+Select "New JUnit 4 test" and click "Finish" button.
+
+:Step.4|
+When the JUnit 4 is not on the build path, eclipse ask if we setup it or not.
+Here, we choose "Not now" and click "OK" button. 
+#ref(CreateCode_fig4.png,,500x166,)
+
+:Step.5|
+Edit test code. For assertion method ("assertThat"), it is recommendableto use "is", one of the method in CoreMatchers class which compares expected result and actual result using Java's "equal" method.
+ 
+You can refer sample code from [[sample code - CalcTest.java:https://github.com/osssv/osssv-helloworld/blob/master/junit/4.8/junit/src/test/java/org/test/CalcTest.java]]
+
+Now, we don't have junit library, so eclipse show errors, but you don't need to mind it. We will solve this using maven in the next step.
+
+#ref(CreateCode_fig3.png,,500x266,)
+
+:Step.5|
+Open POM.xml and edit it as following. 
+ <dependency>
+   <groupId>junit</groupId>
+   <artifactId>junit</artifactId>
+   <version>4.8.1</version>
+   <scope>test</scope>
+ </dependency>
+
+You can refer sample code from [[sample code - POM.xml:https://github.com/osssv/osssv-helloworld/blob/master/junit/4.8/junit/pom.xml]]
+
+
+After you edit the POM.xml and save it, maven automatically download necessary library to local machine and error messages eclipse shows will be disappeared.
+
+:Step.6|
+Execute the following command. Maven download JUnit4 and setup it to the build-path based on the description in POM.xml.
+
+ $ cd <Maven project directory>
+ $ mvn test
+#ref(CreateCode_fig7.png,,500x275,)
+
+Now we have JUnit in project, too.
+#ref(CreateCode_fig6.png,,500x266,)
+
+**Create Test Suite [#o874057d]
+:Step.1|
+As long as you use mvn test, all of the test code in test source director will be executed, but you can also create test suite code as follows.
+Create new class named "AllTest" in test code directory.
+
+:Step.2|
+Edit test suite code using @RunWith annotation.
+You can refer [[sample code - AllTest.java:https://github.com/osssv/osssv-helloworld/blob/master/junit/4.8/junit/src/test/java/org/test/AllTest.java]]
+
+
+:Step.3|
+When you run mvn test, you have the result for 8test cases because AllTest is composed of 4 test cases.
+
+#ref(CreateTestSuite_fig1.png)
+
+
+*Author [#e6401f0e]
+S.Yatsuzuka

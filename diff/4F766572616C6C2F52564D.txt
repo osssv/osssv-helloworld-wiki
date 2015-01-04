@@ -1,0 +1,29 @@
+ #contents
+ 
+ *Overall Feature [#i666077d]
+ >Ruby Version Manager, often abbreviated as RVM, is a unix-like software platform designed to manage multiple installations of Ruby on the same device.
+ The entire ruby environment including the Ruby interpreter, installed RubyGems, and documentation is partitioned. The different versions can then be switched between to enable a developer to work on several projects with different version requirements. 
+ <
+ RIGHT:
+ refered from [[Wikipedia - Ruby Version Manager:http://en.wikipedia.org/wiki/Ruby_Version_Manager]]
+ 
+ 
+ :File Composition|
+ #ref(overall_fig1.png)
+ 
+ *Specification [#jb09e484]
+ |LEFT:100|LEFT:200|c
+ |CENTER:ITEM|CENTER:200|h
+ |Main Developer|Wayne E. Seguin, Michal Papis|
+ |License|Apache 2.0|
+ |OS|Unix-like|
+ |Written In|bash, Ruby|
+ |Official site|http://rvm.io/|
+ 
+ 
+ *HowToUse [#t41a85ee]
+ #ls2(HowToUse/RVM/)
+ 
+-*Contributer [#mc0f44c8]
++*Author [#mc0f44c8]
+ S.Yatsuzuka

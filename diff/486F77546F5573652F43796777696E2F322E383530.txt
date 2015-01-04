@@ -1,0 +1,17 @@
++#contents
+ 
++*Install&Setup [#l90aaecf]
++:Step.1|
++Download installer from the following URL.
++https://cygwin.com/index.html
++
++:Step.2|
++Double click the installer and following the instruction written in the following.
++https://cygwin.com/install.html
++
++*HowToUse [#o80defea]
++:Step.1|
++xxx
++
++*Author [#gc9f1b93]
++S.Yatsuzuka

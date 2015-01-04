@@ -1,0 +1,73 @@
+ #contents
+ 
+ *Prerequisite [#z0f4538b]
+--Eclipse (You can refer [[Overall/Eclipse]])
+--Maven (You can refer [[Overall/Maven]])
+--Cygwin (You can refer [[Overall/Cygwin]])
++-Eclipse (You can refer [[HowToUse/Eclipse/4.3]])
++-Maven (You can refer [[HowToUse/Maven/3.2]])
++-Cygwin (You can refer [[HowToUse/Cygwin/2.850]])
+ 
+ *Install&Setup [#d7844991]
+ :Step.1|
+ (We use maven here)
+ 
+ *HowToUse [#n8cdc9ed]
+ **Prepare Project [#x244938a]
+ :Step.1|
+ Launch Cygwin.
+ 
+ :Step.2|
+ Create the most simple maven project.
+ 
+  $ mvn archetype:create \
+   -DgroupId=org.test \
+   -DartifactId=selenium_webdriver
+ 
+ :Step.3|
+ Luanch Eclipse and import Maven project.
+ 
+ :Step.4|
+ Open POM.xml, append the following description and save it. After the save, all of necessary library files will be downloaded and set into build path by maven.
+ 
+  <dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.8.1</version>
+    <scope>test</scope>
+  </dependency>
+  
+  <dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>2.44.0</version>
+  </dependency>
+ 
+ [[Sample Code - POM.xml:https://github.com/osssv/osssv-helloworld/blob/master/selenium_webdriver/2.44/selenium_webdriver/pom.xml]]
+ 
+ **Create Test Code [#zf8729c7]
+ :Step.1|
+ Create new test class, "WikiTest".
+ #ref(CreateTestCode_fig3.png,,500x346,)
+ 
+ :Step.2|
+ In the Selenium IDE window, select "Option"->"Setting" and check "Enable experimental features".
+ #ref(CreateTestCode_fig1.png,,500x600,)
+ 
+ :Step.3|
+ Select "Option"->"Format" and choose "Java / JUnit 4 / WebDriver.
+ #ref(CreateTestCode_fig2.png)
+ 
+ :Step.4|
+ Copy and paste Java code to new test class "WikiTest". Change package name and class name as needed.
+ 
+ [[Sample Code - WekiTest:https://github.com/osssv/osssv-helloworld/blob/master/selenium_webdriver/2.44/selenium_webdriver/src/test/java/org/test/WikiTest.java]]
+ 
+ :Step.5|
+ Execute maven test. New web browser will be launched , execute the test case and close it automatically.
+ 
+  $ mvn test.
+ 
+ 
+ *Author [#x20fd008]
+ S.Yatsuzuka

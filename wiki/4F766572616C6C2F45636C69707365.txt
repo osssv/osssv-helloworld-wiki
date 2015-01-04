@@ -1,0 +1,31 @@
+#contents
+
+*Overall Feature [#u84aaa28]
+>Eclipse is an integrated development environment (IDE). It contains a base workspace and an extensible plug-in system for customizing the environment. Written mostly in Java, Eclipse can be used to develop applications. By means of various plug-ins, Eclipse may also be used to develop applications in other programming languages: Ada, ABAP, C, C++, COBOL, Fortran, Haskell, JavaScript, Lasso, Natural, Perl, PHP, Prolog, Python, R, Ruby (including Ruby on Rails framework), Scala, Clojure, Groovy, Scheme, and Erlang.
+<
+RIGHT:
+refered from [[Wikipedia - Eclipse:http://en.wikipedia.org/wiki/Eclipse_%28software%29]]
+
+
+:File Composition|
+#ref(Overall_fig3.png,,500x136,)
+#ref(Overall_fig2.png,,500x487,)
+
+:Window Image|
+#ref(Overall_fig1.png,,500x266,)
+
+*Specification [#h697a082]
+|LEFT:100|LEFT:200|c
+|CENTER:ITEM|CENTER:DESCRIPTION|h
+|Main Developer|Eclipse Foundation|
+|License|EPL (Eclipse Public License)|
+|OS|Cross-platform: Linux, Mac OS X, Solaris, Windows|
+|Written In|Java|
+|Official Site|http://www.eclipse.org|
+
+
+*HowToUse [#r4039c15]
+#ls2(HowToUse/Eclipse)
+
+*Author [#cbf5112d]
+S.Yatsuzuka

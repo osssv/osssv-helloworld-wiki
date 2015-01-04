@@ -1,0 +1,37 @@
+-#contents
+ 
+-*Overall Story [#ffd83d04]
+-TBD
+-
+-*Initial Setup [#v0f18a93]
+-:Step1|Access to the Odoo site and complete sign up.
+-
+-:Step2|Login to the online service.
+-#ref(InitialSetup_fig1.png,,500x266,)
+-
+-:Step3|Define the company's name.
+-#ref(InitialSetup_fig2.png,,500x266,)
+-
+-#ref(InitialSetup_fig3.png,,500x266,)
+-
+-:Step4|Click the "Subscribe to keep it running!" link.
+-#ref(InitialSetup_fig4.png,,500x266,)
+-
+-#ref(InitialSetup_fig5.png,,500x266,)
+-
+-:Step5|Install "Accounting" module.
+-#ref(InitialSetup_fig6.png,,500x266,)
+-
+-*Setup Companies [#obd1dab2]
+-:Step1|xxx
+-:Step2|xxx
+-
+-*Setup Accounting Configuration [#r75fb967]
+-:Step1|xxx
+-:Step2|xxx
+-
+-*Open Discussion [#p302ca4e]
+-If you have questions or comments, please share them below.
+-We will improve the above information referring to your posting.
+-#article
+-

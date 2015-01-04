@@ -1,0 +1,165 @@
+#contents
+
+*Install&Setup [#k2a37f3f]
+**Install CentOS [#nb533909]
+:Step.1|
+Download ISO file from [[http://www.centos.org/download/ ]]. 
+For newbie, I recommend to download "DVD image". Though you can choose "LiveCD" or "netinstall" which has light data volume, they have minimum functionality to run server, you need to deal with all of operation in CUI.
+Select "Install or Upgrade an existing system".
+#ref(install_fig1.png,,500x375,)
+
+:Step.2|
+Choose Skip
+#ref(install_fig2.png,,500x277,)
+
+:Step.3|
+Click Next
+#ref(install_fig3.png,,500x375,)
+
+:Step.4|
+Select Language.
+#ref(install_fig4.png,,500x375,)
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|Language|Language for User Interface|"English"(default)|
+
+:Step.5|
+Select Keybord type
+#ref(install_fig5.png,,500x375,)
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|Keyboard|Keyboard Type|"English"(default)|
+
+:Step.6|
+Choose type of devices.
+#ref(install_fig6.png,,500x375,)
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|Type of devices|Type of devices|"Basic Storage Device"(default)|
+
+:Step.7|
+Click "Yes, discard any data".
+#ref(install_fig7.png,,500x375,)
+
+:Step.8|
+Setup host name and click "Configure Network" button.
+#ref(install_fig8.png,,500x375,)
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|Host name|Host name. You can set as you like|"CentOS6.5"|
+
+:Step.9|
+Select "System eth0" and click "Edit" button.
+#ref(install_fig9.png,,500x375,)
+
+:Step.10|
+Check "Connect Automatically" and click "Apply" button.
+#ref(install_fig10.png,,500x375,)
+
+:Step.11|
+Check "Close" button.
+#ref(install_fig11.png,,500x375,)
+
+:Step.12|
+Check "Next" button.
+#ref(install_fig12.png,,500x375,)
+
+:Step.13|
+Setup timezone.
+#ref(install_fig13.png,,500x375,)
+
+:Step.14|
+Setup root password.
+#ref(install_fig14.png,,500x375,)
+
+:Step.15|
+Select Type of installation.
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|Type of installation||"Use All Space"|
+
+:Step.16|
+Click "Write change to the disk".
+#ref(install_fig16.png,,500x375,)
+
+:Step.17|
+Choose Install Mode.
+#ref(install_fig17.png,,500x375,)
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|Install Mode||"Software Development Workstation"|
+
+:Step.18|
+Wait for a while to finish installtion.
+#ref(install_fig18.png,,500x375,)
+
+:Step.19|
+Click "Reboot" button.
+#ref(install_fig19.png,,500x375,)
+
+:Step.20|
+Click Enter key.
+#ref(install_fig20.png,,500x375,)
+
+:Step.21|
+Click "Forward" button.
+#ref(install_fig21.png,,500x375,)
+
+:Step.22|
+Click "Forward" button.
+#ref(install_fig22.png,,500x375,)
+
+:Step.23|
+Enter user name, password and click "Forward" button.
+
+:Step.24|
+Click "Forward" button.
+#ref(install_fig24.png,,500x375,)
+
+:Step.25|
+Click "Finish" button.
+#ref(install_fig25.png,,500x375,)
+
+**Setup Network Adapter [#jed35f38]
+:Step.1|
+Login root user.
+
+:Step.2|
+Launch terminal from "Application"->"System Tools"->"Terminal".
+
+:Step.2|
+Open the following new file.
+
+ # cd /etc/sysconfig/network-scripts
+ # vi ifcfg-eth1
+
+:Step.3|
+Edit as follows and save the file.
+
+ Tools"->"Terminal".
+ DEVICE=eth1
+ TYPE=Ethernet
+ ONBOOT=yes
+ BOOTPROTO=static
+ HWADDR=99:99:99:99:99:99  # MAC Address which you can check Virtual Box Network setting
+ NAME="System eth1"
+ IPADDR=192.168.56.101     # as you like
+ NETMASK=255.255.255.0
+ NETWORK=192.168.56.0
+
+:Step.4|
+Execute the following command.
+
+ # ifup eth1
+ # reboot
+
+Now, you can connect with SSH server specifying IP address as 192.168.56.101.
+
+
+*HowToUse [#g58bf7ef]
+:Step.1|
+xxx
+
+
+*Author [#e7e6a355]
+S.Yatsuzuka

@@ -1,0 +1,24 @@
+ #contents
+ 
+ *Overall Feature [#be2076f9]
+ >CentOS developers use Red Hat's source code to create a final product very similar to RHEL. Red Hat's branding and logos are changed because Red Hat does not allow them to be redistributed. CentOS is available free of charge. 
+ <
+ 
+ RIGHT:
+ refered from [[Wikipedia - Cent OS:http://en.wikipedia.org/wiki/CentOS]]
+ 
+ *Specification [#t3a0f6cc]
+ |LEFT:100|LEFT:200|c
+ |CENTER:Item|CENTER:Description|h
+ |Main Developer|The CentOS Project(Affiliated with Red Hat)|
+ |License|various|
+ |OS|-|
+ |Written In|various|
+ 
+ 
+ *HowToUse [#c866d9f0]
+ #ls2(HowToUse/CentOS/)
+ 
+-*Contributer [#w28c82d2]
++*Author [#w28c82d2]
+ S.Yatsuzuka

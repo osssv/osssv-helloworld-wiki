@@ -1,0 +1,49 @@
+#contents
+
+*Overall Feature [#pd98540b]
+>TBD
+Ruby on Rails, or simply Rails, is an open source web application framework written in Ruby. Rails is a full-stack framework that emphasizes the use of well-known software engineering patterns and paradigms, including convention over configuration (CoC), don't repeat yourself (DRY), the active record pattern, and model–view–controller (MVC).
+<
+RIGHT:
+refered from [[Wikipedia - Ruby on Rails:http://en.wikipedia.org/wiki/Ruby_on_Rails]]
+
+
+:File Composition|
+ .
+ |-- app
+ |   |-- assets
+ |   |-- controllers
+ |   |-- helpers
+ |   |-- mailers
+ |   |-- models
+ |   `-- views
+ |-- bin
+ |-- config
+ |-- config.ru
+ |-- db
+ |-- Gemfile
+ |-- Gemfile.lock
+ |-- lib
+ |-- log
+ |-- public
+ |-- Rakefile
+ |-- README.rdoc
+ |-- test
+ |-- tmp
+ `-- vendor
+
+*Specification [#f727499e]
+|LEFT:100|LEFT:200|c
+|CENTER:ITEM|CENTER:DESCRIPTION|h
+|Main Developer|Rails Core Team|
+|License|MIT|
+|OS|Cross-platform|
+|Written In|Ruby|
+|Official Site|http://rubyonrails.org/|
+
+
+*HowToUse [#i9804190]
+#ls2(HowToUse/RubyOnRails/)
+
+*Author [#fee32d92]
+S.Yatsuzuka

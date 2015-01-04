@@ -1,0 +1,31 @@
+-#contents
+ 
+-*Overall Feature [#z395dcde]
+-:xxx|
+-:Official site|
+-[https://www.vagrantup.com/]
+-
+-*Specification [#fa6a2d3b]
+-:Main Developer|
+-Hashi Corp (Mischell Hashimoto)
+-:License|
+-MIT license
+-:OS|
+---TBD
+-:Written In|
+-Ruby
+-
+-*Install&Setup [#s92733d7]
+-:Step.1|
+-xxx
+-
+-*HowToUse [#e75d14e2]
+-:Step.1|
+-xxx
+-
+-*Contributer [#x4d83c13]
+-S.Yatsuzuka
+-
+-*Open Discussion [#wa23fb69]
+-#article
+-

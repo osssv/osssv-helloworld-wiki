@@ -1,0 +1,46 @@
+#contents
+
+*Prerequisite [#mb52410a]
+-Maven (You can refer [[HowToUse/Maven/3.2]])
+
+*Install&Setup [#m6ca9396]
+:Step.1|
+-
+
+*HowToUse [#n53d46d3]
+:Step.1|
+Create Maven project.
+
+:Step.2|
+Add the following description in POM.xml
+
+ <build>
+   <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <version>2.9.1</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+ </build>
+ 
+ <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>2.9.1</version>
+      </plugin>
+    </plugins>
+  </reporting>
+
+
+:Step.3|
+Execute the following command. Then you can see coverage info from checkstyle-result.xml.
+
+ $ mvn checkstyle:checkstyle
+
+*Author [#p9bb4a07]
+S.Yatsuzuka

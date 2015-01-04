@@ -1,0 +1,145 @@
+#contents
+
+*Prerequisite [#p7787c80]
+-Virtual Box (You can refer [[HowToUse/VirtualBox/4.3]])
+
+*Install&Setup [#ga9b9a40]
+:Step.1|
+Download and runinstaller.
+
+https://www.vagrantup.com/downloads
+
+#ref(install_fig1.png,,500x312,)
+
+:Step.2|
+Click Next button.
+
+#ref(install_fig2.png,,500x398,)
+
+:Step.3|
+Check the accept and click next button.
+
+#ref(install_fig3.png,,500x398,)
+
+:Step.4|
+Choose install folder and click next button.
+
+#ref(install_fig4.png,,500x398,)
+
+:Step.5|
+Choose install folder and click finish button.
+
+#ref(install_fig5.png,,500x398,)
+
+*HowToUse [#ta863717]
+**Create Vagrantfile [#o86a5000]
+:Step.1|
+Execute the following command to create init file.
+
+ $ vagrant init <Guest OS name> <box file path>
+
+Example
+ $ vagrant init centos-6-x64 http://puppet-vagrant-boxes.puppetlabs.com/centos-64-x64-vbox4210.box
+
+#ref(CreateInitFile_fig1.png,,500x275,)
+
+''Puppet Labs Vagrant Boxes''
+http://puppet-vagrant-boxes.puppetlabs.com/
+
+''Chef Bento project''
+https://github.com/opscode/bento
+
+:Step.2|
+Edit Vagrantfile which is created by vagrant init as needed
+
+ $ vi Vagrantfile
+
+**Launch guestOS from command line [#t48567f6]
+:Step.1|
+Launch guest OS. In the first launch, vagrant download box file to remote server, but after it, vagrant try to launch guest OS with the local virtual box file.
+Initial root password is "vagrant".
+
+ $ vagrant up
+
+#ref(LaunchGuestOS_fig1.png,,500x275,)
+
+#ref(LaunchGuestOS_fig2.png,,500x266,)
+
+:Step.3|
+Connect to guest OS from command line.
+
+ $ vagrant ssh
+
+#ref(LaunchGuestOS_fig3.png,,500x275,)
+
+:Step.5|
+Shutdown guest OS.
+
+ $ vagrant halt
+
+#ref(LaunchGuestOS_fig5.png,,500x275,)
+
+**Launch guestOS from GUI (Virtual Box) [#t48567f6]
+:Step.1|
+Launch vagrant.
+
+ $ vagrant up
+
+:Step.2|
+Connect with terminal.
+
+ $ vagrant ssh
+
+:Step.3|
+Change user to root. The initial password for root is "vagrant".
+
+ $ su - root
+
+:Step.4|
+Install X WIndow System and Desktop utilities.
+
+ # yum -y groupinstall "X Window System" "Desktop" "General Purpose Desktop"
+
+:Step.5|
+Change the inittab.
+
+ # vi /etc/inittab
+
+(Before)
+ id:3:initdefault:
+
+(After)
+ id:5:initdefault:
+
+:Step.6|
+Shutdown the system.
+
+(Exit from root)
+ # exit
+
+(Exit from vagrant ssh)
+ $ exit
+
+(Shutdown guest OS)
+ $ vagrant halt
+
+:Step.7|
+Edit Vagrantfile as follows.
+
+ config.vm.provider :virtualbox do |vb|
+  # Don't boot with headless mode
+  vb.gui = true
+ #
+ #   # Use VBoxManage to customize the VM. For example to change memory:
+ #   vb.customize ["modifyvm", :id, "--memory", "1024"]
+ end
+
+:Step.8|
+Launch guest OS and GUI will be show up.
+
+ $ vagrant up
+
+#ref(LaunchGuestOS_fig7.png,,500x275,)
+
+*Author [#l1b9a3ae]
+S.Yatsuzuka

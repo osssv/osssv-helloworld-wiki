@@ -1,0 +1,360 @@
+#contents
+
+*Prerequisite [#q4efe545]
+-Java Runtime Edition
+-Cent OS (You can refer [[HowToUse/CentOS/6.5]])
+-Subversion (You can refer [[HowToUse/Subversion/1.6]])
+-Maven (You can refer [[HowToUse/Maven/3.2]])
+-Maven Javadoc (You can refer [[HowToUse/Maven/3.2/javadoc]])
+
+*Install&Setup [#xfc13f2e]
+**Install Jenkins [#y90b3795]
+:Step.1|
+Import public key.
+
+ # wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
+ # rpm --import http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key
+
+:Step.2|
+Install Jenkins
+
+ # yum install jenkins
+
+
+**Launch Jenkins [#y90b3795]
+:Step.1|
+Login from GUI with root.
+
+:Step.2|
+Select System -> Administration -> Firewall
+
+#ref(Launch_fig1.png,,500x241,)
+
+:Step.3|
+Select "Other Ports" and click "Add" button and set 8080 port.
+
+#ref(Launch_fig2.png,,500x241,)
+
+:Step.4|
+Click "Apply" button on the "Firewall Configuration" window.
+
+:Step.5|
+Execute the following command and access http://<host name>:8080/.
+
+ # /etc/rc.d/init.d/jenkins start
+
+#ref(Launch_fig3.png,,500x266,)
+
+
+*HowToUse [#mafc34ae]
+**Prepare maven project [#s46b1d6c]
+:Step.1|
+Prepare workspace in your pc.
+
+ # svn checkout <SVN repository path>
+
+:Step.2|
+Create Maven project.
+
+ # cd <project directory>
+ # mvn generate:create -DgroupId=org.sample -DartifactId=sample
+
+:Step.3|
+Edit POM.xml so that maven create Javadoc.
+
+ # vi pom.xml
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <configuration>
+          <author>true</author>
+          <source>1.7</source>
+          <show>protected</show>
+          <encoding>UTF-8</encoding>
+          <charset>UTF-8</charset>
+          <docencoding>UTF-8</docencoding>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+Or you can get sample files from the [[Github - OSSSV:https://github.com/osssv/osssv-helloworld/tree/master/jenkins/1.594/sample]]
+
+:Step.4|
+Check in files into the repository Jenkins will monitor.
+
+ # svn add .
+ # svn commit -m "Import new files"
+
+**Mail Server Configuration [#q04c4ad9]
+:Step.1|
+Click "Manage Jenkins".
+
+#ref(ServerConfig_fig1.png,,500x266,)
+
+:Step.2|
+Click "Configure System".
+
+#ref(ServerConfig_fig2.png,,500x266,)
+
+:Step.3|
+Setup mail notification configuration.
+
+#ref(ServerConfig_fig3.png,,500x266,)
+
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|SMTP server|SMTP server|"smtp.gmail.com"|
+|Default user e-mail suffix|If you specify this as "@gmail.com", user e-mail address will be automatically obtained as <user name><suffix>|@gmail.com (for gmail)|
+
+:Step.4|
+Click "Advances..." button.
+Setup the configuration.
+
+#ref(ServerConfig_fig4.png,,500x266,)
+
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|Use SMTP Authentication|If you expect SMTP authorization, check this|TRUE (for gmail)|
+|User Name|e-mail user name for SMTP authentification|"syatsuzuka"|
+|Password|password for SMTP Authentification|"xxxx"|
+|SSL|if SMTP server require SSL, check this|TRUE (for gmail)|
+|SMTP Port|Port used in SMTP server|"465" (for gmail)|
+|Charset|Character used in e-mail|"UTF-8"|
+
+**Install JDK for Jenkins [#q04c4ad9]
+:Step.1|
+Click "Manage Jenkins" link.
+
+:Step.2|
+Click "Configure System" link.
+
+:Step.3|
+Click "Add JDK" button.
+
+:Step.4|
+
+#ref(InstallJDK_fig1.png,,500x266,)
+
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|Name|JDK name|"jdk8u25"|
+|Install automatically|If you want to install JDK automatically, keep this checked|TRUE (default)|
+|Version|JDK Version|"Java SE Development Kit License Agreement|
+|I agree to the Java SE Development Kit License Agreement||TRUE|
+
+:Step.5|
+Click "Please enter your username/password" link.
+
+:Step.6|
+Enter Oracle account and click "OK" button.
+
+#ref(InstallJDK_fig1.png,,500x266,)
+
+**Install Maven for Jenkins [#q04c4ad9]
+:Step.1|
+Click "Add Maven" button and set Name.
+
+:Step.2|
+Click "Save" button.
+
+**Create Items for Build[#o4d3a6b7]
+:Step.1|
+Click "New Item" link.
+
+#ref(CreateItem_fig1.png,,500x266,)
+
+:Step.2|
+Set "Item name", check "Freestyle project" and click "OK" button.
+
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|Item name|Item name|"sample"|
+
+#ref(CreateItem_fig2.png,,500x266,)
+
+Now, you have new directory named "sample" in JENKINS_HOME, namely, /var/lib/jenkins.
+Resources which are necessary for build will be stored in workspace.
+
+:Step.3|
+Click Subversion for "Source Code Management" and set "Repository URL".
+
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|Repository URL|Repository URL|"http://localhost/svn"|
+
+#ref(CreateItem_fig3.png,,500x266,)
+
+:Step.4|
+Click "enter credential" link. 
+
+#ref(CreateItem_fig4.png,,500x266,)
+
+:Step.5|
+You can choose build trigger according to your situation.
+-"Build after other projects are built"
+-"Build periodically"
+-"Poll SCM"
+
+Here, I choose "Poll SCM". Check "Poll SCM". If you want to check every 5min, set as follows.
+The order of parameters are same as cron.
+
+min hour day month wday
+ H/5 * * * *
+
+#ref(CreateItem_fig5.png,,500x266,)
+
+:Step.6|
+Select "Invoke top-level Maven targets" from "Add build step".
+
+:Step.7|
+Set the following.
+
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|Maven Version|installed maven version|"maven3.2.2"|
+|goal|maven goal|"compile"|
+#ref(CreateItem_fig7.png,,500x266,)
+
+:Step.8|
+Click "Advanced ..." link and set as following.
+
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|POM|file path to the pom.xml in the workspace|"trunk/sample/pom.xml|
+
+:Step.9|
+Click "Save" button. Now, you can see New Item in the main window.
+
+#ref(CreateItem_fig6.png,,500x266,)
+
+
+**Run Build [#mc4e49fb]
+:Step.1|
+Click newly created "sample" link.
+
+:Step.2|
+Click "Build Job" link and you can see the status of job is changed.
+
+:Step.3|
+For your first job, Jenkins will download and install maven and related libraries, so it takes time.
+After the build job finished, you can check test result.
+
+You can see the detail information from terminal log, Jenkins -> sample -> #<job number> -> "Console Output Windows".
+
+#ref(RunBuild_fig1.png,,500x266,)
+
+
+**E-mail notification setting [#t68cd7d1]
+
+:Step.1|
+It is useful to notify error by notification mail.
+Select target Item and click "Configure" link. Then choose "E-mail Notification" from "Add post-build action" and set "Recipients".
+
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|Recipients|recipients of error notification|"syatsuzuka@xxx.org"|
+#ref(Email_fig1.png,,500x266,)
+
+After saving, you will recieve notification mail when you encounter error in build.
+
+**JUnit Testing [#h9ff9c5b]
+:Step.1|
+Jenkins can display JUnit test report.
+Select target Item and click "Configure" link. Then choose "Publish JUnit Test Result" from "Add post-build action".
+
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|Test report XMLs|Specify the location of JUnit result report file|"trunk/sample/target/surefire-reports/*.xml"|
+
+:Step.2|
+Add "test" to maven goal.
+
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|goal|maven goal|"compile test"|
+
+After saving, you can see test result in Jenkins window.
+
+#ref(JUnit_fig1.png,,500x266,)
+#ref(JUnit_fig2.png,,500x266,)
+#ref(JUnit_fig3.png,,500x266,)
+
+**Javadoc creation [#df6f10fd]
+:Step.1|
+Jenkins also can show Javadoc from its window.
+Select target Item and click "Configure" link. Then choose "Publish Javadoc" from "Add post-build action".
+
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|Javadoc directory|directory path Javadoc will be stored|"trunk/sample/target/site/apidocs"|
+
+
+:Step.2|
+Add "javadoc:javadoc" to maven goal.
+
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|goal|maven goal|"compile test javadoc:javadoc"|
+
+After saving, you can see javadoc link in your build result page.
+
+#ref(Javadoc_fig1.png,,500x266,)
+
+
+**Deploy objects [#a266d745]
+:Step.1|
+Click "New Item" link.
+
+:Step.2|
+Set "Item name", check "Freestyle project" and click "OK" button.
+
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|Item name|Item name|"sample.deploy"|
+
+:Step.3|
+Select "Build after other projects are built".
+
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|Projects to watch||"sample"|
+
+:Step.4|
+Click "Execute shell" from "Add build step" to deploy the created files. Here, I use dummy program, "deploy_files.sh" for deployment.
+
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|Command|command line|"echo deploy started >> /tmp/jenkins.log"|
+
+:Step.5|
+Set e-mail notification same as "sample".
+
+**Setup User Security [#d31b0517]
+:Step.1|
+Click "Mange Jenkins" link and "Setup Security".
+
+#ref(SetupSecurity_fig1.png,,500x266,)
+
+:Step.2|
+Click "Enable security" and "Jenkins'own user database".
+
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|Security Realm|Choose how to refer security definition|"Jenkins' own user database"|
+|Authorization|Choose authorization management|"Matrix-based security"|
+#ref(SetupSecurity_fig2.png,,500x266,)
+
+:Step.3|
+Sign up the user.
+
+:Step.4|
+If you set readonly for "anonymous", guest user cannot execute "build" any more.
+#ref(SetupSecurity_fig4.png,,500x266,)
+
+
+*Author [#n8b1fbb4]
+S.Yatsuzuka

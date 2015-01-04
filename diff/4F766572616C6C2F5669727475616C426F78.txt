@@ -1,0 +1,33 @@
+ #contents
+ 
+ *Overall Feature [#cccb61a6]
+ >Users of VirtualBox can load multiple guest OSs under a single host operating-system (host OS). Each guest can be started, paused and stopped independently within its own virtual machine (VM).
+ <
+ RIGHT:
+ refered from [[Wikipedia - VirtualBox:http://en.wikipedia.org/wiki/VirtualBox]]
+ 
+ 
+ #ref(overall_2.png,,500x269,))
+ 
+ :File Composition|
+ #ref(overall_3.png,,500x285,))
+ 
+ :Window Image|
+ #ref(overall_1.png,,500x266,))
+ 
+ 
+ *Specification [#m9e1f124]
+ |LEFT:100|LEFT:200|c
+ |CENTER:Item|CENTER:Description|h
+ |Main Developer|Oracle|
+ |License|GPL v2|
+ |OS|Windows,Mac OS,Linux,Solaris|
+ |Written In|C, C++|
+ |Official Site|https://www.virtualbox.org/|
+ 
+ *HowToUse [#o05bef56]
+ #ls2(HowToUse/VirtualBox/)
+ 
+-*Contributer [#ge261d27]
++*Author [#ge261d27]
+ S.Yatsuzuka

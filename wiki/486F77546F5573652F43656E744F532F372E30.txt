@@ -1,0 +1,44 @@
+#contents
+
+*Install&Setup [#b383a8c5]
+**Install CentOS [#s008cd25]
+:Step.1|
+#ref(install_fig1.png,,500x375,)
+
+:Step.2|
+#ref(install_fig2.png,,500x375,)
+
+:Step.3|
+#ref(install_fig3.png,,500x375,)
+
+:Step.4|
+#ref(install_fig4.png,,500x375,)
+
+:Step.5|
+#ref(install_fig5.png,,500x375,)
+
+:Step.6|
+#ref(install_fig6.png,,500x375,)
+
+:Step.7|
+#ref(install_fig7.png,,500x375,)
+
+:Step.8|
+#ref(install_fig8.png,,500x375,)
+
+:Step.9|
+#ref(install_fig9.png,,500x375,)
+
+:Step.10|
+#ref(install_fig10.png,,500x375,)
+
+:Step.11|
+#ref(install_fig11.png,,500x375,)
+
+*HowToUse [#b173cc8a]
+:Step.1|
+xxx
+
+
+*Author [#u92f0874]
+S.Yatsuzuka

@@ -1,0 +1,140 @@
+ #contents
+ 
+ *Install&Setup [#l197a05e]
+ **Install VirtualBox [#v570ef93]
+ :Step.1|
+ Download the installer(virtualization platform package) from [https://www.virtualbox.org/wiki/Downloads here]
+ 
+ :Step.2|
+ Run installer|
+ #ref(install_fig1.png)
+ 
+ :Step.3|
+ Setup install folder|
+ #ref(install_fig2.png)
+ 
+ :Step.4|
+ Confirm shortcut option|
+ #ref(install_fig3.png)
+ 
+ :Step.5|
+ Execute install|
+ #ref(install_fig4.png)
+ 
+ *HowToUse [#kf3359ce]
+ **Create New Virtual Machine [#s70829f9]
+ :Step.1|
+ Click "New" button and define guest OS
+ #ref(howtouse_fig1.png)
+ |LEFT:150|LEFT:300|LEFT:200|c
+ |CENTER:Item|CENTER:Description|CENTER:Example|h
+ |Name|Name of guest OS|"CentOS6.5(64bit)"|
+ |Type|Type of guest OS|"Linux"|
+ |Version|Version of guest OS|"Red Hat(64bit)"|
+ 
+ :Step.2|
+ Specify the memory size for guest OS
+ #ref(howtouse_fig2.png)
+ |LEFT:150|LEFT:300|LEFT:200|c
+ |CENTER:Item|CENTER:Description|CENTER:Example|h
+ |Memory Size|Memory allocation size for guest OS|"2048MB"|
+ 
+ :Step.3|
+ Choose default option and click "next" button
+ #ref(howtouse_fig3.png)
+ |LEFT:150|LEFT:300|LEFT:200|c
+ |CENTER:Item|CENTER:Description|CENTER:Example|h
+ |Hard drive|Check if you want to create virtual hard drive|"Create a virtual hard drive now"(default)|
+ 
+ :Step.4|
+ Choose default option(VDI) for hard drive file type and click "next" button
+ #ref(howtouse_fig4.png)
+ |LEFT:150|LEFT:300|LEFT:200|c
+ |CENTER:Item|CENTER:Description|CENTER:Example|h
+ |Hard drive file type|Choose Hard drive file type (VDI, VMDK, VHD, HDD, QED, QCOW)|"VDI"(default)|
+ 
+ :Step.5|
+ Choose default option(Dynamically allocated) and click "next" button
+ #ref(howtouse_fig5.png)
+ |LEFT:150|LEFT:300|LEFT:200|c
+ |CENTER:Item|CENTER:Description|CENTER:Example|h
+ |Storage on Physical hard drive|Choose from "Dynamically allocated" or "Fixed size"|"Dynamically allocated"(default)|
+ 
+ :Step.6|
+ Set Box file name, location (I recommend to use default location) and choose file size. Then click "create" button. Now you will see new icon for guest OS.
+ #ref(howtouse_fig6.png)
+ |LEFT:150|LEFT:300|LEFT:200|c
+ |CENTER:Item|CENTER:Description|CENTER:Example|h
+ |Box File name and location and size|Set "Box file name and location" and its "size"|"CentOS 6.5(64bit)", "32GB"|
+ 
+ :Step.7|
+ Confirm the newly created guest OS icon is selected, click "start" button.
+ 
+ :Step.8|
+ Select startup disk(ISO file) and click "start" button.
+ #ref(howtouse_fig7.png)
+ |LEFT:150|LEFT:300|LEFT:200|c
+ |CENTER:Item|CENTER:Description|CENTER:Example|h
+ |Startup disk|Choose "ISO File"|"CentOS-6.5-x86_64-bin-DVD1"|
+ 
+ :Step.9|
+ Run guest OS. And follow the operation for each OS.
+ 
+ #ls2(HowToUse/CentOS/)
+ 
+ **Setup Network [#j501f55a]
+ :Step.1|
+ Power-off the Guest OS.
+ 
+ :Step.2|
+ Select "Network" menu, "Adapter2" tab and set the parameter as below and Click "OK" button.
+ Remember MAC Address which is necessary for setup network adapter in guest OS.
+ #ref(SetupNetwork_fig2.png,,500x312,)
+ 
+ |LEFT:150|LEFT:300|LEFT:200|c
+ |CENTER:Item|CENTER:Description|CENTER:Example|h
+ |Enable Network Adapter||TRUE|
+ |Attached To||Host Only Adapter|
+ |Name||VirtualBox Host-Only Eathernet Adapter|
+ 
+ :Step.3|
+ Run Guest OS.
+ 
+ :Step.4|
+ Setup Network adapter in Guest OS.
+ 
+ #ls2(HowToUse/CentOS/)
+ 
+ **Setup Guest Additions [#fe6d4d8f]
+ 
+ :Step.1|
+ Create snapshot.
+ #ref(SetupGuestAdditions_fig0.png,,500x312,)
+ 
+ :Step.1|
+ Login with root.
+ 
+ :Step.2|
+ Execute the following command.
+ 
+  # yum install gcc kenel-devel kernel-headers dkms make bzips2
+  # reboot
+ 
+ :Step.3|
+ Login with root and execute the following command.
+ 
+  #export KERN_DIR=/usr/src/kernels/`uname -r`
+ 
+ :Step.4|
+ Mount Guest Additions CD Image from "Device"->"Insert Guest Additions CD-Image".
+ #ref(SetupGuestAdditions_fig1.png,,500x312,)
+ 
+ :Step.5|
+ If the auto-run didn't run, right click the CD driver icon and select "Open with Auto-run prompt". After the installation is finished, you can access mouth pointer seamlessly between guest OS and host OS.
+ 
+ :Step.6|
+ Eject the "Guest Additions CD-Image" drive.
+ 
+-*Contributer [#ge261d27]
++*Author [#ge261d27]
+ S.Yatsuzuka

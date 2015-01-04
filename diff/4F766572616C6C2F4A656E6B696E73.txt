@@ -1,0 +1,47 @@
+ #contents
+ 
+ *Overall Feature [#s7420e28]
+ >Jenkins provides continuous integration services for software development. It is a server-based system running in a servlet container such as Apache Tomcat. It supports SCM tools including AccuRev, CVS, Subversion, Git, Mercurial, Perforce, Clearcase and RTC, and can execute Apache Ant and Apache Maven based projects as well as arbitrary shell scripts and Windows batch commands.
+ <
+ RIGHT:
+ refered from [[Wikipedia - Jenkins:http://en.wikipedia.org/wiki/Jenkins_%28software%29]]
+ 
+ :Process Flow|
+ #ref(overall_fig2.png,,500x425,)
+ 
+ :File Composition|
+- JENKINS_HOME
++ JENKINS_HOME (default: /var/lib/jenkins)
+   +- config.xml     (configuration file for Jenkins)
+   +- *.xml          (configuration files for others)
+   +- fingerprints   (fingerprints of files)
+   +- plugins        (plugins)
+   +- jobs
+       +- [JOBNAME]      (sub directories for each jobs)
+           +- config.xml     (job setting file)
+           +- workspace      (work directory for version control)
+           +- latest         (symbolic link to succeeded build)
+           +- builds
+               +- [BUILD_ID]     (each build)
+                   +- build.xml      (summary of build result)
+                   +- log            (log files)
+                   +- changelog.xml  (change logs)
+ 
+ :Window Image|
+ #ref(overall_fig1.png,,500x266,)
+ 
+ *Specification [#rb1b2271]
+ |LEFT:100|LEFT:200|c
+ |CENTER:ITEM|CENTER:DESCRIPTION|h
+ |Main Developer|Kohsuke Kawaguchi|
+ |License|MIT|
+ |OS|Cross-platform|
+ |Written In|Java|
+ |Official Site|http://jenkins-ci.org/|
+ 
+ 
+ *HowToUse [#ef7cbec1]
+ #ls2(HowToUse/Jenkins/)
+ 
+ *Author [#a950ec91]
+ S.Yatsuzuka

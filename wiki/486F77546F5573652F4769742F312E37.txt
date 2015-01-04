@@ -1,0 +1,118 @@
+#contents
+
+*Install&Setup [#md5becfa]
+**Install Git from Cygwin [#k4e04c5b]
+(TBD)
+
+*HowToUse [#hd885861]
+**Use original Git Server [#r8596e41]
+***Setup the Git Server [#pcb92f91]
+Refer [[HowToUse/Git Daemon/1.7]]
+
+***Create Repository [#o328d5d8]
+:Step.1|Create your local repository.
+
+ # mkdir <Local Repository>
+ # cd <Local Repository>
+ # git init
+ # git remote add origin <User Name>@<Host name>:<Repository Path>
+
+(Example)
+ # git remote add origin syatsuzuka@192.168.56.101:/home/syatsuzuka/repo/test.git
+
+:Step.2|Check in the first file.
+
+ # touch readme.txt
+ # git add readme.txt
+ # git commit -m 'Initial commit'
+ # git push -u origin master
+
+
+**Use GitHub [#w505603b]
+***Sign up the GitHub [#ha159fd9]
+:Step.1|Access the GitHub web site and sign up(https://github.com/).
+#ref(GitHub_fig1.png,,500x266,)
+#ref(GitHub_fig2.png,,500x266,)
+
+:Step.2|Click "create" button and create new repository.
+#ref(GitHub_fig3.png,,500x266,)
+#ref(GitHub_fig4.png,,500x266,)
+
+
+***Create Repository [#eeb45dca]
+:Step.1|Create your local repository.
+
+ # mkdir <Local Repository>
+ # cd <Locak Repository>
+ # git init
+ # git remote add origin https://<User Name>@github.com/<User Name>/<Repository Name>.git
+
+(Example)
+ # git remote add origin https://github.com/syatsuzuka/test.git
+
+:Step.2|Check in the first file.
+
+ # touch readme.txt
+ # git add readme.txt
+ # git commit -m 'Initial commit'
+ # git push -u origin master
+#ref(GitHub_fig5.png,,500x266,)
+
+
+**Use BitBucket [#j1eba035]
+***Sign up the BitBucket [#n0e61de8]
+:Step.1|Access the BitBucket web site and sign up(https://bitbucket.org/).
+#ref(BitBucket_fig1.png,,500x266,)
+#ref(BitBucket_fig2.png,,500x266,)
+
+:Step.2|Click "create" button and create new repository.
+#ref(BitBucket_fig3.png,,500x266,)
+#ref(BitBucket_fig4.png,,500x266,)
+
+
+***Create Repository [#fd616f93]
+:Step.1|Create your local repository.
+
+ # mkdir <Local Repository>
+ # cd <Locak Repository>
+ # git init
+ # git remote add origin https://<User Name>@bitbucket.org/<User Name>/<Repository Name>.git
+
+(Example)
+ # git remote add origin https://syatsuzuka@bitbucket.org/syatsuzuka/test.git
+
+:Step.2|Check in the first file.
+
+ # touch readme.txt
+ # git add readme.txt
+ # git commit -m 'Initial commit'
+ # git push -u origin master
+#ref(BitBucket_fig5.png,,500x266,)
+
+
+**Maintain the files in Repository [#ia5caee3]
+:Step.1|Clone the remote repository.
+ # git clone <Repository Path>
+
+(Example)
+ # git clone https://syatsuzuka@bitbucket.org/syatsuzuka/test.git
+
+:Step.2|Launch Eclipse and switch to Git Perspective.
+#ref(MaintainFiles_fig1.png,,500x266,)
+
+:Step.3|Click "Add an existing local Git repository" and setup Local Repository Path.
+#ref(MaintainFiles_fig2.png,,500x344,)
+#ref(MaintainFiles_fig3.png,,500x266,)
+
+:Step.4|Edit the files.
+
+:Step.5|Commit and push the modified files.
+Eclipse Plugin sometimes doesn't have full functionalities for the external utilities such as maven or git, so I recommend you to use command line for fundamental operations except for editing files.
+ # git add <Modified Files>
+ # git commit -m '<Commit Log>'
+ # git pull origin
+ # git push origin
+
+
+*Author [#v4f30f2e]
+S.Yatsuzuka

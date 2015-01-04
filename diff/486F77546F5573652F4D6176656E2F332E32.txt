@@ -1,0 +1,122 @@
+ #contents
+ 
+ *Install&Setup [#c9b6b1ee]
+ **Command Line [#mf036c8e]
+ :Prerequisite|
+ -JDK is installed.
+--Eclipse is installed.
++-Eclipse installation (You can refer [[HowToUse/Eclipse/4.3]])
+ 
+ 
+ :Step.1|Download Maven from http://maven.apache.org/download.cgi and unzip it.
+ 
+ (In case download file is tar ball)
+  $ tar xzvf <download file>
+ 
+ :Step.2|Set path.
+ (In case you are using Windows)
+ |LEFT:150|LEFT:300|LEFT:200|c
+ |CENTER:Item|CENTER:Description|CENTER:Example|h
+ |MAVEN_HOME|Maven Home path|"C:\apache-maven-3.2.2"|
+ |Path|Maven executable path|"%MAVEN_HOME%\bin"|
+ The setting of "MAVEN_HOME" is not mandatory. Just I prefer to set "HOME" variable to manage multiple versions' path.
+ 
+ :Step.3|Confirm if the maven works
+  $ mvn --version
+ #ref(Install_fig1.png,,500x275,)
+ 
+ 
+ **Eclipse Plugin [#s6deda6c]
+ (If you installed Eclipse for Java EE, Maven plugin, m2e is installed by default. Here, I use Eclipse 4.3 (Kepler) for explanation.)
+ 
+ :Step.1|Launch eclipse.
+ 
+ :Step.2|Choose "Help" -> "About Eclipse" and check if the plugin for Maven (m2e) has already been installed.
+ If the icon for m2e is shown up, you have plugin.
+ #ref(Install_fig3.png,,500x314,)
+ 
+ :Step.3|Choose "Help" -> "Install New Software" and click "add" button.
+ #ref(Install_fig2.png,,500x277,)
+ 
+ :Step.4|Enter the name and location of plugin.
+ 
+ |LEFT:150|LEFT:300|LEFT:200|c
+ |CENTER:Parameter|CENTER:Value|CENTER:Example|h
+ |Name|Name for plugin|"m2e"|
+ |Location|The location of plugin|"http://download.eclipse.org/technology/m2e/releases "|
+ #ref(Install_fig4.png,,500x126,)
+ 
+ :Step.5|Check the install item and click "next" button.
+ #ref(Install_fig5.png,,500x277,)
+ #ref(Install_fig6.png,,500x277,)
+ 
+ *HowToUse [#g107da17]
+ **Simple Case [#h801fde1]
+ :Step.1|Create a new project.
+  $ mvn archetype:create \
+    -DgroupId=<Group ID> \
+    -DartifactId=<Artifact ID>
+ |LEFT:150|LEFT:300|LEFT:200|c
+ |CENTER:Argument|CENTER:Description|CENTER:Example|h
+ |archetype|ArcheType|"create"|
+ |group ID|Java Package name|"org.apache"|
+ |artifact ID|Project name for Maven|"project1"|
+ #ref(SimpleCase_fig1.png,,500x363,)
+ 
+ :Step.2|Launch eclipse and choose "File" -> "Import". Select "Existing Maven Project" and click "Next" button.
+ #ref(SimpleCase_fig4.png,,500x285,)
+ 
+ :Step.3|Click "Browze" button.
+ #ref(SimpleCase_fig5.png,,500x285,)
+ 
+ :Step.4|Select Maven project folder we have created.
+ #ref(SimpleCase_fig6.png)
+ 
+ :Step.5|pom.xml in the folder will be recognized. Click "finish" button.
+ #ref(SimpleCase_fig7.png,,500x349,)
+ #ref(SimpleCase_fig8.png,,500x266,)
+ 
+ :Step.6|Double click the pom.xml and edit it as needed.
+ If you append "dependency" block, maven download correspondent library from maven repository and link the source code in the project.
+ #ref(SimpleCase_fig9.png,,500x266,)
+ 
+ (Example: Selenium plugin)
+  <dependency>
+  	<groupId>org.seleniumhq.selenium</groupId>
+  	<artifactId>selenium-java</artifactId>
+  	<version>LATEST</version>
+  </dependency>
+ 
+ (MySQL Connector)
+  <dependency>
+  	<groupId>mysql</groupId>
+  	<artifactId>mysql-connector-java</artifactId>
+  	<version>5.1.28</version>
+  </dependency>
+ 
+ (Log4J)
+  <dependency>
+  	<groupId>log4j</groupId>
+  	<artifactId>log4j</artifactId>
+  	<version>1.2.15</version>
+  </dependency>
+ 
+ :Step.7|Create test code.
+ 
+ :Step.8|Compile project
+  $ mvn compile
+ #ref(SimpleCase_fig2.png,,500x363,)
+ 
+ :Step.9|Execute Test Code
+ (Command line)
+  $ mvn test
+ #ref(SimpleCase_fig3.png,,500x483,)
+ 
+ (Eclipse)
+ Choose "Run" -> "Run As" -> "maven test"
+ 
+ **JavaEE project [#g2ba2527]
+ (TBD)
+ 
+ *Author [#jb435f7f]
+ S.Yatsuzuka

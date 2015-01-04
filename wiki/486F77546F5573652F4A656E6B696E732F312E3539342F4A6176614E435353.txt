@@ -1,0 +1,38 @@
+#contents
+
+*Prerequisite [#a55d97e1]
+-Jenkins (You can refer [[HowToUse/Jenkins/1.594]])
+-Maven (You can refer [[HowToUse/Maven/3.2]])
+-Maven JavaNCSS plugin (You can refer [[HowToUse/Maven/3.2/JavaNCSS]])
+
+
+*Install&Setup [#f0afd334]
+:Step.1|
+Click "Manage Jenkins" -> "Manage Plugins" link.
+
+:Step.2|
+Click "Available" tab. Select "JavaNCSS Plugins". Then install plugins and reboot Jenkins after installation.
+
+#ref(Install_fig1.png,,500x266,)
+
+:Step.3|
+Click "Configuration" link of target item, select "Publish JavaNCSS Report" from "Add post-build action" and set as follows.
+
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|goal|Add "JavaNCSS" as goal|"javancss:report"|
+
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|Checkstyle results|specify the path to checkstyle results file|"trunk/sample/target/javancss-raw-report.xml"|
+
+*HowToUse [#xc6574b4]
+:Step.1|
+Execute build and you can see test code graph.
+
+#ref(Result_fig1.png,,500x266,)
+#ref(Result_fig2.png,,500x266,)
+
+
+*Author [#s4cdc5c3]
+S.Yatsuzuka

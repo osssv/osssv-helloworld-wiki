@@ -1,0 +1,31 @@
+ #contents
+ 
+ *Overall Feature [#q26d7772]
+ >Selenium IDE is a Firefox add-on that makes it easy to record and playback tests in Firefox 2+. You can even use it to generate code to run the tests with Selenium Remote Control.
+ <
+ RIGHT:
+ refered from [[Selenium HQ - Selenium IDE:http://docs.seleniumhq.org/projects/ide/]]
+ 
+ 
+-:File Composition
++:File Composition|
+ #ref(Overall_fig2.png)
+ 
+ :Window Image|
+ #ref(Overall_fig1.png,,500x473,)
+ 
+ *Specification [#adc1d4e8]
+ |LEFT:100|LEFT:200|c
+ |CENTER:ITEM|CENTER:DESCRIPTION|h
+ |Main Developer|Shinya Kasatani|
+ |License|Apache License 2.0|
+ |OS|Cross-platform|
+ |Written In|Java|
+ |Official Site|http://www.seleniumhq.org|
+ 
+ 
+ *HowToUse [#i08395dd]
+ #ls2(HowToUse/Selenium IDE/)
+ 
+ *Author [#ca19af79]
+ S.Yatsuzuka

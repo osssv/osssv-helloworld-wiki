@@ -1,0 +1,27 @@
+#contents
+
+*Overall Feature [#qfee502e]
+>JUnit is a unit testing framework for the Java programming language. JUnit has been important in the development of test-driven development, and is one of a family of unit testing frameworks which is collectively known as xUnit that originated with SUnit.
+A research survey performed in 2013 across 10,000 GitHub projects found that JUnit, along with slf4j-api, are the most popular libraries. Each library was used by 30.7% of projects.
+<
+RIGHT:
+refered from [[Wikipedia - JUnit:http://en.wikipedia.org/wiki/JUnit]]
+
+:File Composition|
+#ref(Overall_fig1.png)
+
+*Specification [#e5c5a97a]
+|LEFT:100|LEFT:200|c
+|CENTER:ITEM|CENTER:200|h
+|Main Developer|Kent Beck, Erich Gamma, David Saff, Mike Clark (University of Calgary)|
+|License|Eclipse Public License|
+|OS|Cross-platform|
+|Written In|Java|
+|Official Site|http://www.junit.org/|
+
+
+*HowToUse [#fba035fa]
+#ls2(HowToUse/JUnit/)
+
+*Author [#z62e7115]
+S.Yatsuzuka

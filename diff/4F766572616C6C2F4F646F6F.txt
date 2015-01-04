@@ -1,0 +1,31 @@
+ #contents
+ 
+ *Overall Feature [#a8c6290e]
+ >Odoo is a suite of open-source business apps written in Python and released under the AGPL license. It is used by 2 million users worldwide to manage companies of all different sizes. The main Odoo components are the server, 260 core modules (also called official modules) and around 4000 community modules.
+ Odoo was formely known as OpenERP until May 2014. It was rebranded because version 8 of the software included apps including website builder, e-commerce, point of sale and business intelligence. The software conforms to standard expectations of ERP systems, while providing additional modules beyond the coverage of traditional ERP systems.
+ <
+ RIGHT:
+ refered from [[http://en.wikipedia.org/wiki/Odoo Wikipedia - Odoo]]
+ 
+ 
+ :File Composition|
+ TBD
+ 
+ :Window Image|
+ #ref(Overall_fig1.png,,500x266,))
+ 
+ *Specification [#sdeafe2b]
+ |LEFT:100|LEFT:200|c
+ |CENTER:ITEM|CENTER:200|h
+ |Main Developer|Odoo|
+ |License|AGPL|
+ |OS|Linux, Windows, Mac OS-X, UNIX|
+ |Written In|Python, Javascript, XML|
+ 
+ 
+ *HowToUse [#n0d84150]
+ #ls2(HowToUse/Odoo/)
+ 
+-*Contributer [#rc755480]
++*Author [#rc755480]
+ S.Yatsuzuka

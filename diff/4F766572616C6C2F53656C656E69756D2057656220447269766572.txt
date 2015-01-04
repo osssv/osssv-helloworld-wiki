@@ -1,0 +1,25 @@
++#contents
+ 
++*Overall Feature [#kce2a33d]
++>Selenium WebDriver can drive a browser natively either locally or on remote machines. 
++<
++RIGHT:
++refered from [[Selenium HQ - Selenium Web Driver:http://docs.seleniumhq.org/projects/webdriver/]]
++
++
++*Specification [#x066ca81]
++|LEFT:100|LEFT:200|c
++|CENTER:ITEM|CENTER:DESCRIPTION|h
++|Main Developer|Simon Stewart, David Burns|
++|License|Apache License 2.0|
++|OS|Cross-platform|
++|Written In|Java|
++|Official Site|http://www.seleniumhq.org|
++
++
++*HowToUse [#afdb4e7c]
++#ls2(HowToUse/Selenium Web Driver/)
++
++*Author [#i489c0a1]
++S.Yatsuzuka
++

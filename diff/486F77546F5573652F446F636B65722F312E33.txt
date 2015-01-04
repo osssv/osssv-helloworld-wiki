@@ -1,0 +1,24 @@
+-#contents
+ 
+-*Prerequisite [#oa14ea09]
+--Ubuntu installation
+-
+-*Install&Setup [#b2b2bcc6]
+-**Ubuntu [#q8c2dda4]
+-:Step.1|
+-Install Docker
+-
+- $ sudo apt-get install docker.io
+-
+-:Step.2|
+-Launch docker automatically
+-
+- $ sudo update-rc.d docker.io defaults
+-
+-*HowToUse [#mcd5e78b]
+-:Step.1|
+-xxx
+-
+-*Author [#y082ad8f]
+-S.Yatsuzuka
+-

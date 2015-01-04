@@ -1,0 +1,30 @@
+#contents
+
+*Install&Setup [#o26c9fec]
+:Step.1|
+Download bootstrap from http://getbootstrap.com/ and put them into the document root directory.
+#ref(Install_fig1.png)
+
+*HowToUse [#ubdf9498]
+:Step.1|
+In the html document, define the link to the bootstrap files.
+
+ <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+
+:Step.2|
+Link to the css class defined in bootstrap.
+
+(Example)
+"btn btn-success" shows green button and "icon-user" shows user icon as below.
+ <a class="btn btn-success"><i class="icon-user"></i>Sign up</a>
+#ref(UseCSS_fig1.png)
+
+You can refer icon list and button color definition from the link below.
+-http://getbootstrap.com/components/#glyphicons-glyphs
+-http://getbootstrap.com/css/#buttons
+
+For more information, refer the official page, http://getbootstrap.com/.
+
+
+*Author [#s3eb1471]
+S.Yatsuzuka

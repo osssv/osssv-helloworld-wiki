@@ -1,0 +1,28 @@
+#contents
+
+*Overall Feature [#zb27eaa3]
+>
+Bootstrap is a free collection of tools for creating websites and web applications. It contains HTML and CSS-based design templates for typography, forms, buttons, navigation and other interface components, as well as optional JavaScript extensions. In June 2014 it was the No.1 project on GitHub with 71,000+ stars and 26,000+ forks,with a user base including MSNBC and NASA
+<
+RIGHT:
+refered from [[Wikipedia - Bootstrap:http://en.wikipedia.org/wiki/Bootstrap_%28front-end_framework%29]]
+
+
+:File Composition|
+#ref(overall_fig1.png)
+
+*Specification [#p12926b8]
+|LEFT:100|LEFT:200|c
+|CENTER:ITEM|CENTER:DESCRIPTION|h
+|Main Developer|Mark Otto and Jacob Thornton|
+|License|MIT (Apache License 2.0 prior to 3.1.0)|
+|OS|Web engines|
+|Written In|HTML, CSS, LESS, SASS and Javascript|
+|Official Site|http://getbootstrap.com/|
+
+
+*HowToUse [#i8902245]
+#ls2(HowToUse/Bootstrap/)
+
+*Author [#d20244a3]
+S.Yatsuzuka

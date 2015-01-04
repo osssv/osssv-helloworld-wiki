@@ -1,0 +1,22 @@
+ #contents
+ 
+ *Date [#dbf869a3]
+ (Date)
+ 
+ *Location [#pd81d6e6]
+ [http://www.hackerdojo.com/ Hacker Dojo]
+ 
+-*Registration Fee [#j5a961ee]
+-Free
++*Registration [#j5a961ee]
++Free [[Facebook:https://www.facebook.com/events/]]
+ 
+ *Table of Contents [#l338acdb]
+ +Introduction & News [14:00-14:15]
+ +Lightening Talk [14:15-15:00]
+ ++<Tech/Biz> Topic (PIC)  [15:00-15:30]
+ ++<Tech/Biz> Topic (PIC)  [15:30-16:00]
+ +Moku-Moku [16:00-17:00]
+ 
+ *Materials [#z4cb61ef]
+ #ref(OSSSV_StudySession_Template.odp)

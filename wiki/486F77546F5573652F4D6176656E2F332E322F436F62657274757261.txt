@@ -1,0 +1,60 @@
+#contents
+
+*Prerequisite [#mb6c8031]
+-Maven (You can refer [[HowToUse/Maven/3.2]])
+
+*Install&Setup [#p7e39140]
+:Step.1|
+-
+
+*HowToUse [#x1f205b2]
+:Step.1|
+Create Maven project.
+
+:Step.2|
+Add the following description in POM.xml
+
+    <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>cobertura-maven-plugin</artifactId>
+        <configuration>
+          <formats>
+            <format>html</format>
+            <format>xml</format>
+          </formats>
+          <instrumentation>
+            <excludes>
+              <exclude>**/*Test.class</exclude>
+            </excludes>
+          </instrumentation>
+        </configuration>
+      </plugin>
+    </plugins>
+ 
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>cobertura-maven-plugin</artifactId>
+          <version>2.5.1</version>
+          <configuration>
+            <executions>
+              <execution>
+                <phase>package</phase>
+                <goals>
+                  <goal>cobertura</goal>
+                </goals>
+              </execution>
+            </executions>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
+:Step.3|
+Execute the following command. Then you can see coverage info from site/cobertura/coverage.xml.
+
+ $ mvn cobertura:cobertura
+
+*Author [#u4b3f338]
+S.Yatsuzuka

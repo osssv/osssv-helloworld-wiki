@@ -1,0 +1,46 @@
+ #contents
+ 
+ * Introduction [#kf464079]
+ :Objective|
+ To share information for Open Source Software and its community to public on a volunteer basis.
+ Don't expect too much please.
+ 
+ :Activities|
+ --Monthly Interview
+ --Study Session
+ --Sharing Information (News, Event information, etc)
+ 
+ :Message|
+ Enthusiastic volunteer who has passion for Open Source Software is always welcome even though you are not engineer.
+ 
+-*Mailing List (OSSSV-Wiki) [#jeeb420e]
+ 
+-If you subscribe this ML, you will receive every change notification in this web site and we can use this for our conversation.
+-To register your mail address to this ML (osssv-wiki [at] virago.sakura.ne.jp) please send the following mail. &color(red){Once you send the following request mail, you will receive e-mail which urges you to send "confirmation" mail, so just simply reply to it without change. For detail, please follow the instruction written in the mail you received.};
+-
+-Once you register your mail address to this ML, you will receive the update notification of Wiki sites.
+-
+-:To|osssv-wiki-ctl [at] virago.sakura.ne.jp
+-:Subject|<blank>
+-:Body| 
+- subscribe <FirstName> <LastName>
+-
+-In case you want to unsubscribe, send an e-mail as follwing.
+-
+-:To|osssv-wiki-ctl [at] virago.sakura.ne.jp
+-:Subject|<blank>
+-:Body| 
+- unsubscribe
+-
+ * Link [#k43ad822]
+ [https://www.facebook.com/groups/OSS.SiliconValley/ OSSSV FB Group]
+ 
+ [https://www.facebook.com/groups/OSS.SiliconValley.Staff/ OSSSV FB Group(for Volunteer)]
+ 
+ [http://osssv.wordpress.com/ OSSSV Blog]
+ 
+ [http://virago.sakura.ne.jp/osssv/public/index.php?cmd=rss10 RSS feed - OSSSV Public Memorandum]
+ 
+ [http://osssv.wordpress.com/feed/ RSS feed - OSSSV Blog]
+ 
+ #popular

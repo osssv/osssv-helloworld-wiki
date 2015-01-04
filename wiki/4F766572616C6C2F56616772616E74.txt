@@ -1,0 +1,26 @@
+#contents
+
+*Overall Feature [#z395dcde]
+>Vagrant is free and open-source software for creating and configuring virtual development environments.[1] It can be considered a wrapper around virtualization software such as VirtualBox and configuration management software such as Chef, Salt and Puppet.
+<
+RIGHT:
+refered from [[Wikipedia - Vagrant:http://en.wikipedia.org/wiki/Vagrant_%28software%29]]
+
+:File Composition|
+#ref(overall_fig1.png,,500x163,))
+
+
+*Specification [#m9e1f124]
+|LEFT:100|LEFT:200|c
+|CENTER:Item|CENTER:Description|h
+|Main Developer|Michel Hashimoto|
+|License|MIT|
+|OS|Windows,Mac OS,Linux|
+|Written In|Ruby|
+|Official Site|https://www.vagrantup.com/|
+
+*HowToUse [#f5051e1c]
+#ls2(HowToUse/Vagrant/)
+
+*Author [#x4d83c13]
+S.Yatsuzuka

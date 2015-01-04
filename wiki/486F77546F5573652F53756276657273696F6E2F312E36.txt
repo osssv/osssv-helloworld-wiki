@@ -1,0 +1,100 @@
+#contents
+
+*Prerequisite [#y9e8bc9b]
+-Apache Web Server
+-Cent OS (You can refer [[HowToUse/CentOS/6.5]])
+-Cygwin (You can refer [[HowToUse/Cygwin/2.850]])
+
+*Install&Setup [#ea8c66cd]
+**Install Subversion [#nda81d11]
+Step.1) Excecute the following command and check if you have subversion. 
+
+ # svn --version
+ # svnadmin --version
+
+If you don't have it, install subversion.
+
+ # yum install subversion
+
+
+**Setup Subversion [#w2562730]
+:Step.1|
+Install mod_dav_svn.
+
+ # yum install mod_dav_svn
+
+:Step.2|
+Open HTTPd conf file and check if "LoadModule dav_module modules/mod_dav.so" is valid.
+
+ # vi /etc/httpd/conf/httpd.conf
+
+:Step.3|
+Open subversion.conf and remove comment out for svn setting.
+
+ # vi /etc/httpd/conf.d/subversion.conf
+
+ <Location /repos>
+    DAV svn
+    SVNParentPath /var/www/svn
+ </Location>
+
+:Step.4|
+Create directory for subversion.
+
+ # mkdir -p /var/www/svn
+
+:Step.5|
+Create repository.
+
+ # svnadmin create /var/www/svn/sample
+
+:Step.6|
+Change permission so that apache web server can access repository.
+
+ # chown -R apache:apache /var/www/svn/sample
+
+:Step.7|
+Change the setting for SELinux
+
+ # setenforce Permissive
+ # vi /etc/selinux/config
+
+ SELINUX=permissive
+
+<Attention!>
+It is "SELINUX" not "SELINUXTYPE". If you change "SELINUXTYPE" to permissive, OS will not be able to launch successfully...
+
+:Step.8|
+Launch httpd.
+
+ # /etc/rd.d/init.d/httpd start
+
+Then you can access svn repository from http://<host name>/repos/sample.
+
+#ref(Setup_fig1.png,,500x266,)
+
+*How To Use [#hb213daa]
+**Prepare Workspace [#u8934e51]
+:Step.1|
+Launch Cygwin and execute the following command. Then you have "svn" directory in the current directory.
+
+ # svn checkout http://192.168.56.101/repos/sample
+
+:Step.2|
+Move into "svn" directory and create new directory.
+
+ # cd sample
+ # mkdir trunk branches tags
+
+:Step.3|
+Add the created directory and commit.
+
+ # svn add trunk branches tags
+ # svn commit -m "create new directory"
+
+:Step.4|
+You can check the new directories are registered in repository from http://<host name>/repos/sample/.
+
+
+*Author [#cc3b3ace]
+S.Yatsuzuka

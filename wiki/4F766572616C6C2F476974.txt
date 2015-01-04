@@ -1,0 +1,33 @@
+#contents
+
+*Overall Feature [#f1edd249]
+>Git (/&#609;&#618;t/) is a distributed revision control and source code management (SCM) system with an emphasis on speed, data integrity, and support for distributed, non-linear workflows. Git was initially designed and developed by Linus Torvalds for Linux kernel development in 2005, and has since become the most widely adopted version control system for software development
+<
+RIGHT:
+refered from [[Wikipedia - Git:http://en.wikipedia.org/wiki/Git_%28software%29]]
+:Data Flow|
+#ref(overall_fig1.png,,500x198,)
+:Git Server|
+|LEFT:100|LEFT:400|c
+|CENTER:SERVICE|CENTER:CHARACTERISTICS|h
+|GitHub https://github.com/|We can use without charge. All of the resources in repository will be exposed publicly and there is no limitation for the number of access users.|
+|BitBucket https://bitbucket.org/|We can choose repository public or private. There is limitation for the number of access users.|
+|Original Remote Server|There is no limitation and you can do as you like.|
+
+
+*Specification [#tba7c04c]
+|LEFT:100|LEFT:200|c
+|CENTER:ITEM|CENTER:DESCRIPTION|h
+|Main Developer|Linus Tovalds|
+|License|GPL v2|
+|OS|Linux, POSIX, Windows, OS X|
+|Written In|C, Bourne Shell, Tcl, Perl|
+|Official Site|http://git-scm.com/|
+
+
+*HowToUse [#n317ed24]
+#ls2(HowToUse/Git/)
+#ls2(HowToUse/Git Daemon/)
+
+*Author [#e44cdd4d]
+S.Yatsuzuka

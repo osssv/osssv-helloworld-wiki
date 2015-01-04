@@ -1,0 +1,64 @@
+#contents
+
+*Install&Setup [#z8f82b8d]
+:Step.1|
+xxx
+
+*HowToUse [#tf29a48c]
+**Initial Setup [#v0f18a93]
+:Step1|Access to the Odoo site and complete sign up.
+
+:Step2|Login to the online service.
+#ref(InitialSetup_fig1.png,,500x266,)
+
+:Step3|Define the company's name.
+#ref(InitialSetup_fig2.png,,500x266,)
+#ref(InitialSetup_fig3.png,,500x266,)
+
+:Step4|Click the "Subscribe to keep it running!" link.
+#ref(InitialSetup_fig4.png,,500x266,)
+#ref(InitialSetup_fig5.png,,500x266,)
+
+**Setup Companies [#obd1dab2]
+:Step1|Click "Companies" menu and "Your Comapany record in the list.
+#ref(SetupCompanies_fig1.png,,500x266,)
+#ref(SetupCompanies_fig2.png,,500x266,)
+
+:Step2|Click "Edit" button and setup companies information.
+#ref(SetupCompanies_fig3.png,,500x266,)
+
+:Step3|Create bank account information.
+#ref(SetupCompanies_fig4.png,,500x266,)
+
+**Setup Users [#obd1dab2]
+:Step1|Click "Users" menu.
+#ref(SetupUsers_fig1.png,,500x266,)
+
+:Step2|Edit "Users" record.
+#ref(SetupUsers_fig2.png,,500x266,)
+
+**Choosing application [#f83073a0]
+
+**Setup Accounting Configuration [#rdac4596]
+:Step1|Install "Accounting" module.
+#ref(SetupAccounting_fig1.png,,500x266,)
+
+:Step2|Setup Accounting Options.
+#ref(SetupAccounting_fig2.png,,500x266,)
+
+:Step3|Search Currency.
+#ref(SetupAccounting_fig3.png,,500x266,)
+
+:Step4|Click "Accounting" menu
+#ref(SetupAccounting_fig5.png,,500x266,)
+#ref(SetupAccounting_fig7.png,,500x266,)
+#ref(SetupAccounting_fig8.png,,500x266,)
+
+**Setup Customer [#f435308f]
+:Step1|Click Customer menu and click "create" button.
+#ref(SetupCustomer_fig1.png,,500x266,)
+#ref(SetupCustomer_fig2.png,,500x266,)
+
+
+*Author [#m7148f9b]
+S.Yatsuzuka

@@ -1,0 +1,40 @@
+ #contents
+ 
+ *Prerequisite [#i6d2e90e]
+ -Jenkins (You can refer [[HowToUse/Jenkins/1.594]])
+ -Maven (You can refer [[HowToUse/Maven/3.2]])
++-Maven Cobertura plugin (You can refer [[HowToUse/Maven/3.2/Cobertura]])
+ 
+ 
+ *Install&Setup [#z454effb]
+ :Step.1|
+ Click "Manage Jenkis" -> "Manage Plugins" link.
+ 
+ #ref(Install_fig1.png,,500x266,)
+ 
+ :Step.2|
+ Click "Available" tab. Select "Cobertura Plugins". Then install plugins and reboot Jenkins after installation.
+ 
+ #ref(Install_fig2.png,,500x266,)
+ 
+ :Step.3|
+ Click "Configuration" link of target item, select "Publish Cobertura Coverage Report" from "Add post-build action" and set as follows.
+ 
+ |LEFT:150|LEFT:300|LEFT:200|c
+ |CENTER:Item|CENTER:Description|CENTER:Example|h
+-|goal|Add "checkstyle" as goal|"checkstyle:checkstyle"|
++|goal|Add "cobertura" as goal|"cobertura:cobertura"|
+ 
+ |LEFT:150|LEFT:300|LEFT:200|c
+ |CENTER:Item|CENTER:Description|CENTER:Example|h
+ |Cobertura xml report pattern|specify the path to cobertura report|"trunk/sample/target/site/cobertura/coverage.xml"|
+ 
+ *HowToUse [#ge2c3a2e]
+ :Step.1|
+ Execute build and you can see test coverage graph.
+ 
+ #ref(Result_fig1.png,,500x266,)
+ 
+ 
+ *Author [#y36e2e0f]
+ S.Yatsuzuka
