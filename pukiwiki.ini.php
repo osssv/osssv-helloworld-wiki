@@ -358,7 +358,7 @@ $no_proxy = array(
 // Mail related settings
 
 // Send mail per update of pages
-$notify = 1;
+$notify = 0;
 
 // Send diff only
 $notify_diff_only = 1;
