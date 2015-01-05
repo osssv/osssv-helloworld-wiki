@@ -1,24 +1,102 @@
-+#contents
+ #contents
  
-+*Prerequisite [#oa14ea09]
-+-Ubuntu installation
-+
-+*Install&Setup [#b2b2bcc6]
-+**Ubuntu [#q8c2dda4]
-+:Step.1|
-+Install Docker
-+
-+ $ sudo apt-get install docker.io
-+
-+:Step.2|
-+Launch docker automatically
-+
-+ $ sudo update-rc.d docker.io defaults
-+
-+*HowToUse [#mcd5e78b]
-+:Step.1|
-+xxx
-+
-+*Author [#y082ad8f]
-+S.Yatsuzuka
-+
+ *Prerequisite [#oa14ea09]
+--Ubuntu installation (You can refer from [[HowToUse/UbuntuServer/14.04]])
++-Ubuntu Server installation (You can refer from [[HowToUse/UbuntuServer/14.04]])
+ 
+ 
+ *Install&Setup [#b2b2bcc6]
+ **Ubuntu [#q8c2dda4]
+ :Step.1|
+ Install Docker
+ 
+  $ sudo apt-get install docker.io
+ 
+ :Step.2|
+ Launch docker automatically
+ 
+  $ sudo update-rc.d docker.io defaults
+ 
+ :Step.3|
+ Check the docker version
+ 
+  $ sudo docker version
+ 
+ *HowToUse [#mcd5e78b]
+ **Download Docker image from Docker Hub Registry [#d73e2247]
+ :Step.1|
+ 
+  $ sudo docker pull ubuntu:latest
+ 
+ :Step.2|
+ Run Docker Image and create Docker Container.
+ 
+  $ sudo docker run -it --name ubuntu_work ubuntu /bin/bash
+ 
+ :Step.3|
+ Install additional modules.
+ 
+  # apt-get install -y nginx
+ 
+ :Step.4|
+ Push Ctrl-d to shutdown Docker process.
+ 
+ :Step.5|
+ Check the new Docker Container has been created.
+ 
+  $ sudo docker ps -a
+ 
+ :Step.6|
+ Create new Docker image merging with Docker Container.
+ 
+  $ sudo docker commit ubuntu_work syatsuzuka/nginx
+ 
+ :Step.7|
+ Check the new Docker image has been created.
+ 
+  $ sudo docker images
+ 
+ :Step.8|
+ Delete unnecessary Docker Container and Image.
+ 
+  $ sudo docker rm <Container ID>
+  $ sudo docker rmi <Image ID>
+ 
+ **Create Docker Image with Dockerfile [#r366c17a]
+ :Step.1|
+ Create Docker file.
+  
+  $ mkdir nginx
+  $ vi Dockerfile
+ 
+  FROM ubuntu
+  RUN apt-get install -y nginx
+ 
+ :Step.2|
+ Create Docker image.
+ 
+  $ sudo docker build -t syatsuzuka/nginx:1.0 .
+ 
+ :Step.3|
+ Check the Docker image.
+ 
+  $ sudo docker images
+ 
+ **Upload Docker Image into Docker Hub [#b80f032c]
+ :Step.1|
+ Sign up Docker Hub.
+ 
+ :Step.2|
+ Login Docker Hub.
+ 
+  $ sudo docker login
+ 
+ :Step.3|
+ Push the Docker Image into Docker Hub.
+ 
+  $ sudo docker push syatsuzuka/nginx
+ 
+ 
+ 
+ *Author [#y082ad8f]
+ S.Yatsuzuka
