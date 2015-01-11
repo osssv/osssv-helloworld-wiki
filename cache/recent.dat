@@ -1,3 +1,6 @@
+1420589229	HowToUse/Chef/12.0
+1420503783	HowToUse/RVM/1.25
+1420490713	Overall/Chef
 1420410475	HowToUse/Docker/1.0
 1420391553	Overall/Docker
 1420326871	FrontPage
@@ -33,7 +36,6 @@
 1416570115	Overall/Cygwin
 1416569040	HowToUse/Cygwin/2.850
 1416568521	HowToUse/VirtualBox/4.3
-1416568485	HowToUse/RVM/1.25
 1416568471	HowToUse/RubyOnRails/4.1
 1416568454	HowToUse/Odoo/8.0/AccountingAndFinance
 1416568439	HowToUse/Odoo/8.0
@@ -51,7 +53,6 @@
 1416568168	Overall/jQuery
 1416568148	Overall/Git
 1416568130	Overall/Eclipse
-1416568111	Overall/Chef
 1416568094	Overall/CentOS
 1416568076	Overall/Bootstrap
 1416568044	Template/Overall
@@ -67,4 +68,3 @@
 1410113508	PukiWiki/1.4
 1410113508	InterWiki
 1410113508	FormattingRules
-1410113508	BracketName

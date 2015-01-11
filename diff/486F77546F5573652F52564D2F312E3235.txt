@@ -1,7 +1,14 @@
  #contents
  
++*Prerequisite [#t7d95876]
++-Cent OS installation (You can refer [[HowToUse/CentOS/6.5]])
++or
++-Ubuntu Server installation (You can refer [[HowToUse/UbuntuServer/14.04]])
++
++
  *Install&Setup [#u882e485]
- 
+-
++**Cent OS [#c93f4d67]
  :Step.1|Install EPEL
   # wget http://ftp-srv2.kddilabs.jp/Linux/distributions/fedora/epel/6/x86_64/epel-release-6-8.noarch.rpm
   # rpm -ivh epel-release-6-8.noarch.rpm
@@ -12,6 +19,9 @@
  :Step.3|Install RVM
   $ \curl -sSL https://get.rvm.io | bash -s stable
  
++**Ubuntu Server [#ra325f95]
++:Step.1|
++TBD
  
  *HowToUse [#m01e3b59]
  
@@ -27,6 +37,5 @@
   ruby 2.1.3p242 (2014-09-19 revision 47630) [x86_64-linux]
   $
  
--*Contributer [#b7d9902a]
-+*Author [#b7d9902a]
+ *Author [#b7d9902a]
  S.Yatsuzuka
