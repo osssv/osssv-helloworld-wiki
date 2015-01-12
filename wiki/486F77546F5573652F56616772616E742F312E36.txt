@@ -141,5 +141,25 @@ Launch guest OS and GUI will be show up.
 
 #ref(LaunchGuestOS_fig7.png,,500x275,)
 
+
+**Enable ssh access to guest server [#r8ce5a65]
+:Step.1|
+Edit Vagrant file.
+
+ $ vi Vagrant
+
+ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+ # xxx
+ config.vm.network "private_network", ip: "192.168.33.10"
+ # xxx
+
+:Step.2|
+Reboot Vagrant then you can access via ssh specifying IP address. (Default ID and password are "vagrant".)
+
+ $ vagrant halt
+ $ vagrant up
+ $ ssh 192.168.33.10
+
+
 *Author [#l1b9a3ae]
 S.Yatsuzuka
