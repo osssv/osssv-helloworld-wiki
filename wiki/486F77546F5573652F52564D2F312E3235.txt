@@ -16,15 +16,24 @@ or
 
 When you encounter the error, follow the instruction in the stdout.
 
+**Ubuntu [#m2ffe48c]
+:Step.1|Install RVM
+ $ curl -L https://get.rvm.io | bash -s stable
+ $ source /home/<User Name>/.rvm/scripts/rvm
 
 *HowToUse [#m01e3b59]
 
 :Step.1|
 Load parameters following the instruction in stdout from instllation.
 
+(Cent OS)
  $ source ~/.rvm/scripts/rvm
 or
  $ source ~/.profile
+
+(Ubuntu)
+ # chmod -R 777 /usr/local/rvm
+ $ source /erc/profile.d/rvm.sh
 
 :Step.2|Install Ruby
  $ rvm install 2.1.3

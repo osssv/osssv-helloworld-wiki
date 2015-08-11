@@ -1,9 +1,5 @@
 #counter
 
-Study Session
-
-#ls2(StudySession/)
-
 Overall
 
 #ls2(Overall/)

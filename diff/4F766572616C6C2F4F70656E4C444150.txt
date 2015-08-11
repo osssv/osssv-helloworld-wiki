@@ -1,0 +1,28 @@
+ #contents
+ 
+ *Overall Feature [#h72eb5bc]
+ >OpenLDAP is a free, open source implementation of the Lightweight Directory Access Protocol (LDAP) developed by the OpenLDAP Project. It is released under its own BSD-style license called the OpenLDAP Public License.
+ <
+ RIGHT:
+ refered from [[Wikipedia - OpenLDAP:https://en.wikipedia.org/?title=OpenLDAP]]
+ 
+ 
+ :Example of directory tree|
+-#ref(overall_fig1.png)
++#ref(Overall_fig1.png,,500x291,)
+ 
+ *Specification [#g7fa39c9]
+ |LEFT:100|LEFT:200|c
+ |CENTER:ITEM|CENTER:DESCRIPTION|h
+ |Main Developer|The OpenLDAP Project|
+ |License|OpenLDAP Public License|
+ |OS|Cross Platform|
+ |Written In|C|
+ |Official Site|http://www.openldap.org/|
+ 
+ 
+ *HowToUse [#c9a68cc1]
+ #ls2(HowToUse/OpenLDAP)
+ 
+ *Author [#f8f3f095]
+ S.Yatsuzuka

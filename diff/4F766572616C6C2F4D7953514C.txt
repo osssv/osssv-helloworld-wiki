@@ -1,0 +1,24 @@
++#contents
+ 
++*Overall Feature [#m0374fc8]
++>The MySQL development project has made its source code available under the terms of the GNU General Public License, as well as under a variety of proprietary agreements. MySQL was owned and sponsored by a single for-profit firm, the Swedish company MySQL AB, now owned by Oracle Corporation
++<
++RIGHT:
++refered from [[Wikipedia - MySQL:https://en.wikipedia.org/wiki/MySQL]]
++
++
++*Specification [#v9bf84c5]
++|LEFT:100|LEFT:200|c
++|CENTER:ITEM|CENTER:DESCRIPTION|h
++|Main Developer|xxx|
++|License|GPL (version 2) or proprietary|
++|OS|Windows, Linux, Solaris, OS X, FreeBSD|
++|Written In|C, C++|
++|Official Site|http://www.mysql.com/|
++
++
++*HowToUse [#c55f90a6]
++#ls2(HowToUse/MySQL)
++
++*Author [#p24da8cd]
++S.Yatsuzuka

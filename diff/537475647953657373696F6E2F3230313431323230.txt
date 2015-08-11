@@ -1,23 +1,22 @@
- #contents
+-#contents
  
- *Date [#ve9956d1]
- The 20th of December 14:00-17:00
- 
- *Location [#a2f61947]
- [http://www.hackerdojo.com/ Hacker Dojo]
- 
- *Registration [#u5770191]
- Free [[Facebook:https://www.facebook.com/events/]]
- 
- *Table of Contents [#tb38310b]
- +Introduction & News [14:00-14:15]
- +Lightening Talk [14:15-15:00]
- +Study Session [15:00-16:00]
- ++How to Use [[Overall/Jenkins]] (S.Yatsuzuka)
- +Moku-Moku [16:00-17:00]
- 
- *Materials [#yf99a161]
--#ref(OSSSV_StudySession_4_ver0.1.odp)
--#ref(OSSSV_StudySession_4_ver0.1.pdf)
-+#ref(OSSSV_StudySession_4_ver1.0.odp)
-+#ref(OSSSV_StudySession_4_ver1.0.pdf)
+-*Date [#ve9956d1]
+-The 20th of December 14:00-17:00
+-
+-*Location [#a2f61947]
+-[http://www.hackerdojo.com/ Hacker Dojo]
+-
+-*Registration [#u5770191]
+-Free [[Facebook:https://www.facebook.com/events/]]
+-
+-*Table of Contents [#tb38310b]
+-+Introduction & News [14:00-14:15]
+-+Lightening Talk [14:15-15:00]
+-+Study Session [15:00-16:00]
+-++How to Use [[Overall/Jenkins]] (S.Yatsuzuka)
+-+Moku-Moku [16:00-17:00]
+-
+-*Materials [#yf99a161]
+-#ref(OSSSV_StudySession_4_ver1.0.odp)
+-#ref(OSSSV_StudySession_4_ver1.0.pdf)
+-

@@ -1,0 +1,180 @@
+ #contents
+ 
+ *Prerequisite [#w8c1c256]
+ -Java SDK installation
+ -Maven installation (You can refer [[Overall/Maven]])
+ -Eclipse installation (You can refer [[Overall/Eclipse]])
+ -Tomcat installation
+ -MySQL installation (You can refer [[Overall/MySQL]])
+ -MySQL Workbench
+ 
+ 
+ *Install&Setup [#z64157ea]
+ :Step.1|
+ Create Maven project.
+ 
+  $ mkdir <project>
+  $ cd <project>
+  $ mvn archetype:generate -DgroupId=org.osssv -DartifactId=sample -DinteractiveMode=false -DarchetypeArtifactid=maven-archetype-quickstart
+ 
+ :Step.2|Import existing maven project from Eclipse.
+ 
+ 
+ *HowToUse [#w969428d]
+ 
+ **Prepare Spring framework [#h1b6c914]
+ :Step.1|
+ Remove unnecessary source code such as App.java and AppTest.java.
+ 
+ :Step.2|
+ Edit POM.xml.
+ ([[SAMPLE:https://github.com/osssv/osssv-helloworld/blob/master/spring_framework/4.0/sample/pom.xml]])
+ 
+ :Step.3|
+ Create Source Folder for "src/main/resources".
+ 
+ :Step.4|
+ Create src/main/webapp/WEB-INF.
+ 
+ 
+ **Prepare Spring config files [#m9cbdb25]
+ :Step.1|
+ Create spring-context.xml in src/main/webapp/WEB-INF.
+ ([[SAMPLE:https://github.com/osssv/osssv-helloworld/blob/master/spring_framework/4.0/sample/src/main/webapp/WEB-INF/spring-context.xml]])
+ 
+ :Step.2|
+ Create web.xml in src/main/webapp/WEB-INF.
+ ([[SAMPLE:https://github.com/osssv/osssv-helloworld/blob/master/spring_framework/4.0/sample/src/main/webapp/WEB-INF/web.xml]])
+ 
+ :Step.3|
+ Create log4j.properties in src/main/resources.
+ ([[SAMPLE:https://github.com/osssv/osssv-helloworld/blob/master/spring_framework/4.0/sample/src/main/resources/log4j.properties]])
+ 
+ :Step.4|
+ Create properties directory in src/main/resources.
+ 
+ :Step.5|
+ Create database.properties in properties directory.
+ ([[SAMPLE:https://github.com/osssv/osssv-helloworld/blob/master/spring_framework/4.0/sample/src/main/resources/properties/database.properties]])
+ 
+ 
+ **Create Database [#j191e21a]
+ :Step.1|
+ Launch MySQL Workbench
+ 
+ :Step.2|
+ Connect Database
+ 
+ :Step.3|
+ Create new model for DB schema and tables.
+ ([[SAMPLE:https://github.com/osssv/osssv-helloworld/blob/master/spring_framework/4.0/sample/sql/sample.sql]])
+ 
+ :Step.4|
+ Execute synchronization.
+ 
+ 
+ **Create necessary packages [#gb284228]
+ 
+ :Step.1|
+ Create entity and entity.impl package in main directories.
+ 
+ :Step.2|
+ Create repository and repository.impl package in main and test directories.
+ 
+ :Step.3|
+ Create service, service.impl and service.exception package in main and test directories.
+ 
+ :Step.4|
+ Create http, http.entity and http.exception package in main directories.
+ 
+ :Step.5|
+ Create util package in main directories.
+ 
+ 
+ **Create interfaces [#e6678c55]
+ 
+ :Step.1|
+ Create User interface ([[SAMPLE:https://github.com/osssv/osssv-helloworld/blob/master/spring_framework/4.0/sample/src/main/java/org/osssv/sample/entity/User.java]]) in entity package.
+ 
+ :Step.2|
+ Create UserRepository interface ([[SAMPLE:https://github.com/osssv/osssv-helloworld/blob/master/spring_framework/4.0/sample/src/main/java/org/osssv/sample/repository/UserRepository.java]]) in repository package.
+ 
+ :Step.3|
+ Create UserService ([[SAMPLE:https://github.com/osssv/osssv-helloworld/blob/master/spring_framework/4.0/sample/src/main/java/org/osssv/sample/service/UserService.java]]) interface in service package.
+ 
+ 
+ **Create exception classes for services [#adf9275a]
+ :Step.1|
+ Create ErrorCode enumerate ([[SAMPLE:https://github.com/osssv/osssv-helloworld/blob/master/spring_framework/4.0/sample/src/main/java/org/osssv/sample/service/exception/ErrorCode.java]]).
+ 
+ :Step.2|
+ Create Exception root classes ([[SAMPLE:https://github.com/osssv/osssv-helloworld/blob/master/spring_framework/4.0/sample/src/main/java/org/osssv/sample/service/exception/SampleException.java]]).
+ 
+ :Step.3|
+ Create Exception child classes ([[SAMPLE:https://github.com/osssv/osssv-helloworld/blob/master/spring_framework/4.0/sample/src/main/java/org/osssv/sample/service/exception/InvalidFieldException.java]]).
+ 
+ 
+ **Create exception classes for http object [#af9849e0]
+ 
+ :Step.1|
+ Create HttpError class in http.exception package ([[SAMPLE:https://github.com/osssv/osssv-helloworld/blob/master/spring_framework/4.0/sample/src/main/java/org/osssv/sample/http/exception/HttpError.java]]).
+ 
+ :Step.2|
+ Create SampleExceptionMapper class in http.exception package ([[SAMPLE:https://github.com/osssv/osssv-helloworld/blob/master/spring_framework/4.0/sample/src/main/java/org/osssv/sample/http/exception/SampleExceptionMapper.java]]).
+ 
+ 
+ **Create classes [#gc8b3c0a]
+ 
+ :Step.1|
+ Create UserImpl class in entity.impl package ([[SAMPLE:https://github.com/osssv/osssv-helloworld/blob/master/spring_framework/4.0/sample/src/main/java/org/osssv/sample/entity/impl/UserImpl.java]]).
+ 
+ :Step.2|
+ Create UserRepositoryImpl class in repository.impl package ([[SAMPLE:https://github.com/osssv/osssv-helloworld/blob/master/spring_framework/4.0/sample/src/main/java/org/osssv/sample/repository/impl/UserRepositoryImpl.java]]).
+ 
+ :Step.3|
+ Create UserServiceImpl class in service.impl package ([[SAMPLE:https://github.com/osssv/osssv-helloworld/blob/master/spring_framework/4.0/sample/src/main/java/org/osssv/sample/service/impl/UserServiceImpl.java]]).
+ 
+ :Step.4|
+ Create HttpUser class in http.entity package ([[SAMPLE:https://github.com/osssv/osssv-helloworld/blob/master/spring_framework/4.0/sample/src/main/java/org/osssv/sample/http/entity/HttpUser.java]]).
+ 
+ 
+ :Step.5|
+ Create CustomContextLoaderListener class in util package for workaround ([[SAMPLE:https://github.com/osssv/osssv-helloworld/blob/master/spring_framework/4.0/sample/src/main/java/org/osssv/sample/util/CustomContextLoaderListener.java]]).
+ 
+ 
++**Create class for Presentation [#kd1ea9bb]
++:Step.1|
++Create userResource class in http package ([[SAMPLE:https://github.com/osssv/osssv-helloworld/blob/master/spring_framework/4.0/sample/src/main/java/org/osssv/sample/http/UserResource.java]]).
++
++
+ **Create test classes [#m9c28314]
+ :Step.1|
+ Create TestUserRepository class in src/test/java ([[SAMPLE:https://github.com/osssv/osssv-helloworld/blob/master/spring_framework/4.0/sample/src/test/java/org/osssv/sample/repository/TestUserRepository.java]]).
+ 
+ Don't forget inheritance.
+  extends AbstractTransactionalJUnit4SpringContextTests
+ 
+ :Step.2|
+ Create TestUserService class in src/test/java ([[SAMPLE:https://github.com/osssv/osssv-helloworld/blob/master/spring_framework/4.0/sample/src/test/java/org/osssv/sample/service/TestUserService.java]]).
+ 
+ Don't forget inheritance.
+  extends AbstractTransactionalJUnit4SpringContextTests
+ 
+ 
+ **Launch Service [#e130ac3b]
+ :Step.1|
+ Execute the following commands.
+ 
+  $ cd {PROJECT_HOME}
+  $ mvn test
+ 
+ :Step.2|
+ Execute the follwoing commands.
+ 
+  $ mvn tomcat7:run
+ 
+ You can access the application from http://localhost:8080/user.html.
+ 
+ 
+ *Author [#o431d1bf]
+ S.Yatsuzuka

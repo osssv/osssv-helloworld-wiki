@@ -1,0 +1,30 @@
+#contents
+
+*Overall Feature [#bd064550]
+>Go, also commonly referred to as golang, is a programming language initially developed at Google in 2007 by Robert Griesemer, Rob Pike, and Ken Thompson. It is a statically-typed language with syntax loosely derived from that of C, adding garbage collection, type safety, some dynamic-typing capabilities, additional built-in types such as variable-length arrays and key-value maps, and a large standard library.
+<
+RIGHT:
+refered from [[Wikipedia - Golang:http://en.wikipedia.org/wiki/Go_%28programming_language%29]]
+
+
+:File Composition|
+#ref(overall_fig1.png)
+
+:Window Image|
+#ref(overall_fig2.png)
+
+*Specification [#k1023113]
+|LEFT:100|LEFT:200|c
+|CENTER:ITEM|CENTER:DESCRIPTION|h
+|Main Developer|Google,Inc|
+|License|BSD-style + Patent grant|
+|OS|Multiplatform|
+|Written In|C, Go, ASM|
+|Official Site|https://golang.org/|
+
+
+*HowToUse [#u0939282]
+#ls2(HowToUse/Golang)
+
+*Author [#zf34d383]
+S.Yatsuzuka

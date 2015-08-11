@@ -1,0 +1,32 @@
+#contents
+
+*Prerequisite [#d8ba79a7]
+-CentOS installation (You can refer [[Overall/CentOS]])
+
+*Install&Setup [#j1b518a8]
+:Step.1|Install mysql server
+$ yum install mysql-service mysql-devel
+
+:Step.2|Edit mysql configration file.
+
+$ vi /etc/my.cnf
+
+ [mysqld]
+ ...
+ character-set-server=utf8
+ 
+ [mysql]
+ default-character-set=utf8
+
+
+*HowToUse [#p8f70496]
+:Step.1|Start service
+$ sudo /etc/rc.d/init.d/mysqld start
+
+
+:Step.2|Stop service
+$ sudo /etc/rc.d/init.d/mysqld stop
+
+
+*Author [#d4ec55d3]
+S.Yatsuzuka

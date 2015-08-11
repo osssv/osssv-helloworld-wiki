@@ -8,38 +8,40 @@
 *Install&Setup [#re8e7c77]
 **Install Chef [#x1c0b70e]
 :Step.1|
+ $ su -
  # curl -L https://www.opscode.com/chef/install.sh | bash
+
+:Step.2|
+ # Ctrl-d
+ $ knife configure
 
 **Install knife-solo [#xa8213fc]
 :Step.1|
 Install Ruby 2.x on RVM.
 
- # rvm install 2.1.13
+ $ rvm install 2.1.3
 
 :Step.2|
 install knife-solo
 
- # gem install knife-solo
+ $ gem install knife-solo
+
+:Step.3|
+Create chef repository
+
+ $ mkdir chef-repo
+ $ cd chef-repo
+ $ knife solo init .
 
 *HowToUse [#nf337617]
 **Hello World [#jabb8ed7]
 :Step.1|
-Create repository.
-
- $ git clone git://github.com/opscode/chef-repo.git
-
-:Step.2|
-Configure knife. Choose default value for all parameters.
-
- $ knife configure
-
-:Step.3|
 Create cookbook.
 
  $ cd chef-repo
  $ knife cookbook create hello -o cookbooks
 
-:Step.4|
+:Step.2|
 Edit cookbook.
 
  $ vi cookbooks/hello/recipes/default.rb
@@ -50,9 +52,10 @@ Edit cookbook.
    action :install
  end
 
-:Step.5|
+:Step.3|
 Create json file
 
+ $ cd <work directory>
  $ vi localhost.json
 
  {
@@ -61,7 +64,7 @@ Create json file
    ]
  }
 
-:Step.6|
+:Step.4|
 Create cookbook setting file.
 
  $ vi solo.rb
@@ -69,10 +72,11 @@ Create cookbook setting file.
  file_cache_path "/tmp/chef-solo"
  cookbook_path ["/home/syatsuzuka/work/chef-repo/cookbooks"]
 
-:Step.7|
+:Step.5|
 Execute chef-solo.
 
  $ sudo chef-solo -c solo.rb -j ./localhost.json
+
 
 **knife-solo [#kebc9028]
 :Step.1|

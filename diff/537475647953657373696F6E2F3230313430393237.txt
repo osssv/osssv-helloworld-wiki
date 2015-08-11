@@ -1,27 +1,27 @@
- #contents
+-#contents
  
- *Date [#tb4ec363]
- September 27th, 2014 15:00-17:00
- 
- *Location [#j97087db]
- "Classroom" at [http://www.hackerdojo.com/ Hacker Dojo]
- 
- :Hacker Dojo Event|
- http://events.hackerdojo.com/event/5256516185620480-oss-study-session
- 
- :Charge|Free
- 
- *Table of Contents [#q5250da9]
- +Introduction & News [15:00-15:10]
- +Lightening Talk [15:10-15:20]
- +Study Session [15:20-16:20]
- ---How to use Virtual Box [[Overall/VirtualBox]]
- ---How to use Vagrant [[Overall/Vagrant]]
- ---How to use CentOS [[Overall/CentOS]]
- +Moku-Moku [16:20-17:00]
- +Networking@Somewhere in Mountain View [17:30-]
- 
- *Material [#uaf141f2]
--#ref(OSSSV_StudySession_1_ver1.0.odp)
-+#ref(OSSSV_StudySession_1_ver1.1.odp)
-+#ref(OSSSV_StudySession_1_ver1.1.pdf)
+-*Date [#tb4ec363]
+-September 27th, 2014 15:00-17:00
+-
+-*Location [#j97087db]
+-"Classroom" at [http://www.hackerdojo.com/ Hacker Dojo]
+-
+-:Hacker Dojo Event|
+-http://events.hackerdojo.com/event/5256516185620480-oss-study-session
+-
+-:Charge|Free
+-
+-*Table of Contents [#q5250da9]
+-+Introduction & News [15:00-15:10]
+-+Lightening Talk [15:10-15:20]
+-+Study Session [15:20-16:20]
+----How to use Virtual Box [[Overall/VirtualBox]]
+----How to use Vagrant [[Overall/Vagrant]]
+----How to use CentOS [[Overall/CentOS]]
+-+Moku-Moku [16:20-17:00]
+-+Networking@Somewhere in Mountain View [17:30-]
+-
+-*Material [#uaf141f2]
+-#ref(OSSSV_StudySession_1_ver1.1.odp)
+-#ref(OSSSV_StudySession_1_ver1.1.pdf)
+-

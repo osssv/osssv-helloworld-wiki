@@ -1,0 +1,61 @@
+ #contents
+ 
+ *Prerequisite [#ke71fb81]
+ -Ubuntu Server installation (You can refer [[Overall/UbuntuServer]])
+ 
+ *Install&Setup [#z6068ecd]
+ :Step.1|Install golang.
+ 
+  $ sudo apt-get install golang
+ 
+ :Step.2|Set path env
+ 
+  $ su -
+  # vi /etc/profile
+ 
+  export PATH=$PATH:/usr/bin/go/bin
+ 
++:Step.3|Prepare workspace.
++
++ $ mkdir ~/go
++ $ vi ~/.bashrc
++
++ # Go environment
++ 
++ export GOPATH=$HOME/go
++ export PATH=$PATH:$GOPATH/bin
++
+ :Step.3|Check if go can run.
+ 
+  $ go version
+ 
+ 
+ *HowToUse [#rf6a65f9]
+ :Step.1|Create hello world script.
++ 
++ $ cd $GOPATH/src
++ $ mkdir -p github.com/syatsuzuka/hello
++ $ vi github.com/syatsuzuka/hello/hello.go
+ 
+- $ vi hello.go
+-
+  package main
+  
+  import "fmt"
+  
+  func main() {
+         fmt.Println("hello, world\n")
+  }
+ 
++:Step.2|Compile program.
++
++ $ cd github.com/syatsuzuka/hello
++ $ go install
++
++:Step.3|Execute program.
++
++ $ $GOPATH/bin/hello
++
++
+ *Author [#c6ad7a7d]
+ S.Yatsuzuka

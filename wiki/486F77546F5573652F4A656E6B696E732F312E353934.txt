@@ -56,8 +56,10 @@ Prepare workspace in your pc.
 :Step.2|
 Create Maven project.
 
- # cd <project directory>
- # mvn generate:create -DgroupId=org.sample -DartifactId=sample
+ $ cd <project directory>
+ $ mvn archetype:create \
+  -DgroupId=<Group ID> \
+  -DartifactId=<Artifact ID>
 
 :Step.3|
 Edit POM.xml so that maven create Javadoc.

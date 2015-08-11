@@ -1,0 +1,22 @@
+-#contents
+ 
+-*Date [#cceecf20]
+-The 21th of February 14:00-17:00
+-
+-*Location [#xdc9b244]
+-[http://www.hackerdojo.com/ Hacker Dojo]
+-
+-*Registration [#k0348d6a]
+-Free [[Facebook Event:https://www.facebook.com/events/619133008219448/]]
+-
+-*Table of Contents [#dc3e4060]
+-+Introduction & News [14:00-14:15]
+-+Lightening Talk [14:15-14:45]
+-+Study Session [14:45 - 16:00]
+-++How to Use Chef [[Overall/Chef]] (S.Yatsuzuka)
+-+Moku-Moku [16:00-17:00]
+-
+-*Materials [#m8aa60d9]
+-#ref(OSSSV_StudySession_5_ver0.1.odp)
+-#ref(OSSSV_StudySession_5_ver0.1.pdf)
+-

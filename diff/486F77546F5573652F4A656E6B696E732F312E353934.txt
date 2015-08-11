@@ -56,8 +56,12 @@
  :Step.2|
  Create Maven project.
  
-  # cd <project directory>
-  # mvn generate:create -DgroupId=org.sample -DartifactId=sample
+- # cd <project directory>
+- # mvn generate:create -DgroupId=org.sample -DartifactId=sample
++ $ cd <project directory>
++ $ mvn archetype:create \
++  -DgroupId=<Group ID> \
++  -DartifactId=<Artifact ID>
  
  :Step.3|
  Edit POM.xml so that maven create Javadoc.
@@ -270,16 +274,15 @@
  |CENTER:Item|CENTER:Description|CENTER:Example|h
  |Test report XMLs|Specify the location of JUnit result report file|"trunk/sample/target/surefire-reports/*.xml"|
  
--After saving, you can see test result.
-+:Step.2|
-+Add "test" to maven goal.
+ :Step.2|
+ Add "test" to maven goal.
  
-+|LEFT:150|LEFT:300|LEFT:200|c
-+|CENTER:Item|CENTER:Description|CENTER:Example|h
-+|goal|maven goal|"compile test"|
-+
-+After saving, you can see test result in Jenkins window.
-+
+ |LEFT:150|LEFT:300|LEFT:200|c
+ |CENTER:Item|CENTER:Description|CENTER:Example|h
+ |goal|maven goal|"compile test"|
+ 
+ After saving, you can see test result in Jenkins window.
+ 
  #ref(JUnit_fig1.png,,500x266,)
  #ref(JUnit_fig2.png,,500x266,)
  #ref(JUnit_fig3.png,,500x266,)
@@ -293,16 +296,16 @@
  |CENTER:Item|CENTER:Description|CENTER:Example|h
  |Javadoc directory|directory path Javadoc will be stored|"trunk/sample/target/site/apidocs"|
  
-+
-+:Step.2|
-+Add "javadoc:javadoc" to maven goal.
-+
-+|LEFT:150|LEFT:300|LEFT:200|c
-+|CENTER:Item|CENTER:Description|CENTER:Example|h
-+|goal|maven goal|"compile test javadoc:javadoc"|
-+
-+After saving, you can see javadoc link in your build result page.
-+
+ 
+ :Step.2|
+ Add "javadoc:javadoc" to maven goal.
+ 
+ |LEFT:150|LEFT:300|LEFT:200|c
+ |CENTER:Item|CENTER:Description|CENTER:Example|h
+ |goal|maven goal|"compile test javadoc:javadoc"|
+ 
+ After saving, you can see javadoc link in your build result page.
+ 
  #ref(Javadoc_fig1.png,,500x266,)
  
  
@@ -357,6 +360,5 @@
  #ref(SetupSecurity_fig4.png,,500x266,)
  
  
--
  *Author [#n8b1fbb4]
  S.Yatsuzuka

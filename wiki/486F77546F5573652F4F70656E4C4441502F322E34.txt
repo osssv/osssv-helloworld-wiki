@@ -1,0 +1,45 @@
+#contents
+
+*Prerequisite [#qb980aa1]
+-Cent OS installation (You can refer [[Overall/CentOS]])
+
+*Install&Setup [#k3f4920b]
+:Step.1|
+Install OpenLDAP server and clients.
+
+ #  yum install openldap-servers openldap-clients
+
+:Step.2|
+Remove unnecessary config files.
+
+ # rm -rf /etc/openldap/slapd.d/*
+ # rm -rf /var/lib/ldap/*
+
+:Step.3|
+Prepare default config files.
+
+ # cp -a /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
+ # chown ldap. /var/lib/ldap/DB_CONFIG
+ # cp -a /usr/share/openldap-servers/slapd.conf.obsolete /etc/openldap/slapd.conf 
+
+:Step.4|
+Config slapd.conf.
+
+ # vi /etc/openldap/slapd.conf
+
+Example of slapd.conf
+
+[https://github.com/nasebanal/nb-deliverykit/blob/master/chef-repo/site-cookbooks/openldap/templates/default/slapd.conf Github - nb-deliverykit]
+
+:Step.5|
+Launch ldap server.
+
+ # /etc/init.d/slapd start
+ # chkconfig slapd on
+
+*HowToUse [#jc131a5c]
+:Step.1|
+xxx
+
+*Author [#h3c81b45]
+S.Yatsuzuka

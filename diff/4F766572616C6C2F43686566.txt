@@ -1,33 +1,33 @@
  #contents
  
--*Overall Feature [#e82dd1d3]
---xxx
-+*Overall Feature [#ld30c0ec]
-+>Chef is a configuration management tool written in Ruby and Erlang. It uses a pure-Ruby, domain-specific language (DSL) for writing system configuration "recipes". Chef is used to streamline the task of configuring and maintaining a company's servers, and can integrate with cloud-based platforms such as Rackspace, Amazon EC2, Google Cloud Platform, OpenStack, SoftLayer and Microsoft Azure to automatically provision and configure new machines. Chef contains solutions for both small and large scale systems, with features and pricing for the respective ranges.
-+<
-+RIGHT:
-+refered from [[Wikipedia - Chef:http://en.wikipedia.org/wiki/Chef_%28software%29]]
+ *Overall Feature [#ld30c0ec]
+ >Chef is a configuration management tool written in Ruby and Erlang. It uses a pure-Ruby, domain-specific language (DSL) for writing system configuration "recipes". Chef is used to streamline the task of configuring and maintaining a company's servers, and can integrate with cloud-based platforms such as Rackspace, Amazon EC2, Google Cloud Platform, OpenStack, SoftLayer and Microsoft Azure to automatically provision and configure new machines. Chef contains solutions for both small and large scale systems, with features and pricing for the respective ranges.
+ <
+ RIGHT:
+ refered from [[Wikipedia - Chef:http://en.wikipedia.org/wiki/Chef_%28software%29]]
  
--*HowToUse [#zd0779ee]
--#ls2(HowToUse/Chef/)
  
--*Author [#v78b4228]
--A.Yokouchi
-+:File Composition|
-+#ref(overall_fig1.png)
+ :Process Flow|
+ chef-solo
+-#ref(overall_fig1.png)
++#ref(overall_fig1.png,,500x328,)
  
-+*Specification [#raa76feb]
-+|LEFT:100|LEFT:200|c
-+|CENTER:ITEM|CENTER:DESCRIPTION|h
-+|Main Developer|xxx|
-+|License|Apache License|
-+|OS|Linux, UNIX, Windows, BSD, Mac OSX|
-+|Written In|Ruby (Client), Ruby / Erlang (Server)|
-+|Official Site|http://www.chef.io/|
-+
-+
-+*HowToUse [#w517ccd8]
-+#ls2(HowToUse/Chef)
-+
-+*Author [#v2b8130f]
-+S.Yatsuzuka
+ knife-solo
+-#ref(overall_fig2.png)
++#ref(overall_fig2.png,,500x291,)
+ 
+ *Specification [#raa76feb]
+ |LEFT:100|LEFT:200|c
+ |CENTER:ITEM|CENTER:DESCRIPTION|h
+ |Main Developer|xxx|
+ |License|Apache License|
+ |OS|Linux, UNIX, Windows, BSD, Mac OSX|
+ |Written In|Ruby (Client), Ruby / Erlang (Server)|
+ |Official Site|http://www.chef.io/|
+ 
+ 
+ *HowToUse [#w517ccd8]
+ #ls2(HowToUse/Chef)
+ 
+ *Author [#v2b8130f]
+ S.Yatsuzuka

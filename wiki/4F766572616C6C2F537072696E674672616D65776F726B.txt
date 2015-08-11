@@ -1,0 +1,24 @@
+#contents
+
+*Overall Feature [#k08cc61a]
+>The Spring Framework is an open source application framework and inversion of control container for the Java platform. The framework's core features can be used by any Java application, but there are extensions for building web applications on top of the Java EE platform. Although the framework does not impose any specific programming model, it has become popular in the Java community as an alternative to, replacement for, or even addition to the Enterprise JavaBean (EJB) model.
+<
+RIGHT:
+refered from [[Wikipedia - Spring Framework:http://en.wikipedia.org/wiki/Spring_Framework]]
+
+
+*Specification [#f674ec42]
+|LEFT:100|LEFT:200|c
+|CENTER:ITEM|CENTER:DESCRIPTION|h
+|Main Developer|Pivotal Software|
+|License|Apache License 2.0|
+|OS|cross-platform|
+|Written In|Java|
+|Official Site|https://spring.io/|
+
+
+*HowToUse [#hfbbd381]
+#ls2(HowToUse/SpringFramework)
+
+*Author [#e446b299]
+S.Yatsuzuka

@@ -1,9 +1,9 @@
  #counter
  
- Study Session
- 
- #ls2(StudySession/)
- 
+-Study Session
+-
+-#ls2(StudySession/)
+-
  Overall
  
  #ls2(Overall/)
@@ -12,14 +12,6 @@
  
  #ls2(HowToUse/)
  
--GettingStarted
--
--#ls2(GettingStarted/)
--
--UserManual
--
--#ls2(UserManual/)
--
  Template
  
  #ls2(Template/)

@@ -7,8 +7,12 @@ RIGHT:
 refered from [[Wikipedia - Chef:http://en.wikipedia.org/wiki/Chef_%28software%29]]
 
 
-:File Composition|
-#ref(overall_fig1.png)
+:Process Flow|
+chef-solo
+#ref(overall_fig1.png,,500x328,)
+
+knife-solo
+#ref(overall_fig2.png,,500x291,)
 
 *Specification [#raa76feb]
 |LEFT:100|LEFT:200|c

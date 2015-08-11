@@ -1,8 +1,7 @@
  #contents
  
  *Prerequisite [#oa14ea09]
---Ubuntu installation (You can refer from [[HowToUse/UbuntuServer/14.04]])
-+-Ubuntu Server installation (You can refer from [[HowToUse/UbuntuServer/14.04]])
+ -Ubuntu Server installation (You can refer from [[HowToUse/UbuntuServer/14.04]])
  
  
  *Install&Setup [#b2b2bcc6]
@@ -22,20 +21,28 @@
  
   $ sudo docker version
  
++
  *HowToUse [#mcd5e78b]
  **Download Docker image from Docker Hub Registry [#d73e2247]
  :Step.1|
++ $ sudo docker pull <Docker Image Name>:<Tag>
  
++Example
   $ sudo docker pull ubuntu:latest
  
  :Step.2|
  Run Docker Image and create Docker Container.
  
-  $ sudo docker run -it --name ubuntu_work ubuntu /bin/bash
+- $ sudo docker run -it --name ubuntu_work ubuntu /bin/bash
++ $ sudo docker run -p 0.0.0.0:<port Num>:<Port Num> -it --name <Docker Container> <Docker Image> <Shell>
  
++Example
++ $ sudo docker run -p 0.0.0.0:80:80 -it --name ubuntu_work ubuntu /bin/bash
++
  :Step.3|
  Install additional modules.
  
++Example
   # apt-get install -y nginx
  
  :Step.4|
@@ -49,6 +56,9 @@
  :Step.6|
  Create new Docker image merging with Docker Container.
  
++ $ sudo docker commit <Docker Container> <Docker Image>
++
++Example
   $ sudo docker commit ubuntu_work syatsuzuka/nginx
  
  :Step.7|
@@ -75,6 +85,9 @@
  :Step.2|
  Create Docker image.
  
++ $ sudo docker build -t <Docker Image>:<Tag> .
++
++Example
   $ sudo docker build -t syatsuzuka/nginx:1.0 .
  
  :Step.3|
@@ -94,6 +107,9 @@
  :Step.3|
  Push the Docker Image into Docker Hub.
  
++ $ sudo docker push <Docker Image>
++
++Example
   $ sudo docker push syatsuzuka/nginx
  
  

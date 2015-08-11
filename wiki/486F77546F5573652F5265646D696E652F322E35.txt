@@ -1,0 +1,287 @@
+#contents
+
+*Prerequisite [#jf262f07]
+-Cent OS installation (You can refer [[HowToUse/CentOS/6.5]])
+-MySQL instllation (You can refer [[HowToUse/MySQL/5.1]])
+-Apache instllation (You can refer [[HowToUse/Apache]])
+-Subversion instllation (You can refer [[HowToUse/Subversion/1.6]])
+-RVM instllation (You can refer [[HowToUse/RVM/1.25]])
+-Ruby instllation
+
+*Install&Setup [#bd9a5a6a]
+:Step.1|Install the necessary packages
+
+ # yum groupinstall "Development Tools"
+ # yum install openssl-devel readline-devel zlib-devel curl-devel libyaml-devel
+ # yum install mysql-server mysql-devel
+ # yum install httpd httpd-devel
+ # yum install ImageMagick ImageMagick-devel ipa-pgothic-fonts
+
+:Step.2|Install Ruby
+ $ rvm install 2.1.3
+
+:Step.3|Install Bundler
+ $ gem install bundler --no-rdoc --no-ri
+
+:Step.4|Configure mySQL
+
+ [mysqld]
+ datadir=/var/lib/mysql
+ socket=/var/lib/mysql/mysql.sock
+ user=mysql
+ # Disabling symbolic-links is recommended to prevent assorted security risks
+ symbolic-links=0
+ 
+ character-set-server=utf8
+ 
+ # &#20219;&#24847;&#35373;&#23450;
+ innodb_file_per_table
+ query-cache-size=16M
+ 
+ [mysqld_safe]
+ log-error=/var/log/mysqld.log
+ pid-file=/var/run/mysqld/mysqld.pid
+ 
+ [mysql]
+ default-character-set=utf8
+ 
+:Step.5|Launch mySQL
+ # /etc/rc.d/init.d/mysqld start
+
+]Step.6|Create DB and DB user for Redmine
+ # mysql -uroot -p
+ mysql> create database db_redmine default character set utf8;
+ mysql> grant all on db_redmine.* to user_redmine@localhost identified by '********';
+ mysql> flush privileges;
+ mysql> exit;
+
+:Step.7|Download installer.
+ # curl -O http://www.redmine.org/releases/redmine-2.5.0.tar.gz
+ # tar xzvf redmine-2.5.0.tar.gz
+ # mv redmine-2.5.0 /var/lib/redmine
+
+:Step.8|Configure DB connection.
+
+ # vi config/database.yml
+
+ production:
+   adapter: mysql2
+   database: db_redmine
+   host: localhost
+   username: user_redmine
+   password: ********
+   encoding: utf8
+
+:Step.9|Configure Mail Server connection.
+
+ # vi config/configuration.yml 
+
+(For general mail server)
+ production:
+   email_delivery:
+     delivery_method: :smtp
+     smtp_settings:
+       address: "localhost"
+       port: 25
+       domain: 'example.com' 
+
+(For gmail)
+ production:
+   email_delivery:
+     delivery_method: :smtp
+     smtp_settings:
+       tls: true
+       enable_starttls_auto: true
+       address: "smtp.gmail.com" 
+       port: '587'
+       domain: "smtp.gmail.com" 
+       authentication: :plain
+       user_name: "your_email@gmail.com" 
+       password: "your_password"  
+
+   rmagick_font_path: /usr/share/fonts/ipa-pgothic/ipagp.ttf
+
+
+:Step.10|Install bundle
+
+ # bundle install 
+
+:Step.11|Initial DB migration.
+
+ # bundle exec rake generate_secret_token
+ # RAILS_ENV=production bundle exec rake db:migrate
+
+
+:Step.11|Install passenger
+
+ # gem install passenger --no-rdoc --no-ri
+ # passenger-install-apache2-module
+
+
+:Step.12|Configure Apache server.
+
+ # vi /etc/httpd/conf.d/passenger.conf 
+
+ LoadModule passenger_module /usr/local/lib/ruby/gems/1.9.1/gems/passenger-3.0.17/ext/apache2/mod_passenger.so
+ PassengerRoot /usr/local/lib/ruby/gems/1.9.1/gems/passenger-3.0.17
+ PassengerRuby /usr/local/bin/ruby
+
+
+:Step.13|Restart apache server.
+
+ # /etc/rc.d/init.d/httpd restart
+
+
+:Step.14|
+
+ # chown -R apache:apache /var/lib/redmine
+
+
+:Step.15|Link redmine to Apache Web Server.
+
+
+(Pattern.1)
+ DocumentRoot "/var/lib/redmine/public"
+
+ # /etc/rc.d/init.d/httpd restart
+
+(Pattern.2)
+ ln -s /var/lib/redmine/public /var/www/html/redmine
+
+ RackBaseURI /redmine
+
+ # /etc/rc.d/init.d/httpd restart
+
+
+*HowToUse [#p068717c]
+**Create Project [#tcdd8f07]
+
+:Step.1|Login with "admin" account (initial password is a"admin").
+
+:Step.2|Click Project link, then click "New project". link.
+
+:Step.3|Input as follows and click "Create" button. Then you can have new project.
+
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|Name|Name of Project|"test"|
+|Identifier|Project ID|"test"|
+
+:Step.4|Click "test" project and choose "Setting" tab.
+
+:Step.5|Click "Repositories" sub menu and click "New repository".
+
+:Step.6|Input as follows and click "Create" button. Then you can see the contents in the allocated repository.
+
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|URL|Repository path|"http://xxx.xxx.xxx.xxx/svn"|
+
+
+**Create Users/Group [#wb717db6]
+
+:Step.1|Click "Administration" -> "Users".
+
+:Step.2|Click "New user" link. Input data and click "Create" button.
+
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|Login|login account id|"testuser"|
+|First name|first name of the user|"Test"|
+|Last name|last name of the user|"User"|
+|Email|email address||
+|Password|password||
+
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|Login|login account id|"testuser2"|
+|First name|first name of the user|"Test"|
+|Last name|last name of the user|"User2"|
+|Email|email address||
+|Password|password||
+
+
+:Step.3|click created user, "testuser" and allocate it to "test" project.
+
+
+
+**Setup Trackers [#gf4391df]
+:Step.1|Click "Administration"->"Trackers" and click "New tracker".
+
+:Step.2|Input as follows and click "Save" button.
+
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|Name|Tracker name|"Task"|
+|Projects|Select the project to use this|"test"|
+
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|Name|Tracker name|"Bug"|
+|Projects|Select the project to use this|"test"|
+
+
+**Setup Statuses [#sb553250]
+:Step.1|Click "Administration"->"Issue statuses" and click "New status".
+
+:Step.2|Input as follows and click "Save" button.
+
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|Name|Status name|"Created"|
+|Issue closed|status for closing|FALSE|
+|Default value|default flag|TRUE|
+
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|Name|Status name|"In Process"|
+|Issue closed|status for closing|FALSE|
+|Default value|default flag|FALSE|
+
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|Name|Status name|"Closed"|
+|Issue closed|status for closing|TRUE|
+|Default value|default flag|FALSE|
+
+**Setup Priorities [#j304fe19]
+
+:Step.1|Click "Administration"->"Enumerations" link and click "New statuses".
+
+:Step.2|Input as follows and click "Create" button
+
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|Name|Priority name|"Urgent"|
+|Active|set active or inactive|TRUE|
+|Default value|default flag|FALSE|
+
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|Name|Priority name|"Normal"|
+|Active|set active or inactive|TRUE|
+|Default value|default flag|FALSE|
+
+|LEFT:150|LEFT:300|LEFT:200|c
+|CENTER:Item|CENTER:Description|CENTER:Example|h
+|Name|Priority name|"Low"|
+|Active|set active or inactive|TRUE|
+|Default value|default flag|FALSE|
+
+
+**Create Issues [#f995f290]
+:Step.1|Choose project.
+
+:Step.2|Click "New issue" link and fill in items.
+
+
+**Import issues [#r3ecc32b]
+:Step.1|Choose project.
+
+:Step.2|Click "Import" tab. Click "Browse" button and choose files and click "Upload File" button.
+
+:Step.3|Choose "select unique-valued column" and click "Submit" button.
+
+
+*Author [#jc92e588]
+S.Yatsuzuka

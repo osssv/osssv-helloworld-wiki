@@ -1,31 +1,30 @@
-+#contents
+ #contents
  
-+*Overall Feature [#a2f1b6af]
-+>TBD
-+<
-+RIGHT:
-+refered from [[Wikipedia - XXX:http://en.wikipedia.org/wiki/]]
-+
-+
-+:File Composition|
-+#ref(overall_fig1.png)
-+
-+:Window Image|
-+#ref(overall_fig2.png)
-+
-+*Specification [#k6a45a2f]
-+|LEFT:100|LEFT:200|c
-+|CENTER:ITEM|CENTER:DESCRIPTION|h
-+|Main Developer|xxx|
-+|License|xxx|
-+|OS|xxx|
-+|Written In|xxx|
-+|Official Site|xxx|
-+
-+
-+*HowToUse [#q9388486]
-+#ls2(HowToUse/Redmine)
-+
-+*Author [#s1026991]
-+(author of this page)
-+
+ *Overall Feature [#a2f1b6af]
+ >Redmine is a free and open source, web-based project management and issue tracking tool. It handles multiple projects and subprojects. It features per project wikis and forums, time tracking, and flexible role based access control. It includes a calendar and Gantt charts to aid visual representation of projects and their deadlines. Redmine integrates with various version control systems and includes a repository browser and diff viewer.
+ <
+ RIGHT:
+ refered from [[Wikipedia - Redmine:http://en.wikipedia.org/wiki/Redmine]]
+ 
+ 
+ :Window Image|
+ #ref(Overall_fig1.png,,500x259,)
+ #ref(Overall_fig2.png,,500x259,)
+ 
+ *Specification [#k6a45a2f]
+ |LEFT:100|LEFT:200|c
+ |CENTER:ITEM|CENTER:DESCRIPTION|h
+ |Main Developer|Jean-Philippe Lang|
+ |License|GPL v2|
+ |OS|Cross Platform|
+ |Written In|Ruby|
+ |Official Site|http://www.redmine.org/|
+ 
+ 
+ *HowToUse [#q9388486]
+ #ls2(HowToUse/Redmine)
+ 
+ *Author [#s1026991]
+-(author of this page)
+-
++S.Yatsuzuka
