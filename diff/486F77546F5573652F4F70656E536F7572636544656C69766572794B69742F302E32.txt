@@ -1,0 +1,63 @@
+ #contents
+ 
+ *Prerequisite [#c91d131c]
+ -Docker installation (You can refer [[Overall/Docker]])
+ 
+ *Install&Setup [#xdfd7b16]
+ :Step.1|
+ Prepare work directory.
+ 
+  $ mkdir <Work Directory>
+ 
+ :Step.2|
+ Download base image.
+ 
+  $ sudo docker pull centos:6.6
+ 
+ :Step.3|
+ Download Recipe.
+ 
+  $ cd <Work Directory>
+  $ git clone https://github.com/nasebanal/nb-deliverykit.git
+ 
+ :Step.4|
+ Create Docker Image.
+ 
+  $ cd nb-deliverykit
+  $ sudo docker build -t <Docker Image Name> .
+ 
+ *HowToUse [#ga97f510]
+ :Step.1|
+ Execute Docker.
+ 
+  $ sudo docker -p 0.0.0.0:80:80 --priviledged -it --name <Docker Container Name> <Docker Image Name> /bin/bash
+ 
+ :Step.2|
+ Launch services.
+ 
+  # cd /var/chef-repo
+  # chef-solo -c solo.js -j node/start.js
+ 
+ :Step.3|
+ You can access to web page as below.
+ 
+ :TOP Page| http://<IP Address>/
+ :PHP LDAP Admin| http://<IP Address>/phpldapadmin/
+ 
+ 
+-<Initial Password>
++|LEFT:100|LEFT:200|c
++|CENTER:ITEM|CENTER:User Name / Password|h
++|OS ROOT User|root / root|
++|LDAP ROOT User| cn=Manager,dc=my-domain,dc=com / osdk_admin|
++|mySQL Admin User| root / osdk_admin|
++|Redmine Admin User| admin / admin|
+ 
+-:OS ROOT User| root / root
+-:LDAP ROOT User| cn=Manager,dc=my-domain,dc=com / osdk_admin
+-:mySQL Admin User| root / osdk_admin
+-:Redmine Admin User| admin / admin
+ 
+-
+ *Author [#zf05a55a]
+ S.Yatsuzuka

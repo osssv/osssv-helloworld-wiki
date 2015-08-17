@@ -23,7 +23,7 @@ if (! defined('PKWK_OPTIMISE'))
 // PKWK_READONLY - Prohibits editing and maintain via WWW
 //   NOTE: Counter-related functions will work now (counter, attach count, etc)
 if (! defined('PKWK_READONLY'))
-	define('PKWK_READONLY', 0); // 0 or 1
+	define('PKWK_READONLY', 1); // 0 or 1
 
 // PKWK_SAFE_MODE - Prohibits some unsafe(but compatible) functions 
 if (! defined('PKWK_SAFE_MODE'))
@@ -233,9 +233,10 @@ $pagereading_config_dict = ':config/PageReading/dict';
 // User definition
 $auth_users = array(
 	// Username => password
+	'osssv' => 'osssv',
 	'foo'	=> 'foo_passwd', // Cleartext
-	'bar'	=> '{x-php-md5}f53ae779077e987718cc285b14dfbe86', // PHP md5() 'bar_passwd'
-	'hoge'	=> '{SMD5}OzJo/boHwM4q5R+g7LCOx2xGMkFKRVEx',      // LDAP SMD5 'hoge_passwd'
+	// 'bar'	=> '{x-php-md5}f53ae779077e987718cc285b14dfbe86', // PHP md5() 'bar_passwd'
+	// 'hoge'	=> '{SMD5}OzJo/boHwM4q5R+g7LCOx2xGMkFKRVEx',      // LDAP SMD5 'hoge_passwd'
 );
 
 /////////////////////////////////////////////////
@@ -260,9 +261,10 @@ $edit_auth = 0;
 
 $edit_auth_pages = array(
 	// Regex		   Username
-	'#BarDiary#'		=> 'bar',
-	'#HogeHoge#'		=> 'hoge',
-	'#(NETABARE|NetaBare)#'	=> 'foo,bar,hoge',
+	'/.*/' => 'osssv,foo',
+	// '#BarDiary#'		=> 'bar',
+	// '#HogeHoge#'		=> 'hoge',
+	// '#(NETABARE|NetaBare)#'	=> 'foo,bar,hoge',
 );
 
 /////////////////////////////////////////////////

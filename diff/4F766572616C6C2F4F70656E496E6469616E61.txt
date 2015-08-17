@@ -1,0 +1,30 @@
++#contents
+ 
++*Overall Feature [#z064e08b]
++>OpenIndiana is a free and open-source, Unix operating system derived from OpenSolaris. Developers forked OpenSolaris after Oracle Corporation discontinued it,in order to continue development and distribution of the source code.
++<
++RIGHT:
++refered from [[Wikipedia - OpenIndiana:https://en.wikipedia.org/wiki/OpenIndiana]]
++
++
++:File Composition|
++#ref(overall_fig1.png)
++
++:Window Image|
++#ref(overall_fig2.png)
++
++*Specification [#oe79fa1c]
++|LEFT:100|LEFT:200|c
++|CENTER:ITEM|CENTER:DESCRIPTION|h
++|Main Developer|illumos Foundation et al.|
++|License|CDDL|
++|OS|-|
++|Written In|C|
++|Official Site|http://openindiana.org/download/#live|
++
++
++*HowToUse [#sd33af30]
++#ls2(HowToUse/OpenIndiana)
++
++*Author [#q42e1e3a]
++S.Yatsuzuka
