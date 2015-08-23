@@ -1,0 +1,109 @@
+ #contents
+ 
+ *Prerequisite [#v50266e0]
+ -Ruby On Rails installation (You can refer [[HowToUse/RubyOnRails/4.1]])
+ 
+ *Install&Setup [#h7236ae1]
+ :Step.1|
+ Download Twitter Bootstrap file.
+ http://getbootstrap.com/
+ 
+ #ref(Bootstrap_fig1.png,,500x266,)
+ 
+ :Step.2|
+ Deploy files to Ruby On Rails project.
+ 
+  $ cp -r <BootStrap>/fonts <Ruby On Rails Project>/vendor/assets
+  $ cp <Bootstrap>/css/* <Ruby On Rails Project>/vendor/assets/stylesheets/
+  $ cp <Bootstrap>/javascripts/* <Ruby On Rails Project>/vendor/assets/javascripts/
+ 
+ Step:3|Add new line to app/assets/stylesheets/application.css
+  
+  *= require bootstrap
+ 
+ Step:4|Edit new line to app/assets/javascripts/application.js
+ 
+  //= require bootstrap
+ 
+ :Step.5|Edit config/application.rb
+ 
+  config.assets.paths << "#{Rails}/vender/assets/fonts"
+ 
+ :Step.6|Execute precompile
+ 
+  $ rake assets:precompile Rails_ENV=development
+ 
+ 
+ *HowToUse [#z1d45951]
+ :Step.1|Add new controller to have bootstrap.
+ 
+  $ cd <Ruby On Rails Project>
+  $ rails g controller <Controller name> <view name>
+ 
+ :Step.2|Edit view file.
+ 
+  $ vi app/views/layouts/application.html.erb
+ 
+- <!DOCTYPE html>
+- <html lang="en">
+- <head>
+-  <meta charset="utf-8">
+-  <title>NASEBANAL Social Coding</title>
+- 
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="">
+   <meta name="author" content="">
+  
+   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  
+   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+-  <%= csrf_meta_tags %>
+- </head>
+- <body>
+- 
+-    <nav class="navbar navbar-inverse navbar-fixed-top">
+-      <div class="container">
+-        <div class="navbar-header">
+-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+-            <span class="sr-only">Toggle navigation</span>
+-            <span class="icon-bar"></span>
+-            <span class="icon-bar"></span>
+-            <span class="icon-bar"></span>
+-          </button>
+-          <a class="navbar-brand" href="#">Project name</a>
+-        </div>
+-        <div id="navbar" class="navbar-collapse collapse">
+-          <form class="navbar-form navbar-right">
+-            <div class="form-group">
+-              <input type="text" placeholder="Email" class="form-control">
+-            </div>
+-            <div class="form-group">
+-              <input type="password" placeholder="Password" class="form-control">
+-            </div>
+-            <button type="submit" class="btn btn-success">Sign in</button>
+-          </form>
+-        </div><!--/.navbar-collapse -->
+-      </div>
+-    </nav>
+- 
+- 
+-    <div class="container">
+- 
+-      <%= yield %>
+- 
+-      <hr>
+- 
+-      <footer>
+-        <p>&copy; Company 2013</p>
+-      </footer>
+- 
+-    </div> <!-- /container -->
+- 
+- </body>
+- </html>
+ 
++You can see sample (https://github.com/nasebanal/nb-socialcoding/blob/master/app/views/layouts/application.html.erb).
+ 
++
+ *Author [#abd78b53]
+ S.Yatsuzuka

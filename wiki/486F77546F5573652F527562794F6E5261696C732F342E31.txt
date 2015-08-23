@@ -1,5 +1,9 @@
 #contents
 
+*Prerequisite [#q4efe545]
+-Ubuntu Server (You can refer [[Overall/UbuntuServer]])
+-RVM (You can refer [[Overall/RVM]])
+
 *Install&Setup [#y05d363e]
 :Step.1|
 Check if the rails has already been installed.
@@ -11,6 +15,7 @@ If the rails has not been installed yet, execute the following command
 
 
 *HowToUse [#p499ff68]
+**Create new application [#n11fa587]
 :Step.1|
 Create new application.
  $ rails new <Application Name>
@@ -48,6 +53,102 @@ Access the following page.
  http://localhost:3000/say/hello/
 #ref(CreateApplication_fig2.png,,500x266,)
 
+
+**Get data from RESTful service [#t20ffe9e]
+:Step.1|
+Edit controller.
+
+ $ vi app/controller/<Controller file>
+
+    require 'open-uri'
+    require 'json'
+ 
+    res = open('<URL>')
+    code, message = res.status
+ 
+    if code == '200'
+ 
+      @result = JSON.parse(res.read)
+    end 
+
+:Step.2|
+Put it to view file.
+
+ $ vi app/view/<View file>
+
+ <table>
+ <% @result.each do |data| %>
+  <tr>
+  <td><%= data['<Key#1>'] %></td>
+  <td><%= data['<Key#2>'] %></td>
+  </tr>
+ <% end %>
+ </table>
+
+
+**Upload to Heroku [#hf6c5c2d]
+:Step.1|Create new account in Heroku (https://id.heroku.com/login)
+
+#ref(Heroku_fig1.png,,500x266,)
+
+:Step.2|Install Ruby 2.2.2
+
+ $ rvm install ruby-2.2.2
+
+:Step.3|Install Heroku Toolbelt.
+
+ $ wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+
+When you encounter error, you can use standalone edition with the following commands.
+
+ $ wget -qO- https://toolbelt.heroku.com/install.sh | bash
+ $ echo 'PATH="/usr/local/heroku/bin:$PATH"' >> ~/.profile
+
+:Step.4|Login to Heroku
+
+ $ heroku login
+
+:Step.5| Prepare Git repository.
+
+ $ git clone <Git Repository>
+
+or
+
+ $ cd <Ruby On Rails Project>
+ $ git init
+ $ git add .
+ $ git commit -m "initial commit"
+
+:Step.6| Edit Gemfile because Heroku doesn't allow sqlite3, but PostgreSQL
+
+ $ vi config/Gemfile
+
+ +gem 'pg'
+ -gem 'sqlite3'
+ +gem 'sqlite3', group: %w(test development), require: false
+ +gem 'pg', group: %w(production), require: false
+
+:Step.7|Install gem file.
+
+ $ bundle install
+
+:Step.8|Edit database.yml
+
+ $ vi db/database.yml
+
+ production:
+   <<: *default
+ -  database: db/production.sqlite3
+ +  adapter: pg
+ +  database: db/production.pg
+
+:Step.9|Create application in Heroku
+
+ $ heroku create <application name>
+
+:Step.10|Push files.
+
+ $ git push heroku master
 
 *Author [#la69134c]
 S.Yatsuzuka

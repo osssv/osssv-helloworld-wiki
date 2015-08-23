@@ -1,0 +1,65 @@
+#contents
+
+*Prerequisite [#cd7ccbd0]
+-Ruby On Rails installation (You can refer [[HowToUse/RubyOnRails/4.1]])
+
+*Install&Setup [#pbdb1317]
+:Step.1|
+Install lazy_high_charts.
+
+ $ vi Gemfile
+
+ gem 'lazy_high_charts'
+
+ $ bundle install
+
+(You can see sample from [[here:https://github.com/nasebanal/nb-socialcoding/blob/master/Gemfile]]
+
+
+:Step.2|
+Edit application.js.
+
+ $ vi app/asset/javascript/application.js
+
+ //= require highcharts/highcharts
+ //= require highcharts/highcharts-more
+ //= require highcharts/highstock
+
+(You can see sample from [[here:https://github.com/nasebanal/nb-socialcoding/blob/master/app/assets/javascripts/application.js]]
+
+
+*HowToUse [#xa568572]
+:Step.1|
+Add input data in controller file.
+
+ $ vi app/controller/<control file>
+
+ @chart = LazyHighCharts::HighChart.new('graph') do |f|
+  f.title(:text => "Population vs GDP For 5 Big Countries [2009]")
+  f.xAxis(:categories => ["United States", "Japan", "China", "Germany", "France"])
+  f.series(:name => "GDP in Billions", :yAxis => 0, :data => [14119, 5068, 4985, 3339, 2656])
+  f.series(:name => "Population in Millions", :yAxis => 1, :data => [310, 127, 1340, 81, 65])
+ 
+  f.yAxis [
+    {:title => {:text => "GDP in Billions", :margin => 70} },
+    {:title => {:text => "Population in Millions"}, :opposite => true},
+  ]
+ 
+  f.legend(:align => 'right', :verticalAlign => 'top', :y => 75, :x => -50, :layout => 'vertical',)
+  f.chart({:defaultSeriesType=>"column"})
+ end
+
+(You can see sample from [[here:https://github.com/nasebanal/nb-socialcoding/blob/master/app/controllers/dashboard_controller.rb]].)
+
+:Step.2|
+Edit view file.
+
+ $ vi app/view/<view file>
+
+ <%= high_chart("some_id", @chart) %>
+
+(You can see sample from [[here:https://github.com/nasebanal/nb-socialcoding/blob/master/app/views/dashboard/index.html.erb]].)
+
+
+*Author [#v79fb9bc]
+S.Yatsuzuka
