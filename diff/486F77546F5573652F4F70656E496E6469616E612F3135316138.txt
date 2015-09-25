@@ -1,35 +1,44 @@
  #contents
  
  *Prerequisite [#x8a031e4]
---xxx installation (You can refer [[Overall/xxx]])
-+-VirtualBox installation (You can refer [[Overall/VirtualBox]])
+ -VirtualBox installation (You can refer [[Overall/VirtualBox]])
  
  *Install&Setup [#dec116aa]
--:Step.1|
--xxx
-+:Step.1|Download ISO file from http://openindiana.org/download/. For newbie, I recommend to download "DVD image". 
+ :Step.1|Download ISO file from http://openindiana.org/download/. For newbie, I recommend to download "DVD image". 
  
-+:Step.2|Launch installer and click enter for the first dialog.
+ :Step.2|Launch installer and click enter for the first dialog.
+ 
+ #ref(Install_fig1.png,,500x375,)
+ 
+ :Step.3|Select Keybord layout.
+ 
+ #ref(Install_fig2.png,,500x375,)
+ 
+ :Step.4|Select Language.
+ 
+ #ref(Install_fig3.png,,500x375,)
+ 
+ Then you can use OpenIndiana. You can connect to the internet by default using the host OS's network device.
+ 
+ #ref(Install_fig4.png,,500x375,)
+ 
++:Step.5|Shutdown system once.
+ 
++ $ sudo shutdown 0
 +
-+#ref(Install_fig1.png,,500x375,)
++:Step.6|Click "Setting" menu in the main window of Virtual Box, and select "Storage".
 +
-+:Step.3|Select Keybord layout.
++:Step.7|Select Disk icon and check "Live CD/DVD" box so that you can unmount disk after you installed ISO image to hard disk at a later procedure.
 +
-+#ref(Install_fig2.png,,500x375,)
++:Step.8|Launch OpenIndiana once again.
 +
-+:Step.4|Select Language.
++:Step.9|Double click "Install OpenIndiana" which is located on the desktop of OpenIndiana.
 +
-+#ref(Install_fig3.png,,500x375,)
-+
-+Then you can use OpenIndiana. You can connect to the internet by default using the host OS's network device.
-+
-+#ref(Install_fig4.png,,500x375,)
-+
++:Step.10|Select partition setting as you like, and complete installation. After this, you can unmount DVD disk image, and your OpenIndiana will be launched with your local virtual box file.
 +
  *HowToUse [#u003fedc]
  :Step.1|
--xxx
-+TBD
+ TBD
  
  *Author [#sb7e2951]
  S.Yatsuzuka

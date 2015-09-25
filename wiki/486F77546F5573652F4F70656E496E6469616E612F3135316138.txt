@@ -22,6 +22,19 @@ Then you can use OpenIndiana. You can connect to the internet by default using t
 
 #ref(Install_fig4.png,,500x375,)
 
+:Step.5|Shutdown system once.
+
+ $ sudo shutdown 0
+
+:Step.6|Click "Setting" menu in the main window of Virtual Box, and select "Storage".
+
+:Step.7|Select Disk icon and check "Live CD/DVD" box so that you can unmount disk after you installed ISO image to hard disk at a later procedure.
+
+:Step.8|Launch OpenIndiana once again.
+
+:Step.9|Double click "Install OpenIndiana" which is located on the desktop of OpenIndiana.
+
+:Step.10|Select partition setting as you like, and complete installation. After this, you can unmount DVD disk image, and your OpenIndiana will be launched with your local virtual box file.
 
 *HowToUse [#u003fedc]
 :Step.1|

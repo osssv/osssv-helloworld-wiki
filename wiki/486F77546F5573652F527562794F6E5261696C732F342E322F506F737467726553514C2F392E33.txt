@@ -1,0 +1,85 @@
+#contents
+
+*Prerequisite [#w7a3b6fb]
+-Ruby On Rails installation (You can refer [[HowToUse/RubyOnRails/4.1]])
+-PostgreSQL installation (You can refer [[HowToUse/PostgreSQL/9.3]])
+
+*Install&Setup [#qaf6bfa7]
+:Step.1|
+Check the version of installed postgresql.
+
+ $ su - postgres
+ $ psql --version
+
+:Step.2|
+Install module.
+
+ $ sudo apt-get install postgresql-server-dev-9.3
+
+:Step.3|
+Create rails project.
+
+ $ rails new <project name> --database=postgresql
+
+:Step.4|
+Edit Gemfile.
+
+ $ vi Gemfile
+
+ gem pg
+
+:Step.5|
+Install gems.
+
+ $ bundle install
+
+:Step.6|
+Update pg_hba.conf from "peer" to "trust" so that other user than postgres can access database as exepected.
+
+ $ su - postgres
+ $ cd /etc/postgres/9.3/main
+ $ vi pg_hba.conf
+
+ local   all             postgres                                trust
+ local   all             all                                     trust
+
+:Step.7|
+Restart postgres daemon.
+
+ $ /etc/init.d/postgres restart
+
+:Step.8|
+Create DB user for application.
+
+ $ su - postgres
+ $ psql -d postgres
+ postgres=# create role <user_name> login createdb;
+ postgres=# \q
+
+:Step.9|
+Edit database configuration for rails application.
+Put the same user name as you created in postgres database.
+
+ $ vi config/database.yml
+
+ default:
+ ...
+ username: <user_name>
+
+:Step.10|
+Check if you can connect database from your rails application's user.
+
+ $ rails dbconsole
+
+:Step.11|
+Create and migrate initial database.
+
+ $ rake db:create
+ $ rake db:migrate
+
+*HowToUse [#i549396c]
+:Step.1|
+xxx
+
+*Author [#c979e935]
+S.Yatsuzuka

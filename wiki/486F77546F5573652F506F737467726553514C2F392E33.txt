@@ -1,0 +1,43 @@
+#contents
+
+*Prerequisite [#u4a7f521]
+-Ubuntu Server installation (You can refer [[Overall/UbuntuServer]])
+
+*Install&Setup [#b492acdd]
+:Step.1|
+Install PostgreSQL.
+
+ $ sudo apt-get install postgresql pgadmin3
+
+:Step.2|
+Set up the initial password for postgres user.
+
+ $ sudo passwd postgres
+ <password>
+
+:Step.3|
+Setup the initial password for postgres DB user.
+
+ $ su - postgres
+ $ psql
+ postgres=# alter user postgres with password '<password>';
+
+:Step.4|
+Launch pgAdminIII.
+
+#ref(Install_fig1.png,,500x266,)
+#ref(Install_fig2.png,,500x266,)
+
+:Step.5|
+Access DB.
+
+#ref(Install_fig3.png,,500x266,)
+#ref(Install_fig4.png,,500x266,)
+
+
+*HowToUse [#uf9e096b]
+:Step.1|
+xxx
+
+*Author [#j2888479]
+S.Yatsuzuka

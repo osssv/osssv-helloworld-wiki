@@ -1,0 +1,23 @@
+#contents
+
+*Overall Feature [#geb3b9fc]
+>PostgreSQL, often simply Postgres, is an object-relational database management system (ORDBMS) with an emphasis on extensibility and on standards-compliance. As a database server, its primary function is to store data securely, supporting best practices, and to allow for retrieval at the request of other software applications. It can handle workloads ranging from small single-machine applications to large Internet-facing applications with many concurrent users.
+<
+RIGHT:
+refered from [[Wikipedia - PostgreSQL:https://en.wikipedia.org/wiki/PostgreSQL]]
+
+*Specification [#s6cf57b7]
+|LEFT:100|LEFT:200|c
+|CENTER:ITEM|CENTER:DESCRIPTION|h
+|Main Developer|PostgreSQL Global Development Team|
+|License|PostgreSQL License|
+|OS|Cross-platform|
+|Written In|C|
+|Official Site|http://postgresql.org/|
+
+
+*HowToUse [#f49e25eb]
+#ls2(HowToUse/PostgreSQL)
+
+*Author [#med0e7e9]
+S.Yatsuzuka

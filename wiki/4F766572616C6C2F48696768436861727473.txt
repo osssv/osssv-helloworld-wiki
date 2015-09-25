@@ -1,0 +1,27 @@
+#contents
+
+*Overall Feature [#cd92e358]
+>Highcharts is a product that was created by the Norway based company, Highsoft. Highcharts was released in 2009, and it is a charting library written in pure JavaScript.
+<
+RIGHT:
+refered from [[Wikipedia - Highcharts:https://en.wikipedia.org/wiki/Highcharts]]
+
+
+:File Composition|
+#ref(overall_fig1.png)
+
+*Specification [#b7e2d279]
+|LEFT:100|LEFT:200|c
+|CENTER:ITEM|CENTER:DESCRIPTION|h
+|Main Developer|Highsoft|
+|License|Creative Commons Attribution-NonCommercial 3.0 License|
+|OS|Cross-platform|
+|Written In|Javascript|
+|Official Site|http://www.highcharts.com/|
+
+
+*HowToUse [#h70d1b04]
+#ls2(HowToUse/Highcharts/)
+
+*Author [#e8a6cae3]
+S.Yatsuzuka

@@ -19,7 +19,8 @@ When you encounter the error, follow the instruction in the stdout.
 **Ubuntu [#m2ffe48c]
 :Step.1|Install RVM
  $ curl -L https://get.rvm.io | bash -s stable
- $ source /home/<User Name>/.rvm/scripts/rvm
+
+If you encounter the error, follow the instruction in the stdout.
 
 *HowToUse [#m01e3b59]
 
@@ -32,7 +33,6 @@ or
  $ source ~/.profile
 
 (Ubuntu)
- $ gpg --keyserver hkp://keys.gnupg.net --recv-keys <Specified Key Code>
  $ source ${HOME}/.rvm/scripts/rvm
 
 :Step.2|Check the installed Ruby

@@ -1,0 +1,107 @@
+ #contents
+ 
+ *Prerequisite [#z427d905]
+ -Ubuntu Server 14.04 installation (You can refer [[HowToUse/UbuntuServer/14.04]])
+ -RVM installation (You can refer [[HowToUse/RVM/1.25]])
+ -Ruby On Rails installation (You can refer [[HowToUse/RubyOnRails/4.1]])
+ -PostgreSQL installation (You can refer [[HowToUse/PostgreSQL/9.3]])
+--Ruby On Rails with PostgreSQL connection (You can refer [[HowToUse/RubyOnRails/4.3/PostgreSQL/9.3]])
++-Ruby On Rails with PostgreSQL connection (You can refer [[HowToUse/RubyOnRails/4.2/PostgreSQL/9.3]])
+ 
+ *Install&Setup [#re66614c]
+ **Prepare Heroku's development environment [#ze65401f]
+ :Step.1|
+ Access to Heroku's web site.
+ 
+ #ref(CreateAccount_fig1.png,,500x266,)
+ 
+ :Step.2|
+ Login the system.
+ 
+ #ref(CreateAccount_fig2.png,,500x266,)
+ 
+ #ref(CreateAccount_fig3.png,,500x266,)
+ 
+ :Step.3|
+ Click the Ruby's icon, and you will see the instruction how to install Heroku Toolbelt.
+ 
+ #ref(CreateAccount_fig4.png,,500x266,)
+ 
+ :Step.4|
+ Install bundler to your environment.
+ 
+  $ gem install bundler
+ 
+ :Step.5|
+ Download Heroku Toolbelt from the link in web page.
+ 
+ 
+ *HowToUse [#qe563e1e]
+ **Create rails project [#h6e960a7]
+ 
+ :Step.1|
+ Login to Heroku server.
+ 
+  $ heroku login
+ 
+ :Step.2|
+ Create new rails project.
+ 
+  $ rails new <project name> --database=postgresql
+ 
+ :Step.3|
+ Create new controller for welcome page.
+ 
+  $ rails generate controller welcome
+ 
+ :Step.4|
+ Create welcome page.
+ 
+  $ vi app/views/welcome/index.html.erb 
+ 
+  <h2>Hello World</h2>
+  <p>
+  <%= Time.now %>
+  </p>
+ 
+ :Step.5|
+ Config routing setting
+ 
+  $ vi config/routes.rb
+ 
+  root 'welcome#index'
+ 
+ :Step.6|
+ Check if it can run in local environment.
+ 
+  $ rails s
+ 
+ :Step.7|
+ Create new project in Heroku space.
+ 
+  $ heroku create
+ 
+ 
+ :Step.8|
+ Deploy the sample project to Heroku server.
+ 
+  $ git init
+  $ git add .
+  $ git commit -m "initial checkin"
+  $ git push heroku master
+ 
+ Then you can access your application.
+ 
+ #ref(CreateApps_fig1.png,,500x266,)
+ 
+ 
+ **Connect Database [#jf515d14]
+ :Step.1|
+ Migrate database
+ 
+  $ heroku run rake db:migrate
+ 
+ 
+ 
+ *Author [#r1ccd722]
+ S.Yatsuzuka
