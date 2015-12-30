@@ -27,11 +27,6 @@ Click the Ruby's icon, and you will see the instruction how to install Heroku To
 #ref(CreateAccount_fig4.png,,500x266,)
 
 :Step.4|
-Install bundler to your environment.
-
- $ gem install bundler
-
-:Step.5|
 Download Heroku Toolbelt from the link in web page.
 
 
@@ -44,62 +39,80 @@ Login to Heroku server.
  $ heroku login
 
 :Step.2|
-Create new rails project.
-
- $ rails new <project name> --database=postgresql
+Change directory of your application which uses PostgreSQL not Sqlite.
+(You can refer [[HowToCreate/RubyOnRails/4.2/PostgreSQL/9.3]] about how to create Rails Application with )
 
 :Step.3|
-Create new controller for welcome page.
-
- $ rails generate controller welcome
-
-:Step.4|
-Create welcome page.
-
- $ vi app/views/welcome/index.html.erb 
-
- <h2>Hello World</h2>
- <p>
- <%= Time.now %>
- </p>
-
-:Step.5|
-Config routing setting
-
- $ vi config/routes.rb
-
- root 'welcome#index'
-
-:Step.6|
-Check if it can run in local environment.
-
- $ rails s
-
-:Step.7|
 Create new project in Heroku space.
 
  $ heroku create
 
 
-:Step.8|
-Deploy the sample project to Heroku server.
+:Step.4|
+Prepare sample project.
 
+ $ bundle exec rake assets:precompile
  $ git init
  $ git add .
- $ git commit -m "initial checkin"
- $ git push heroku master
+ $ git commit -m "initial check-in"
 
-Then you can access your application.
+When you don't precompile the modules, Heroku sometimes doesn't recognize stylesheet as expected. [#dc1c44b6]
+
+Then you will see the following window from the URL displayed in the terminal.
 
 #ref(CreateApps_fig1.png,,500x266,)
 
+:Step.5|
+If your application create image file and you want to display it in your application, add the following line in config/application.rb
 
-**Connect Database [#jf515d14]
+ $ vi config/application.rb
+
+ config.serve_static_assets = true
+
+You can read [[here:https://devcenter.heroku.com/articles/rails-4-asset-pipeline]] for detail
+
+:Step.6|
+Deploy project into Heroku server.
+
+ $ git push heroku master
+
+
+**Configure rails project [#h6e960a7]
 :Step.1|
 Migrate database
 
  $ heroku run rake db:migrate
 
+Then you can access your application as expected. You can create record to the database in Heroku server.
+
+#ref(CreateApps_fig2.png,,500x266,)
+
+#ref(CreateApps_fig3.png,,500x266,)
+
+:Step.2|
+You can setup environment variable as needed. For example, in case you want to use third party's authentification service, it is recommended to set upt those in environment variable so that internet user can't see it.
+
+ $ heroku config:set GITHUB_KEY="xxx"
+ $ heroku config:set GITHUB_SECRET="xxx"
+
+**Task Scheduller [#jcadae67]
+
+:Step.1|
+Create task file.
+
+:Step.2|
+Test task.
+
+(local execution)
+ $ rake <task name>
+
+(Execution in Heroku)
+ $ heroku run rake <task name>
+
+:Step.3|
+Register task in Heroku.
+
+https://scheduler.heroku.com/dashboard
 
 
 *Author [#r1ccd722]

@@ -1,0 +1,31 @@
+#contents
+
+*Prerequisite [#j5767d2c]
+-Ubuntu Server installation (You can refer [[HowToUse/UbuntuServer/14.04]])
+-Ruby On Rails setup on Heroku (You can refer [[HowToUse/RubyOnRails/4.2/Heroku/2015]]
+
+*HowToUse [#gf0f59f5]
+:Step.1|
+Prepare a new project.
+
+:Step.2|
+Execute the following commands.
+
+ $ heroku login
+ $ heroku create app-test --buildpack https://github.com/heroku/heroku-buildpack-multi.git
+
+:Step.3|
+Create .buildpacks
+
+ $ vi .buildpacks
+
+ https://github.com/virtualstaticvoid/heroku-buildpack-r.git
+ https://github.com/heroku/heroku-buildpack-ruby.git
+
+Then you can launch R on Heroku server.
+
+ $ heroku run R
+
+
+*Author [#q18431a7]
+S.Yatsuzuka

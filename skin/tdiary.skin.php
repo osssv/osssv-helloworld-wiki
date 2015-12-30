@@ -84,6 +84,7 @@ case 'hatena-black':
 case 'hatena-brown':
 case 'hatena-darkgray':
 case 'hatena-green':
+case 'hatena-osssv':
 case 'hatena-lightblue':
 case 'hatena-lightgray':
 case 'hatena-purple':
@@ -304,6 +305,7 @@ if (defined('TDIARY_SIDEBAR_POSITION')) {
 	case 'hatena-brown':
 	case 'hatena-darkgray':
 	case 'hatena-green':
+	case 'hatena-osssv':
 	case 'hatena-lightblue':
 	case 'hatena-lightgray':
 	case 'hatena-lime':
@@ -452,6 +454,7 @@ if (defined('TDIARY_SIDEBAR_POSITION')) {
 	case 'hatena-brown':
 	case 'hatena-darkgray':
 	case 'hatena-green':
+	case 'hatena-osssv':
 	case 'hatena-lightblue':
 	case 'hatena-lightgray':
 	case 'hatena-lime':

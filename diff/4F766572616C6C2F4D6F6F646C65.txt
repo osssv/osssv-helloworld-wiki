@@ -1,0 +1,23 @@
++#contents
+ 
++*Overall Feature [#l993b569]
++>Moodle is a free and open-source software learning management system written in PHP and distributed under the GNU General Public License. Developed on pedagogical principles, Moodle is used for blended learning, distance education, flipped classroom and other e-learning projects in schools, universities, workplaces and other sectors.
++<
++RIGHT:
++refered from [[Wikipedia - Moodle:https://en.wikipedia.org/wiki/Moodle]]
++
++*Specification [#v875e00d]
++|LEFT:100|LEFT:200|c
++|CENTER:ITEM|CENTER:DESCRIPTION|h
++|Main Developer|Martin Dougiamas|
++|License|GPLv3|
++|OS|cross-platform|
++|Written In|PHP|
++|Official Site|http://www.moodle.org/|
++
++
++*HowToUse [#v7734098]
++#ls2(HowToUse/Moodle)
++
++*Author [#d1635057]
++S.Yatsuzuka

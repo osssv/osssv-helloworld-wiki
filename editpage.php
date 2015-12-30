@@ -13,7 +13,7 @@ error_reporting(E_ERROR | E_PARSE); // Avoid E_WARNING, E_NOTICE, etc
 define('PKWK_READONLY',  0);
 //define('PKWK_SAFE_MODE', 1);
 //define('PKWK_OPTIMISE',  1);
-define('TDIARY_THEME',   'hatena-green');
+define('TDIARY_THEME',   'hatena-osssv');
 
 // Directory definition
 // (Ended with a slash like '../path/to/pkwk/', or '')

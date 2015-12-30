@@ -307,7 +307,7 @@ div#menubar {
 <?php   if ($media == 'print') { ?>
 	display:none;
 <?php   } else { ?>
-	width:9em;
+	width:20em;
 	padding:0px;
 	margin:4px;
 	word-break:break-all;

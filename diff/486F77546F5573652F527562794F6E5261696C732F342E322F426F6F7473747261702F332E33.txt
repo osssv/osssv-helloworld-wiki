@@ -15,26 +15,31 @@
  
   $ cp -r <BootStrap>/fonts <Ruby On Rails Project>/vendor/assets
   $ cp <Bootstrap>/css/* <Ruby On Rails Project>/vendor/assets/stylesheets/
-  $ cp <Bootstrap>/javascripts/* <Ruby On Rails Project>/vendor/assets/javascripts/
+  $ cp <Bootstrap>/js/* <Ruby On Rails Project>/vendor/assets/javascripts/
  
- Step:3|Add new line to app/assets/stylesheets/application.css
+ :Step:3|
+ Add new line to app/assets/stylesheets/application.css
   
   *= require bootstrap
  
- Step:4|Edit new line to app/assets/javascripts/application.js
+ :Step:4|
+ Edit new line to app/assets/javascripts/application.js
  
   //= require bootstrap
  
- :Step.5|Edit config/application.rb
+ :Step.5|
+ Edit config/application.rb
  
   config.assets.paths << "#{Rails}/vender/assets/fonts"
  
- :Step.6|Execute precompile
+ :Step.6|
+ Execute precompile
  
   $ rake assets:precompile Rails_ENV=development
  
  
  *HowToUse [#z1d45951]
+ **Use Bootstrap from Rails Project [#y517f33e]
  :Step.1|Add new controller to have bootstrap.
  
   $ cd <Ruby On Rails Project>
@@ -44,12 +49,6 @@
  
   $ vi app/views/layouts/application.html.erb
  
-- <!DOCTYPE html>
-- <html lang="en">
-- <head>
--  <meta charset="utf-8">
--  <title>NASEBANAL Social Coding</title>
-- 
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta name="description" content="">
    <meta name="author" content="">
@@ -57,53 +56,57 @@
    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   
    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
--  <%= csrf_meta_tags %>
-- </head>
-- <body>
-- 
--    <nav class="navbar navbar-inverse navbar-fixed-top">
--      <div class="container">
--        <div class="navbar-header">
--          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
--            <span class="sr-only">Toggle navigation</span>
--            <span class="icon-bar"></span>
--            <span class="icon-bar"></span>
--            <span class="icon-bar"></span>
--          </button>
--          <a class="navbar-brand" href="#">Project name</a>
--        </div>
--        <div id="navbar" class="navbar-collapse collapse">
--          <form class="navbar-form navbar-right">
--            <div class="form-group">
--              <input type="text" placeholder="Email" class="form-control">
--            </div>
--            <div class="form-group">
--              <input type="password" placeholder="Password" class="form-control">
--            </div>
--            <button type="submit" class="btn btn-success">Sign in</button>
--          </form>
--        </div><!--/.navbar-collapse -->
--      </div>
--    </nav>
-- 
-- 
--    <div class="container">
-- 
--      <%= yield %>
-- 
--      <hr>
-- 
--      <footer>
--        <p>&copy; Company 2013</p>
--      </footer>
-- 
--    </div> <!-- /container -->
-- 
-- </body>
-- </html>
  
-+You can see sample (https://github.com/nasebanal/nb-socialcoding/blob/master/app/views/layouts/application.html.erb).
  
-+
+ **Use Jumbotron [#n0605b6c]
+ :Step.1|
+ Edit application.html.erb with Jumbotron's sample layout.
+ 
+  $ vi app/view/layout/application.html.erb
+ 
+ You can see sample from [[here:https://github.com/nasebanal/nb-socialcoding/blob/master/app/views/layouts/application.html.erb]].
+ 
+ :Step.2|
+ Update application.css so that your each page can be display with appropriate margin.
+ 
+  $ vi app/assets/stylesheets/application.css
+ 
+  div.content {
+    padding: 70px 20px 20px 80px;
+  }
+ 
+ You can see sample from [[here:https://github.com/nasebanal/nb-platform4iot/blob/master/app/assets/stylesheets/application.css]].
+ 
+ #ref(Bootstrap_fig2.png,,500x266,)
+ 
+ **Use Glyphicons [#o4489f72]
+ 
+ :Step.1|
+ Create new css file.
+ 
+- $ vi app/asset/bootstrap_override.css.less
++ $ vi app/asset/stylesheets/bootstrap_override.css.less
+ 
+  @font-face {
+   font-family: 'Glyphicons Halflings';
+   src: url('/assets/glyphicons-halflings-regular.eot');
+   src: url('/asstes/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+   url('/assets/glyphicons-halflings-regular.woff') format('woff'),
+   url('/assets/glyphicons-halflings-regular.ttf') format('truetype'),
+   url('/assets/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+  }
+ 
+ :Step.2|
+ Execute precompile.
+ 
+  $ rake assets:precompile Rails_ENV=development
+ 
+ In case you want to deploy to Heroku Server, you need to change config.assets.compile from false into true.
+ 
+  $ vi config/environments/production.rb
+ 
+  config.assets.compile = true
+ 
+ 
  *Author [#abd78b53]
  S.Yatsuzuka

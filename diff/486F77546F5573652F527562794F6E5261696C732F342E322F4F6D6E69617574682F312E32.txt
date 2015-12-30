@@ -1,14 +1,34 @@
  #contents
  
  *Prerequisite [#o1198db9]
-+-Ubuntu Server installation (You can refer [[HowToUse/UbuntuServer/14.04]])
+ -Ubuntu Server installation (You can refer [[HowToUse/UbuntuServer/14.04]])
  -Ruby On Rails installation (You can refer [[HowToUse/RubyOnRails/4.1]])
  
  *Install&Setup [#sd9ea3c6]
+ **Obtain Client ID and Client Secret from GitHub [#c868a7c1]
  :Step.1|
- Setup "Client ID" and "Client Secret" from GitHub.com
+ Access GitHub Developper page, and click "Register new application".
+-[[https://github.com/settings/developers]]
++[https://github.com/settings/developers]
+ 
+ #ref(GetClientID_fig1.png,,500x266,)
  
  :Step.2|
+ Input information on the new application, and click "Register Application" button.
+ In this sample case, you can set "callback URL" as below.
+ 
+ http://<host name>/auth/github/callback
+ 
+ #ref(GetClientID_fig2.png,,500x266,)
+ 
+ :Step.3|
+ Then you will get "Client ID", and "Client Secret" code for GitHub API.
+ 
+ #ref(GetClientID_fig3.png,,500x266,)
+ 
+ 
+ **Setup Client ID and Client Secret to your Rails project [#h72c99b9]
+ :Step.1|
  Edit Gemfile
  
   $ vi Gemfile
@@ -16,43 +36,40 @@
   gem 'omniauth'
   gem 'omniauth-github'
  
-+(You can see sample from [[here:https://github.com/nasebanal/nb-socialcoding/blob/master/Gemfile]].)
-+
- :Step.3|
+ (You can see sample from [[here:https://github.com/nasebanal/nb-socialcoding/blob/master/Gemfile]].)
+ 
+ :Step.2|
  Install gem files
  
   $ bundle install
  
- :Step.4|
-+Setup "Client ID" and "Client Secret" to environment variable.
-+
-+ $ vi ~/.bashrc
-+
-+ export GITHUB_KEY="<Client ID>"
-+ export GITHUB_SECRET="<Client Secret>"
-+
-+*HowToUse [#d87e7fe8]
-+:Step.1|
+ :Step.3|
+ Setup "Client ID" and "Client Secret" to environment variable.
+ 
+  $ vi ~/.bashrc
+ 
+  export GITHUB_KEY="<Client ID>"
+  export GITHUB_SECRET="<Client Secret>"
+ 
+ *HowToUse [#d87e7fe8]
+ :Step.1|
  Add omniauth.rb
  
   $ vi config/initializers/omniauth.rb
  
   Rails.application.config.middleware.use OmniAuth::Builder do
--  provider :github, ENV['NB_GITHUB_KEY'], ENV['NB_GITHUB_SECRET']
-+  provider :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET']
+   provider :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET']
   end
  
--:Step.5|
-+(You can see sample from [[here:https://github.com/nasebanal/nb-socialcoding/blob/master/config/initializers/omniauth.rb]].)
-+
-+:Step.2|
+ (You can see sample from [[here:https://github.com/nasebanal/nb-socialcoding/blob/master/config/initializers/omniauth.rb]].)
+ 
+ :Step.2|
  Add User model.
  
   $ rails g model user provider:string uid:string screen_name:string name:string
   $ rake db:migrate
  
--:Step.6|
-+:Step.3|
+ :Step.3|
  Add method for User model.
  
   class User < ActiveRecord::Base
@@ -66,46 +83,47 @@
     end
   end
  
--:Step.7|
-+(You can see sample from [[here:https://github.com/nasebanal/nb-socialcoding/blob/master/app/models/user.rb]].)
-+
-+:Step.4|
+ (You can see sample from [[here:https://github.com/nasebanal/nb-socialcoding/blob/master/app/models/user.rb]].)
+ 
+ :Step.4|
  Create necessary controllers.
  
-  $ rails g controller base
-  $ rails g controller home index
+  $ rails g controller welcome index
   $ rails g controller sessions
  
--:Step.8|
-+:Step.5|
+ :Step.5|
  Edit routes.
  
-  $ rake routes
+  $ vi config/routes.rb
  
-  root 'home#index'
-  get "home/index"
+  get 'welcome/index'
+  ...
+  root 'welcome#index'
   get '/auth/:provider/callback', :to => 'sessions#callback'
   post '/auth/:provider/callback', :to => 'sessions#callback'
   get '/logout' => 'sessions#destroy', :as => :logout
  
--:Step.9|
-+(You can see sample from [[here:https://github.com/nasebanal/nb-socialcoding/blob/master/config/routes.rb]].)
-+
-+:Step.6|
- Edit Base controller.
+ (You can see sample from [[here:https://github.com/nasebanal/nb-socialcoding/blob/master/config/routes.rb]].)
  
-  $ vi app/controller/base_controller.rb
+ You can check the configuration result from the following command.
  
-  class BaseController < ActionController::Base
-    protect_from_forgery
+  $ rake routes
  
+ 
+ :Step.6|
+ Edit Application controller.
+ 
+  $ vi app/controller/application_controller.rb
+ 
+  class ApplicationController < ActionController::Base
+   protect_from_forgery
+  
     def login_required
       if session[:user_id]
         @current_user = User.find(session[:user_id])
       else
         redirect_to root_path
-      end
-  
+      end 
     end
   
     helper_method :current_user
@@ -116,23 +134,9 @@
     end
   end
  
--:Step.10|
-+(You can see sample from [[here:https://github.com/nasebanal/nb-socialcoding/blob/master/app/controllers/base_controller.rb]].)
-+
-+:Step.7|
- Edit Home controller.
+ (You can see sample from [[here:https://github.com/nasebanal/nb-socialcoding/blob/master/app/controllers/base_controller.rb]].)
  
-  $ vi app/controller/home_controller.rb
- 
-  class HomeController < BaseController
-    def index
-    end
-  end
- 
--:Step.11|
-+(You can see sample from [[here:https://github.com/nasebanal/nb-socialcoding/blob/master/app/controllers/home_controller.rb]].)
-+
-+:Step.8|
+ :Step.7|
  Edit Session controller.
  
   $ vi app/controllers/session_controller.rb
@@ -151,10 +155,9 @@
     end
   end
  
--:Step.11|
-+(You can see sample from [[here:https://github.com/nasebanal/nb-socialcoding/blob/master/app/controllers/session_controller.rb]].)
-+
-+:Step.9|
+ (You can see sample from [[here:https://github.com/nasebanal/nb-socialcoding/blob/master/app/controllers/session_controller.rb]].)
+ 
+ :Step.8|
  Edit view file.
  
   $ vi app/view/layout/application.rb
@@ -166,9 +169,5 @@
   <% end %>
  
  
--*HowToUse [#d87e7fe8]
--:Step.1|
--xxx
--
  *Author [#s17e9cc9]
  S.Yatsuzuka

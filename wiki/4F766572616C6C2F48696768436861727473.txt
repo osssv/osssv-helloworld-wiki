@@ -22,6 +22,7 @@ refered from [[Wikipedia - Highcharts:https://en.wikipedia.org/wiki/Highcharts]]
 
 *HowToUse [#h70d1b04]
 #ls2(HowToUse/Highcharts/)
+#ls2(HowToUse/RubyOnRails/4.2/HighCharts/)
 
 *Author [#e8a6cae3]
 S.Yatsuzuka

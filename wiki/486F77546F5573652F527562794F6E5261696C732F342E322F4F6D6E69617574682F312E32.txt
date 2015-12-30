@@ -5,10 +5,29 @@
 -Ruby On Rails installation (You can refer [[HowToUse/RubyOnRails/4.1]])
 
 *Install&Setup [#sd9ea3c6]
+**Obtain Client ID and Client Secret from GitHub [#c868a7c1]
 :Step.1|
-Setup "Client ID" and "Client Secret" from GitHub.com
+Access GitHub Developper page, and click "Register new application".
+[https://github.com/settings/developers]
+
+#ref(GetClientID_fig1.png,,500x266,)
 
 :Step.2|
+Input information on the new application, and click "Register Application" button.
+In this sample case, you can set "callback URL" as below.
+
+http://<host name>/auth/github/callback
+
+#ref(GetClientID_fig2.png,,500x266,)
+
+:Step.3|
+Then you will get "Client ID", and "Client Secret" code for GitHub API.
+
+#ref(GetClientID_fig3.png,,500x266,)
+
+
+**Setup Client ID and Client Secret to your Rails project [#h72c99b9]
+:Step.1|
 Edit Gemfile
 
  $ vi Gemfile
@@ -18,12 +37,12 @@ Edit Gemfile
 
 (You can see sample from [[here:https://github.com/nasebanal/nb-socialcoding/blob/master/Gemfile]].)
 
-:Step.3|
+:Step.2|
 Install gem files
 
  $ bundle install
 
-:Step.4|
+:Step.3|
 Setup "Client ID" and "Client Secret" to environment variable.
 
  $ vi ~/.bashrc
@@ -68,38 +87,42 @@ Add method for User model.
 :Step.4|
 Create necessary controllers.
 
- $ rails g controller base
- $ rails g controller home index
+ $ rails g controller welcome index
  $ rails g controller sessions
 
 :Step.5|
 Edit routes.
 
- $ rake routes
+ $ vi config/routes.rb
 
- root 'home#index'
- get "home/index"
+ get 'welcome/index'
+ ...
+ root 'welcome#index'
  get '/auth/:provider/callback', :to => 'sessions#callback'
  post '/auth/:provider/callback', :to => 'sessions#callback'
  get '/logout' => 'sessions#destroy', :as => :logout
 
 (You can see sample from [[here:https://github.com/nasebanal/nb-socialcoding/blob/master/config/routes.rb]].)
 
+You can check the configuration result from the following command.
+
+ $ rake routes
+
+
 :Step.6|
-Edit Base controller.
+Edit Application controller.
 
- $ vi app/controller/base_controller.rb
+ $ vi app/controller/application_controller.rb
 
- class BaseController < ActionController::Base
-   protect_from_forgery
-
+ class ApplicationController < ActionController::Base
+  protect_from_forgery
+ 
    def login_required
      if session[:user_id]
        @current_user = User.find(session[:user_id])
      else
        redirect_to root_path
-     end
- 
+     end 
    end
  
    helper_method :current_user
@@ -113,18 +136,6 @@ Edit Base controller.
 (You can see sample from [[here:https://github.com/nasebanal/nb-socialcoding/blob/master/app/controllers/base_controller.rb]].)
 
 :Step.7|
-Edit Home controller.
-
- $ vi app/controller/home_controller.rb
-
- class HomeController < BaseController
-   def index
-   end
- end
-
-(You can see sample from [[here:https://github.com/nasebanal/nb-socialcoding/blob/master/app/controllers/home_controller.rb]].)
-
-:Step.8|
 Edit Session controller.
 
  $ vi app/controllers/session_controller.rb
@@ -145,7 +156,7 @@ Edit Session controller.
 
 (You can see sample from [[here:https://github.com/nasebanal/nb-socialcoding/blob/master/app/controllers/session_controller.rb]].)
 
-:Step.9|
+:Step.8|
 Edit view file.
 
  $ vi app/view/layout/application.rb

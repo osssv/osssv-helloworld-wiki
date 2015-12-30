@@ -1,0 +1,29 @@
+ #contents
+ 
+ *Prerequisite [#y2069f79]
+ -Ubuntu Server installation (You can refer [[HowToUse/UbuntuServer/14.04]])
+--Ruby On Rails installation (You can refer [[HowToUse/RubyOnRails/4.2]])
++-Ruby On Rails installation (You can refer [[HowToUse/RubyOnRails/4.1]])
+ 
+ *HowToUse [#m1228a99]
+ :Step.1|
+ Prepare rails project.
+ 
+ :Step.2|
+ Edit Gemfile to install gem for rinruby, and install it.
+ 
+  $ vi Gemfile
+ 
+  gem 'rinruby'
+ 
+  $ bundle install
+ 
+ :Step3|
+ Prepare code to access R from rails.
+ 
+  R.eval ("<R statement>") 
+ 
+ You can see sample code from [[here:https://github.com/nasebanal/nb-microfinance/blob/master/app/controllers/home_controller.rb]]
+ 
+ *Author [#p6e220ee]
+ S.Yatsuzuka

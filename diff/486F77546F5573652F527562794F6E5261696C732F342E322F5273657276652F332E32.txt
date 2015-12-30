@@ -1,0 +1,64 @@
+ #contents
+ 
+ *Prerequisite [#g2f6fa2d]
+--xxx installation (You can refer [[Overall/xxx]])
++-Ubuntu Server installation (You can refer [[HowToUse/UbuntuServer/14.04]])
+ 
+ *Install&Setup [#o1a49901]
+ :Step.1|
+-xxx
+-
+-*HowToUse [#rc290faf]
+-:Step.1|
+ Install Rserve in R.
+ 
+  > install.packages("Rserve")
+ 
+ :Step.2|
+ Launch Rserve
+ 
+  $ R CMD RServe
+ 
+ When you use rvm for ruby version management, RServe can't be found with the above command line. In that case, execute the following command, and specify the path to RServe.
+ 
+  $ sudo find / -name Rserve
+  $ R CMD <RServe Path>
+ 
+ (Example)
+ 
+  $ R CMD ~/R/x86_64-pc-linux-gnu-library/3.2/Rserve/libs/Rserve
+ 
+-:Step.3|
++
++*HowToUse [#rc290faf]
++**Connect Rails with Rserve [#h9283897]
++:Step.1|
++Prepare rails project.
++
++:Step.2|
+ Add rserve-client in Gemfile
+ 
+  gem 'rserve-client', require:'rserve'
+ 
+  $ bundle install
+ 
+-:Step.4|
++:Step.3|
+ Edit code as below.
+ 
+  c = Rserve::Connection.new
+  ...
+  c.assign("root", Rails.root.to_s)
+  ...
+  c.eval <<-EOF
+    x = rnorm(100,0,1)
+    png(paste(root, "/app/assets/images/test.png", sep=""))
+    hist(x)
+    dev.off()
+  EOF
+ 
++Then your rails application can connect with Rserve.
+ 
++
+ *Author [#x4ed9673]
+ S.Yatsuzuka

@@ -109,69 +109,56 @@ Put it to view file.
  </table>
 
 
-**Upload to Heroku [#hf6c5c2d]
-:Step.1|Create new account in Heroku (https://id.heroku.com/login)
+**Add table columns [#vc6eb3b5]
+:Step.1|
+Create migration script
 
-#ref(Heroku_fig1.png,,500x266,)
+ $ rails g migration <Migration Script Name>
 
-:Step.2|Install Ruby 2.2.2
+(Example)
+ $ rails g migration AddColumnUsers
 
- $ rvm install ruby-2.2.2
+:Step.2|
+Edit migration script.
 
-:Step.3|Install Heroku Toolbelt.
+ $ vi db/migrate/<Migration Script File Name>
 
- $ wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+(Example)
+ $ rails g migration db/migrate/20150927000024_add_column_workorders.rb
 
-When you encounter error, you can use standalone edition with the following commands.
+ class AddColumnWorkorders < ActiveRecord::Migration
+   def change
+     add_column :<table name>, :<column name>, :<data type>
+     remove_column :<table name>, :<column name>
+   end
+ end
 
- $ wget -qO- https://toolbelt.heroku.com/install.sh | bash
- $ echo 'PATH="/usr/local/heroku/bin:$PATH"' >> ~/.profile
+:Step.3|
+Execute migration
 
-:Step.4|Login to Heroku
+ $ rails db:migrate
 
- $ heroku login
+:Step.4|
+Edit index.html.erb
 
-:Step.5| Prepare Git repository.
+ $ vi app/views/<table>/index.html.erb
 
- $ git clone <Git Repository>
+:Step.5|
+Edit _form.html.erb
 
-or
+ $ vi app/views/<table>/_form.html.erb
 
- $ cd <Ruby On Rails Project>
- $ git init
- $ git add .
- $ git commit -m "initial commit"
+ <%= f.label :<column> %>
+ <%= f.text_field :<column> %>
 
-:Step.6| Edit Gemfile because Heroku doesn't allow sqlite3, but PostgreSQL
+:Step.6|
+Edit conroller. After Rails is version up to 4.x, we can't use "attr_accessible", so we need to define as below instead.
 
- $ vi config/Gemfile
+ $ vi app/controller/<table name>_controller.rb
 
- +gem 'pg'
- -gem 'sqlite3'
- +gem 'sqlite3', group: %w(test development), require: false
- +gem 'pg', group: %w(production), require: false
-
-:Step.7|Install gem file.
-
- $ bundle install
-
-:Step.8|Edit database.yml
-
- $ vi db/database.yml
-
- production:
-   <<: *default
- -  database: db/production.sqlite3
- +  adapter: pg
- +  database: db/production.pg
-
-:Step.9|Create application in Heroku
-
- $ heroku create <application name>
-
-:Step.10|Push files.
-
- $ git push heroku master
+ def create
+   attr = params.require(:<table name>).permit(:<column name>)
+   @<table name> = <table name>.new(attr)
 
 *Author [#la69134c]
 S.Yatsuzuka

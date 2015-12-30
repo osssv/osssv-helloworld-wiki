@@ -5,7 +5,8 @@
 
 *Install&Setup [#j1b518a8]
 :Step.1|Install mysql server
-$ yum install mysql-service mysql-devel
+
+$ yum install mysql-server mysql-devel
 
 :Step.2|Edit mysql configration file.
 
@@ -21,10 +22,15 @@ $ vi /etc/my.cnf
 
 *HowToUse [#p8f70496]
 :Step.1|Start service
+
 $ sudo /etc/rc.d/init.d/mysqld start
 
+:Step.2|Config chkconfig so that mysqld is launched by default.
 
-:Step.2|Stop service
+$ sudo chkconfig mysqld on
+
+:Step.3|Stop service
+
 $ sudo /etc/rc.d/init.d/mysqld stop
 
 

@@ -1,0 +1,24 @@
+#contents
+
+*Overall Feature [#e642f80f]
+>The Apache HTTP Server, colloquially called Apache, is the world's most used web server software.
+<
+RIGHT:
+refered from [[Wikipedia - Apache:https://en.wikipedia.org/wiki/Apache_HTTP_Server]]
+
+
+*Specification [#s1b1fd61]
+|LEFT:100|LEFT:200|c
+|CENTER:ITEM|CENTER:DESCRIPTION|h
+|Main Developer|Robert McCool|
+|License|Apache License 2.0|
+|OS|cross-platform|
+|Written In|C/C++, XML|
+|Official Site|https://httpd.apache.org/|
+
+
+*HowToUse [#bec92715]
+#ls2(HowToUse/Apache/)
+
+*Author [#g3557e35]
+S.Yatsuzuka

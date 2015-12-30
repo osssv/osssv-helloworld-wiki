@@ -1,0 +1,23 @@
+#contents
+
+*Prerequisite [#g3e8e274]
+-Ubuntu Server installation (You can refer [[HowToUse/UbuntuServer/14.04]])
+
+*Install&Setup [#y99a1f16]
+:Step.1|
+Execute the following command.
+
+ $ sudo apt-get install apache2
+
+:Step.2|
+Access the URL and you will see the following window.
+
+#ref(Install_fig1.png,,500x266,)
+
+
+*HowToUse [#ta9bca45]
+:Step.1|
+xxx
+
+*Author [#xa0a11fc]
+S.Yatsuzuka

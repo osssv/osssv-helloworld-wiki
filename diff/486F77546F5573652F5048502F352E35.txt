@@ -1,0 +1,22 @@
+ #contents
+ 
+ *Prerequisite [#x25a0f0d]
+ -CentOS installation (You can refer [[Overall/CentOS]])
+ 
+ *Install&Setup [#rff91024]
+ :Step.1|
+ Execute the following command.
+ 
+  $ sudo yum install php55*
+ 
+-php5.5 requires httpd later than 2.4, so in case you have already had older version of httpd, it may be failed.
++php5.5 requires httpd later than 2.4, so if you haven't installed httpd yet, it will install httpd2.4 automatically.
++In case you have already had older version of httpd, it may be failed.
+ If you possible, clean install is easier.
+ 
+ *HowToUse [#a6818a6d]
+ :Step.1|
+ xxx
+ 
+ *Author [#ke3e30fa]
+ S.Yatsuzuka

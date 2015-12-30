@@ -1,0 +1,65 @@
+ #contents
+ 
+ *Prerequisite [#iebde9f2]
+ -Ubuntu Server installation (You can refer [[HowToUse/UbuntuServer/14.04]])
+ 
+ *Install&Setup [#md3ecffc]
+ :Step.1|
+ Setup APT
+ 
+  $ sudo sh -c 'echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >> /etc/apt/sources.list'
+  $ gpg --keyserver keyserver.ubuntu.com --recv-key E084DAB9
+  $ gpg -a --export E084DAB9 | sudo apt-key add -
+ 
+ :Step.2|
+ Install R
+ 
+  $ sudo apt-get install r-base
+ 
+ Then you can launch R with the following command. And you can quit R prompt with "q()".
+ 
+  $ R
+ 
+ 
+ *HowToUse [#lb7555a3]
+ **Install modules [#cbfd1075]
+ :Step.1|
+ Install modules.
+ 
+  > install.packages(<Package Name>)
+ 
+ (Example)
+  > install.packages("ggplot2")
+ 
+ :Step.2|
+ Load modules.
+ 
+  > library("ggplot2")
+ 
++You can see library list as below.
++
++ > library
++
+ **Read data [#dc63d093]
+ :Step.1|
+ Import data.
+ 
+  > data<-read.csv("<CSV file>", header=TRUE)
+ 
+ :Step.2|
+ Create scatter plot.
+ 
+  > plot (data$X, data$Y)
+ 
+ **Execute R script file. [#i60d9364]
+ Execute the following command to run R script file.
+ 
+  $ R CMD <R Script File Name>
+ 
+ (Example)
+ 
+  $ R CMD init.r
+ 
+ 
+ *Author [#ad81976a]
+ S.Yatsuzuka
