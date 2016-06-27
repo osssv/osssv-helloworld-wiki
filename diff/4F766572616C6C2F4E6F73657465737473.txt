@@ -1,0 +1,24 @@
++#contents
+ 
++*Overall Feature [#x5def267]
++>Nose has been in maintenance mode for the past several years and will likely cease without a new person/team to take over maintainership. New projects should consider using Nose2, py.test, or just plain unittest/unittest2.
++<
++RIGHT:
++cited from [[Nose official site:http://nose.readthedocs.org/en/latest/]]
++
++
++*Specification [#tfa7c7fe]
++|LEFT:100|LEFT:200|c
++|CENTER:ITEM|CENTER:DESCRIPTION|h
++|Main Developer|Nose community|
++|License|GPLv2|
++|OS|cross-platform|
++|Written In|python|
++|Official Site|http://nose.readthedocs.org/en/latest/|
++
++
++*HowToUse [#df259197]
++#ls2(HowToUse/Nosetests)
++
++*Author [#q04fb7c3]
++S.Yatsuzuka

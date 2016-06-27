@@ -47,16 +47,18 @@
  
   $ heroku create
  
++You can destroy app with the following command.
  
++ $ heroku apps:destroy --app <App name>
++
++
  :Step.4|
--Deploy the sample project to Heroku server.
-+Prepare sample project.
+ Prepare sample project.
  
   $ bundle exec rake assets:precompile
   $ git init
   $ git add .
   $ git commit -m "initial check-in"
-- $ git push heroku master
  
  When you don't precompile the modules, Heroku sometimes doesn't recognize stylesheet as expected. [#dc1c44b6]
  
@@ -64,21 +66,21 @@
  
  #ref(CreateApps_fig1.png,,500x266,)
  
-+:Step.5|
-+If your application create image file and you want to display it in your application, add the following line in config/application.rb
-+
-+ $ vi config/application.rb
-+
-+ config.serve_static_assets = true
-+
-+You can read [[here:https://devcenter.heroku.com/articles/rails-4-asset-pipeline]] for detail
-+
-+:Step.6|
-+Deploy project into Heroku server.
-+
-+ $ git push heroku master
-+
-+
+ :Step.5|
+ If your application create image file and you want to display it in your application, add the following line in config/application.rb
+ 
+  $ vi config/application.rb
+ 
+  config.serve_static_assets = true
+ 
+ You can read [[here:https://devcenter.heroku.com/articles/rails-4-asset-pipeline]] for detail
+ 
+ :Step.6|
+ Deploy project into Heroku server.
+ 
+  $ git push heroku master
+ 
+ 
  **Configure rails project [#h6e960a7]
  :Step.1|
  Migrate database

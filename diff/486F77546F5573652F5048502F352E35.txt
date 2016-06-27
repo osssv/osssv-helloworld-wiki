@@ -1,22 +1,40 @@
  #contents
  
  *Prerequisite [#x25a0f0d]
- -CentOS installation (You can refer [[Overall/CentOS]])
+ -CentOS installation (You can refer [[HowToUse/CentOS/6.5]])
+ -Apache Web Server installation (You can refer [[HowToUse/Apache/2.4]])
  
++php5.5 requires httpd later than 2.4, so if you haven't installed httpd yet, it will install httpd2.4 automatically.
++In case you have already had older version of httpd, it may fail.
++
++
  *Install&Setup [#rff91024]
  :Step.1|
- Execute the following command.
+ Setup repository path.
  
-  $ sudo yum install php55*
+  $ sudo rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm
  
--php5.5 requires httpd later than 2.4, so in case you have already had older version of httpd, it may be failed.
-+php5.5 requires httpd later than 2.4, so if you haven't installed httpd yet, it will install httpd2.4 automatically.
-+In case you have already had older version of httpd, it may be failed.
- If you possible, clean install is easier.
  
- *HowToUse [#a6818a6d]
- :Step.1|
- xxx
+ :Step.2|
+ Uninstall php-common-5.3 to avoid conflict with php-common-5.5.
+ 
+  $ sudo yum remove php-common-5.3*
+ 
+ 
+-:Step.2|
++:Step.3|
+ Install php 5.5.
+ 
+  $ sudo yum install php55w php55w-opcache
+ 
+-php5.5 requires httpd later than 2.4, so if you haven't installed httpd yet, it will install httpd2.4 automatically.
+-In case you have already had older version of httpd, it may fail.
+-
+ Or you can use the following command.
+ 
+  $ sudo yum install yum-plugin-replace
+  $ sudo yum replace php-common --replace-with=php55w-common
+ 
  
  *Author [#ke3e30fa]
  S.Yatsuzuka

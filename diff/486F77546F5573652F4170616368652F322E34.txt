@@ -2,22 +2,35 @@
  
  *Prerequisite [#g3e8e274]
  -Ubuntu Server installation (You can refer [[HowToUse/UbuntuServer/14.04]])
++-Cent OS installation (You can refer [[HowToUse/CentOS/6.5]])
  
  *Install&Setup [#y99a1f16]
++**Ubuntu Server 14.04 [#x985b7a8]
  :Step.1|
  Execute the following command.
  
   $ sudo apt-get install apache2
  
-+:Step.2|
-+Access the URL and you will see the following window.
-+
-+#ref(Install_fig1.png,,500x266,)
-+
-+
- *HowToUse [#ta9bca45]
- :Step.1|
- xxx
+ :Step.2|
+ Access the URL and you will see the following window.
  
+ #ref(Install_fig1.png,,500x266,)
+ 
+-
+-*HowToUse [#ta9bca45]
++**Cent OS 6.5 [#e602ccdc]
+ :Step.1|
+-xxx
++Put epel path
+ 
++ $ cd /etc/yum.repos.d/epel-httpd24.repo
++ $ sudo rpm -Uvh http://repos.fedorapeople.org/repos/jkaluza/httpd24/epel-httpd24.repo
++
++:Step.2|
++Install Apache 2.4
++
++ $ yum install httpd24.x86_64
++
++
  *Author [#xa0a11fc]
  S.Yatsuzuka

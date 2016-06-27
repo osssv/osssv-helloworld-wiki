@@ -1,0 +1,24 @@
++#contents
+ 
++*Overall Feature [#id8becdd]
++>OpenCV (Open Source Computer Vision) is a library of programming functions mainly aimed at real-time computer vision, originally developed by Intel research center in Nizhny Novgorod (Russia), later supported by Willow Garage and now maintained by Itseez. The library is cross-platform and free for use under the open-source BSD license.
++<
++RIGHT:
++cited from [[Wikipedia - Open CV:https://en.wikipedia.org/wiki/OpenCV]]
++
++
++*Specification [#t1e1f988]
++|LEFT:100|LEFT:200|c
++|CENTER:ITEM|CENTER:DESCRIPTION|h
++|Main Developer|Intel Corporation, Willow Garage, Itseez|
++|License|BSD|
++|OS|Cross-platform|
++|Written In|C/C++|
++|Official Site|http://opencv.org/|
++
++
++*HowToUse [#vd11ff74]
++#ls2(HowToUse/OpenCV)
++
++*Author [#xb11a46b]
++S.Yatsuzuka

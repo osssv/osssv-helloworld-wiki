@@ -4,7 +4,8 @@
  >TBD
  <
  RIGHT:
- refered from [[Wikipedia - XXX:http://en.wikipedia.org/wiki/]]
+-refered from [[Wikipedia - XXX:http://en.wikipedia.org/wiki/]]
++cited from [[Wikipedia - XXX:http://en.wikipedia.org/wiki/]]
  
  
  :File Composition|
@@ -26,6 +27,5 @@
  *HowToUse [#k121da1f]
  #ls2(HowToUse/)
  
--*Contributer [#idc78b35]
-+*Author [#idc78b35]
+ *Author [#idc78b35]
  (author of this page)

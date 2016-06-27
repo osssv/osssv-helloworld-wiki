@@ -1,160 +1,159 @@
- #contents
+-#contents
  
- *Prerequisite [#m08e7d3d]
- -Cent OS installation (You can refer [[HowToUse/CentOS/6.5]])
- -MySQL installation (You can refer [[HowToUse/MySQL/5.1]])
- -PHP installation (You can refer [[HowToUse/PHP/5.5]])
- -Git installation (You can refer [[HowToUse/Git/1.7]])
- 
- *Install&Setup [#l55f6514]
- **Cent OS [#mc215c37]
- :Step.1|
- Get sourcecode from git server.
- 
-  $
-  $ cd /var/www/html
-  $ sudo git clone --depth=1 -b MOODLE_29_STABLE git://git.moodle.org/moodle.git  
-  $ sudo chown -R root moodle
-  $ sudo chmod -R 0755 moodle
-  $ sudo find moodle -type f -exec chmod 0644 {} \;
- 
- :Step.2|
- Create DB account.
- 
-  $ mysql -u root -p
-  mysql> CREATE DATABASE moodle DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-  mysql> GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,CREATE TEMPORARY TABLES,DROP,INDEX,ALTER ON moodle.* TO moodleuser@localhost IDENTIFIED BY 'yourpassword';
- 
- :Step.3|
- Create data directory.
- 
-  $ cd /var/www
-  $ sudo mkdir moodledata
-  $ sudo chmod 0777 moodledata
- 
- :Step.4|
- 
-  $ cd html
-  $ sudo chown apache:apache moodle
-  $ cd moodle/admin/cli
-  $ sudo -u apache php install.php
- 
-  == Choose a language ==
-  en - English (en)
-  ? - Available language packs
-  type value, press Enter to use default value (en)
-  :
-  -------------------------------------------------------------------------------
-  == Data directories permission ==
-  type value, press Enter to use default value (2777)
-  :
-  == Web address ==
-  type value
-  : http://xxx/moodle
-  -------------------------------------------------------------------------------
-  == Data directory ==
-  type value, press Enter to use default value  (/var/www/moodledata)
-  :
-  -------------------------------------------------------------------------------
-  == Notice ==
-  The version of Moodle that you are about to install or upgrade to contains
- unstable "Alpha" development code that is not suitable for use on most production
- sites. If this is not what you wanted then you should make sure you are updating
- from a STABLE branch of the Moodle code. See Moodle  Docs for more details.
-  More help: http://docs.moodle.org/30/en/admin /versions
-  Continue
-  type y (means yes) or n (means no)
-  y
-  -------------------------------------------------------------------------------
-  == Choose database driver ==
-   mysqli
-   mariadb
-   pgsql
-   mssql
-  type value, press Enter to use default value  (mysqli)
-  :
-  -------------------------------------------------------------------------------
-  == Database host ==
-  type value, press Enter to use default value (localhost)
-  :
-  -------------------------------------------------------------------------------
-  == Database name ==
-  type value, press Enter to use default value (moodle)
-  :
-  -------------------------------------------------------------------------------
-  == Tables prefix ==
-  type value, press Enter to use default value (mdl_)
-  :
-  -------------------------------------------------------------------------------
-  == Database port ==
-  type value, press Enter to use default value ()
-  :
-  -------------------------------------------------------------------------------
-  == Unix socket ==
-  type value, press Enter to use default value ()
-  :
-  -------------------------------------------------------------------------------
-  == Database user ==
-  type value, press Enter to use default value (root)
-  :
-  -------------------------------------------------------------------------------
-  == Database user ==
-  type value, press Enter to use default value (root)
-  : moodleuser
-  -------------------------------------------------------------------------------
-  == Database password ==
-  type value
-  : <your password>
-  -------------------------------------------------------------------------------
-  == Full site name ==
-  type value
-  : <Service Name>
-  -------------------------------------------------------------------------------
-  == Short name for site (eg single word) ==
-  type value
-  : <Short name>
-  -------------------------------------------------------------------------------
-  == Admin account username ==
-  type value, press Enter to use default value (admin)
-  :
-  -------------------------------------------------------------------------------
-  == New admin user password ==
-  type value
-  :
-  -------------------------------------------------------------------------------
-  == New admin user email address ==
-  type value, press Enter to use default value ()
-  : <admin's email address>
-  -------------------------------------------------------------------------------
-  == Upgrade key (leave empty to not set it) ==
-  type value
-  :
-  -------------------------------------------------------------------------------
-  == Copyright notice ==
-  Moodle  - Modular Object-Oriented Dynamic Learning Environment
-  Copyright (C) 1999 onwards Martin Dougiamas  (http://moodle.com)
-  
-  
-  Have you read these conditions and understood them?
-  type y (means yes) or n (means no)
-  : y
- 
-  
-- :Step.6|Change the permission
-+:Step.6|Change the permission
- 
-  $ chown -R root moodle
- 
- *HowToUse [#x33a8ad4]
- **Create Backup [#ye00c409]
- :Step.1|
- Get DB backup
- 
-  $ cd /my/backup/directory
-  $ mv moodle-database.sql.gz moodle-database-old.sql.gz
-  $ mysqldump -u myusername --password=mypassword -C -Q -e --create-options mydatabasename > moodle-database.sql
-  $ gzip moodle-database.sql
- 
- 
- *Author [#a65e77a7]
- S.Yatsuzuka
+-*Prerequisite [#m08e7d3d]
+--Cent OS installation (You can refer [[HowToUse/CentOS/6.5]])
+--MySQL installation (You can refer [[HowToUse/MySQL/5.1]])
+--PHP installation (You can refer [[HowToUse/PHP/5.5]])
+--Git installation (You can refer [[HowToUse/Git/1.7]])
+-
+-*Install&Setup [#l55f6514]
+-**Cent OS [#mc215c37]
+-:Step.1|
+-Get sourcecode from git server.
+-
+- $ cd /var/www/html
+- $ sudo git clone --depth=1 -b MOODLE_29_STABLE git://git.moodle.org/moodle.git  
+- $ sudo chown -R root moodle
+- $ sudo chmod -R 0755 moodle
+- $ sudo find moodle -type f -exec chmod 0644 {} \;
+-
+-:Step.2|
+-Create DB account.
+-
+- $ mysql -u root -p
+- mysql> CREATE DATABASE moodle DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+- mysql> GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,CREATE TEMPORARY TABLES,DROP,INDEX,ALTER ON moodle.* TO moodleuser@localhost IDENTIFIED BY 'yourpassword';
+-
+-:Step.3|
+-Create data directory.
+-
+- $ cd /var/www
+- $ sudo mkdir moodledata
+- $ sudo chmod 0777 moodledata
+-
+-:Step.4|
+-
+- $ cd html
+- $ sudo chown apache:apache moodle
+- $ cd moodle/admin/cli
+- $ sudo -u apache php install.php
+-
+- == Choose a language ==
+- en - English (en)
+- ? - Available language packs
+- type value, press Enter to use default value (en)
+- :
+- -------------------------------------------------------------------------------
+- == Data directories permission ==
+- type value, press Enter to use default value (2777)
+- :
+- == Web address ==
+- type value
+- : http://xxx/moodle
+- -------------------------------------------------------------------------------
+- == Data directory ==
+- type value, press Enter to use default value  (/var/www/moodledata)
+- :
+- -------------------------------------------------------------------------------
+- == Notice ==
+- The version of Moodle that you are about to install or upgrade to contains
+-unstable "Alpha" development code that is not suitable for use on most production
+-sites. If this is not what you wanted then you should make sure you are updating
+-from a STABLE branch of the Moodle code. See Moodle  Docs for more details.
+- More help: http://docs.moodle.org/30/en/admin /versions
+- Continue
+- type y (means yes) or n (means no)
+- y
+- -------------------------------------------------------------------------------
+- == Choose database driver ==
+-  mysqli
+-  mariadb
+-  pgsql
+-  mssql
+- type value, press Enter to use default value  (mysqli)
+- :
+- -------------------------------------------------------------------------------
+- == Database host ==
+- type value, press Enter to use default value (localhost)
+- :
+- -------------------------------------------------------------------------------
+- == Database name ==
+- type value, press Enter to use default value (moodle)
+- :
+- -------------------------------------------------------------------------------
+- == Tables prefix ==
+- type value, press Enter to use default value (mdl_)
+- :
+- -------------------------------------------------------------------------------
+- == Database port ==
+- type value, press Enter to use default value ()
+- :
+- -------------------------------------------------------------------------------
+- == Unix socket ==
+- type value, press Enter to use default value ()
+- :
+- -------------------------------------------------------------------------------
+- == Database user ==
+- type value, press Enter to use default value (root)
+- :
+- -------------------------------------------------------------------------------
+- == Database user ==
+- type value, press Enter to use default value (root)
+- : moodleuser
+- -------------------------------------------------------------------------------
+- == Database password ==
+- type value
+- : <your password>
+- -------------------------------------------------------------------------------
+- == Full site name ==
+- type value
+- : <Service Name>
+- -------------------------------------------------------------------------------
+- == Short name for site (eg single word) ==
+- type value
+- : <Short name>
+- -------------------------------------------------------------------------------
+- == Admin account username ==
+- type value, press Enter to use default value (admin)
+- :
+- -------------------------------------------------------------------------------
+- == New admin user password ==
+- type value
+- :
+- -------------------------------------------------------------------------------
+- == New admin user email address ==
+- type value, press Enter to use default value ()
+- : <admin's email address>
+- -------------------------------------------------------------------------------
+- == Upgrade key (leave empty to not set it) ==
+- type value
+- :
+- -------------------------------------------------------------------------------
+- == Copyright notice ==
+- Moodle  - Modular Object-Oriented Dynamic Learning Environment
+- Copyright (C) 1999 onwards Martin Dougiamas  (http://moodle.com)
+- 
+- 
+- Have you read these conditions and understood them?
+- type y (means yes) or n (means no)
+- : y
+-
+- 
+-:Step.6|Change the permission
+-
+- $ chown -R root moodle
+-
+-*HowToUse [#x33a8ad4]
+-**Create Backup [#ye00c409]
+-:Step.1|
+-Get DB backup
+-
+- $ cd /my/backup/directory
+- $ mv moodle-database.sql.gz moodle-database-old.sql.gz
+- $ mysqldump -u myusername --password=mypassword -C -Q -e --create-options mydatabasename > moodle-database.sql
+- $ gzip moodle-database.sql
+-
+-
+-*Author [#a65e77a7]
+-S.Yatsuzuka
+-

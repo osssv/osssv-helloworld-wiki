@@ -1,0 +1,20 @@
+#contents
+
+*Prerequisite [#rb39fde8]
+-EnthoughtCanopy installation (You can refer [[HowToUse/EnthoughtCanopy/1.6]])
+
+*HowToUse [#ba8cee6f]
+**Launch IPython [#e63a4afe]
+:Step.1|
+Execute the command.
+
+ $ IPython
+
+**Run commands [#k3c0ef2e]
+:Step.1|
+
+ In [n]: %run '<file>'
+ 
+
+*Author [#v106ef40]
+S.Yatsuzuka

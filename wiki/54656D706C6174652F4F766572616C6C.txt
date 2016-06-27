@@ -4,7 +4,7 @@
 >TBD
 <
 RIGHT:
-refered from [[Wikipedia - XXX:http://en.wikipedia.org/wiki/]]
+cited from [[Wikipedia - XXX:http://en.wikipedia.org/wiki/]]
 
 
 :File Composition|

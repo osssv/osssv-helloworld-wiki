@@ -1,0 +1,31 @@
+ #contents
+ 
+ *Prerequisite [#me91a14e]
+ -CentOS installation (You can refer [[HowToUse/CentOS/6.5]])
+ 
++*Install&Setup [#y998c313]
++**Setup configuration file [#l6a928cc]
++:Step.1|
++Edit .vimrc
++
++ $ vi ~/.vimrc
++
++|LEFT:100|LEFT:200|c
++|CENTER:ITEM|CENTER:DESCRIPTION|h
++|tabstop|number of space when we enter tab|
++|shiftwidth| control how many columns text is indented with the reindent operations (<< and >>) and automatic C-style indentation.|
++|softtabstop|control how many columns vim uses when you hit Tab in insert mode. If softtabstop is less than tabstop and expandtab is not set, vim will use a combination of tabs and spaces to make up the desired spacing. If softtabstop equals tabstop and expandtab is not set, vim will always use tabs. When expandtab is set, vim will always use the appropriate number of spaces.|
++|expandtab|Convert tab into space|
++
++Example
++ set tabstop=4
++ set shiftwidth=4
++ set expandtab
++
+ *HowToUse [#h641de9a]
+ **Editing [#ucf67c20]
+ TBD
+ 
+ 
+ *Author [#q8e3f9c3]
+ S.Yatsuzuka

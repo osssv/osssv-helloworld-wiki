@@ -1,0 +1,193 @@
+-#contents
+ 
+-*Prerequisite [#x0db75ec]
+--Ubuntu Server (You can refer [[Overall/UbuntuServer]])
+--RVM (You can refer [[Overall/RVM]])
+-
+-*Install&Setup [#y3bd5bb8]
+-:Step.1|
+-Check if the rails has already been installed.
+- $ rails --version
+-
+-:Step.2|
+-If the rails has not been installed yet, execute the following command
+- $ gem install rails
+-
+-
+-*HowToUse [#kc8895da]
+-**Create new application [#u6957d0e]
+-:Step.1|
+-Create new application.
+- $ rails new <Application Name>
+-
+-Step.2|
+-Open the Gemfile and append the following lines.
+- $ vi Gemfile
+-
+- gem ‘execjs’
+- gem ‘therubyracer’
+-
+- $ bundle install
+-
+-:Step.3|
+-Launch application.
+- $ cd <Application Name>
+- $ rails server
+-
+-:Step.4|
+-Access the following page.
+- http://localhost:3000/
+-#ref(CreateApplication_fig1.png,,500x266,)
+-
+-When you are setting portforwarding with rails4.2, localhost doesn't work by default. If you want to do port-forwarding, put the following option.
+-
+- $ rails start -b 0.0.0.0
+-
+-Reference)
+-http://stackoverflow.com/questions/27799260/rails-4-2-server-port-forwarding-on-vagrant-does-not-work
+-
+-
+-**Create sample program with Scaffold [#j1551070]
+-:Step.1|
+-Create objects withs scaffold.
+- $ rails generate scaffold <Object Name>
+-(Example)
+- $ rails generate scaffold scaffold_test
+-
+-:Step.2|
+-Prepare database.
+-
+- $ rake db:migrate
+-
+-:Step.3|
+-Launch the server and access http://<IP address>:3000/<Object Name>
+-
+-#ref(CreateSample_fig1.png,,500x266,)
+-
+-Now you have a page which maintains data stored in Sqlite DB.
+-
+-**Create Say Hello program [#l7637cde]
+-:Step.1|
+-Create controller and view files.
+- $ rails generate controller <Controller Name> <Method(View)> <Method(View)>
+-(Example)
+- $ rails generate controller Say hello goodbye
+-
+-:Step.2|
+-Access the following page.
+- http://localhost:3000/say/hello/
+-#ref(CreateApplication_fig2.png,,500x266,)
+-
+-
+-**Get data from RESTful service [#la9384e5]
+-:Step.1|
+-Edit controller.
+-
+- $ vi app/controller/<Controller file>
+-
+-    require 'open-uri'
+-    require 'json'
+- 
+-    res = open('<URL>')
+-    code, message = res.status
+- 
+-    if code == '200'
+- 
+-      @result = JSON.parse(res.read)
+-    end 
+-
+-:Step.2|
+-Put it to view file.
+-
+- $ vi app/view/<View file>
+-
+- <table>
+- <% @result.each do |data| %>
+-  <tr>
+-  <td><%= data['<Key#1>'] %></td>
+-  <td><%= data['<Key#2>'] %></td>
+-  </tr>
+- <% end %>
+- </table>
+-
+-
+-**Add table columns [#w36d6412]
+-:Step.1|
+-Create migration script
+-
+- $ rails g migration <Migration Script Name>
+-
+-(Example)
+- $ rails g migration AddColumnUsers
+-
+-:Step.2|
+-Edit migration script.
+-
+- $ vi db/migrate/<Migration Script File Name>
+-
+-(Example)
+- $ rails g migration db/migrate/20150927000024_add_column_workorders.rb
+-
+- class AddColumnWorkorders < ActiveRecord::Migration
+-   def change
+-     add_column :<table name>, :<column name>, :<data type>
+-     remove_column :<table name>, :<column name>
+-   end
+- end
+-
+-:Step.3|
+-Execute migration
+-
+- $ rails db:migrate
+-
+-:Step.4|
+-Edit index.html.erb
+-
+- $ vi app/views/<table>/index.html.erb
+-
+-:Step.5|
+-Edit _form.html.erb
+-
+- $ vi app/views/<table>/_form.html.erb
+-
+- <%= f.label :<column> %>
+- <%= f.text_field :<column> %>
+-
+-:Step.6|
+-Edit conroller. After Rails is version up to 4.x, we can't use "attr_accessible", so we need to define as below instead.
+-
+- $ vi app/controller/<table name>_controller.rb
+-
+- def create
+-   attr = params.require(:<table name>).permit(:<column name>)
+-   @<table name> = <table name>.new(attr)
+-
+-
+-**Testing [#n359ce0b]
+-:Step.1|
+-Prepare test script.
+-
+-default script)
+-
+- require 'test_helper'
+- 
+- class <Class Name>ControllerTest < ActionController::TestCase
+-   # test "the truth" do
+-   #   assert true
+-   # end
+- end
+-
+-:Step.2|
+-Prepare test environment.
+- 
+- $ rake db:test:prepare
+-
+-:Step.3|
+-Execute test script.
+-
+- $ rake test
+-
+-
+-*Author [#b529832c]
+-S.Yatsuzuka
+-

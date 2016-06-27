@@ -1,9 +1,5 @@
  #counter
  
--Study Session
--
--#ls2(StudySession/)
--
  Overall
  
  #ls2(Overall/)
@@ -12,8 +8,9 @@
  
  #ls2(HowToUse/)
  
- Template
- 
- #ls2(Template/)
- 
- &edit(MenuBar,noicon){edit};
+-Template
+-
+-#ls2(Template/)
+-
+-&edit(MenuBar,noicon){edit};
+-

@@ -1,0 +1,23 @@
++#contents
+ 
++*Overall Feature [#ubf4e235]
++>Python is a widely used high-level, general-purpose, interpreted, dynamic programming language. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as C++ or Java. The language provides constructs intended to enable clear programs on both a small and large scale.
++<
++RIGHT:
++cited from [[Wikipedia - Python:https://en.wikipedia.org/wiki/Python_(programming_language)]]
++
++
++*Specification [#s881ebed]
++|LEFT:100|LEFT:200|c
++|CENTER:ITEM|CENTER:DESCRIPTION|h
++|Main Developer|Python Software Foundation|
++|License|Python Software Foundation License|
++|OS|cross-platform|
++|Official Site|https://www.python.org/|
++
++
++*HowToUse [#l5fdf30a]
++#ls2(HowToUse/Python)
++
++*Author [#m371498d]
++S.Yatsuzuka

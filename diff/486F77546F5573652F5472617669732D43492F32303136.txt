@@ -1,0 +1,99 @@
+ #contents
+ 
+ *Prerequisite [#lf263c4d]
+ -Python installation (You can refer [[HowToUse/Python/2.7]])
+ or
+ -Ruby on Rails installation (You can refer [[HowToUse/RubyOnRails/4.2]])
+ 
+ *Install&Setup [#c44f21ff]
+ :Step.1|
+ Access Travis-ci web site, and register account with GitHub account.
+ 
+ :Step.2|
+ Click "+" on the right of "My Repositories" menu.
+ 
+ #ref(Setup_fig2.png,,500x267,)
+ 
+ :Step.3|
+ Choose target project to integrate with Travis CI.
+ 
+ #ref(Setup_fig3.png,,500x267,)
+ 
+ :Step.4|
+ Access to GitHub project, and choose "setting" menu.
+ 
+ #ref(Setup_fig4.png,,500x267,)
+ 
+ :Step.5|
+ click "Web Hook" menu".
+ 
+ #ref(Setup_fig5.png,,500x267,)
+ 
+ :Step.6|
+ click "Add Service" menu, and choose "Travis-ci".
+ 
+ #ref(Setup_fig6.png,,500x267,)
+ 
+ *HowToUse [#qc6fc894]
+ :Step.1|
+ Prepare .travis.yml in the project root directory.
+ 
+  $ vi .travis.yml
+ 
+ (Example for python)
+  language: python
+  python:
+  - "2.7"
+  # command to install dependencies
+  install: "pip install nose"
+  # command to run tests
+  script: nosetests
+ 
+ (Example for Ruby)
+  language: ruby
+  rvm:
+  - "2.2.3"
+  before_script:
+  - psql -c "CREATE USER nasebanal WITH PASSWORD 'nasebanal';" -U postgres
+  - psql -c 'CREATE DATABASE "nb-bitcoin_test";' -U postgres
+ 
+ If you use database, add "before_script" to create database and database user to pass the test script.
+ If you want to use RSpec, you can add the following line additionally.
+ 
+  script: bundle exec rspec spec
+ 
++You can see sample from [[here:https://github.com/nasebanal/nb-bitcoin/blob/master/.travis.yml]]
+ 
+ :Step.2|
+ Install travis validator as needed.
+ 
+ (Example for Ruby)
+ 
+  $ gem install travis --no-rdoc --no-ri
+ 
+ 
+ :Step.3|
+ Prepare test script, and check if the test runs successfully in local environment.
+ 
+ (Example for Ruby)
+  $ rake test
+ 
+ 
+ :Step.4|
+ Check if the syntax of travis.yml is correct.
+ 
+ (Example for Ruby)
+  $ travis lint [travis.yml path]
+ 
+ 
+ :Step.5|
+ Check in .travis.yml to GitHub, then test will be autoran on travis-ci server.
+ 
+ If you put the following line in your README.md file, you can see the status of Travis-ci from it.
+ 
+  [![Build Status](https://travis-ci.org/nasebanal/hd-website.svg)](https://travis-ci.org/nasebanal/hd-website)
+ 
+ 
+ 
+ *Author [#n93be3cd]
+ S.Yatsuzuka

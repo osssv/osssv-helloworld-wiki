@@ -47,6 +47,10 @@ Create new project in Heroku space.
 
  $ heroku create
 
+You can destroy app with the following command.
+
+ $ heroku apps:destroy --app <App name>
+
 
 :Step.4|
 Prepare sample project.

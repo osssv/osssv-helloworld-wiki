@@ -1,0 +1,24 @@
+#contents
+
+*Overall Feature [#t30721ee]
+>Travis CI is a FOSS, hosted, distributed continuous integration service used to build and test software projects hosted at GitHub. Although the source is available piecemeal on GitHub under permissive licenses, it appears unlikely that casual users could successfully integrate it on their own platforms.
+<
+RIGHT:
+cited from [[Wikipedia - Travis CI:https://en.wikipedia.org/wiki/Travis_CI]]
+
+
+*Specification [#x94f3542]
+|LEFT:100|LEFT:200|c
+|CENTER:ITEM|CENTER:DESCRIPTION|h
+|Main Developer|Travis CI community|
+|License|MIT|
+|OS|Cross-platform|
+|Written In|Ruby|
+|Official Site|https://travis-ci.org/|
+
+
+*HowToUse [#t0309b4b]
+#ls2(HowToUse/Travis-CI/)
+
+*Author [#ae542548]
+S.Yatsuzuka

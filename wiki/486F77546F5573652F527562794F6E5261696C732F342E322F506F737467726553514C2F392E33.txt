@@ -1,6 +1,7 @@
 #contents
 
 *Prerequisite [#w7a3b6fb]
+-Ubuntu Server installation (You can refer [[HowToUse/UbuntuServer/14.04]])
 -Ruby On Rails installation (You can refer [[HowToUse/RubyOnRails/4.1]])
 -PostgreSQL installation (You can refer [[HowToUse/PostgreSQL/9.3]])
 
@@ -46,6 +47,7 @@ Install gems.
 Update pg_hba.conf from "peer" to "trust" so that other user than postgres can access database as exepected.
 
  $ su - postgres
+
  $ cd /etc/postgres/9.3/main
  $ vi pg_hba.conf
 

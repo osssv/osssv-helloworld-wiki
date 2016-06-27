@@ -1,0 +1,33 @@
++#contents
+ 
++*Prerequisite [#me28dcf5]
++-CentOS installation (You can refer [[HowToUse/CentOS/6.5]])
++-Vundler installation (You can refer [[HowToUse/Vim/7.2/Vundler/0.10]])
++
++*Install&Setup [#r66ae86f]
++:Step.1|
++Clone git repository for jedi-vim.
++
++ $ git clone https://github.com/davidhalter/jedi-vim ~/.vim/bundle/jedi-vim
++
++:Step.2|
++Add line to .vimrc
++
++ $ vi ~/.vimrc
++ 
++ Plugin 'davidhalter/jedi-vim'
++ 
++
++:Step.3|
++Install plugin.
++
++ $ vim
++
++ :PluginInstall
++
++
++*HowToUse [#pae35f80]
++TBD
++
++*Author [#w8bfa3aa]
++S.Yatsuzuka

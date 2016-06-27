@@ -1,0 +1,24 @@
++#contents
+ 
++*Overall Feature [#gf078aaa]
++>Raspbian is a free operating system based on Debian optimized for the Raspberry Pi hardware. An operating system is the set of basic programs and utilities that make your Raspberry Pi run. However, Raspbian provides more than a pure OS: it comes with over 35,000 packages, pre-compiled software bundled in a nice format for easy installation on your Raspberry Pi. 
++<
++RIGHT:
++cited from [[Rasbian.org:https://www.raspbian.org/]]
++
++
++*Specification [#a4691cb8]
++|LEFT:100|LEFT:200|c
++|CENTER:ITEM|CENTER:DESCRIPTION|h
++|Main Developer|Raspbian Project|
++|License|various|
++|OS|-|
++|Written In|various|
++|Official Site|https://www.raspberrypi.org/|
++
++
++*HowToUse [#vb0d0240]
++#ls2(HowToUse/Raspbian/)
++
++*Author [#dd143ad3]
++S.Yatsuzuka

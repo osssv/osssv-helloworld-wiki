@@ -1,0 +1,24 @@
++#contents
+ 
++*Overall Feature [#p41d5555]
++>IPython is a command shell for interactive computing in multiple programming languages, originally developed for the Python programming language, that offers introspection, rich media, shell syntax, tab completion, and history. 
++<
++RIGHT:
++cited from [[Wikipedia - IPython:https://en.wikipedia.org/wiki/IPython]]
++
++
++*Specification [#nd6450a6]
++|LEFT:100|LEFT:200|c
++|CENTER:ITEM|CENTER:DESCRIPTION|h
++|Main Developer|Fernando Perez|
++|License|BSD|
++|OS|Cross-platform|
++|Written In|Python, etc|
++|Official Site|http://www.ipython.org/|
++
++
++*HowToUse [#p44821fb]
++#ls2(HowToUse/IPython)
++
++*Author [#ne17bf13]
++S.Yatsuzuka

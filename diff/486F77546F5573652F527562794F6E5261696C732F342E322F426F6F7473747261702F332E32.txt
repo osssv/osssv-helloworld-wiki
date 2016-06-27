@@ -1,0 +1,38 @@
++#contents
+ 
++*Prerequisite [#g56273b4]
++-Ruby on Rails installation (You can refer [[Overall/RubyOnRails]])
++
++*Install&Setup [#pba61374]
++:Step.1|
++Edit Gemfile.
++
++ $ vi Gemfile
++
++ gem 'less-rails'
++ gem 'twitter-bootstrap-rails
++
++:Step.2|
++Install gem file.
++
++ $ bundle install
++
++
++*HowToUse [#gacf36a0]
++:Step.1|
++Add object for bootstrap to the project.
++
++ $ rails g bootstrap:install
++
++Then you can see new files in the project directory.
++
++:Step.2|
++Add files for form for model.
++
++ $ rails g bootstrap:themed <Model Name>
++
++Then your form will be updated automatically.
++
++
++*Author [#e5e8b804]
++S.Yatsuzuka

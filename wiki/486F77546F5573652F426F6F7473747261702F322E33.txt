@@ -1,9 +1,13 @@
 #contents
 
 *Install&Setup [#o26c9fec]
+**Install by manual [#jcc696a5]
 :Step.1|
 Download bootstrap from http://getbootstrap.com/ and put them into the document root directory.
 #ref(Install_fig1.png)
+
+**Install with gem [#d7d9842d]
+TBD
 
 *HowToUse [#ubdf9498]
 :Step.1|

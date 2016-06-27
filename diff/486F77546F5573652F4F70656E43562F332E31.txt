@@ -1,0 +1,174 @@
+ #contents
+ 
+ *Prerequisite [#o3a3ea69]
+ -Raspbian installation (You can refer [[HowToUse/Raspbian/WHEEZY]])
+ or
+ -Ubuntu Server installation (You can refer [[HowToUse/UbuntuServer/14.04]]
+ 
+ *Install&Setup [#w936dcc2]
+ ** Raspbian WHEEZY [#s35cbe1b]
+ :Step.1|
+ Update existing modules.
+ 
+  $ sudo apt-get update
+  $ sudo apt-get upgrade
+  $ sudo rpi-update
+  $ sudo reboot
+ 
+ :Step.2|
+ Install required modules for OpenCV.
+ 
+  $ sudo apt-get install build-essential git cmake pkg-config
+  $ sudo apt-get install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev
+  $ sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+  $ sudo apt-get install libxvidcore-dev libx264-dev
+  $ sudo apt-get install libgtk2.0-dev
+  $ sudo apt-get install libatlas-base-dev gfortran
+ 
+ :Step.3|
+ Install Python
+ 
+  $ sudo apt-get install python2.7-dev python3-dev
+  $ wget https://bootstrap.pypa.io/get-pip.py
+  $ sudo python get-pip.py
+  $ pip install numpy
+ 
+ :Step.4|
+ Download OpenCV
+ 
++ $ mkdir <OpenCV Install directory>
++ $ cd <OpenCV Install directory>
+  $ wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.1.0.zip
+  $ unzip 3.1.0.zip
+  $ wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.1.0.zip
+  $ unzip opencv_contrib.zip
+ 
+ :Step.5|
+ Compile OpenCV
+ 
+  $ cd opencv-3.1.0
+  $ mkdir build
+  $ cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_C_EXAMPLES=OFF -D INSTALL_PYTHON_EXAMPLES=ON -D OPENCV_EXTRA_MODULES_PATH=<OpenCV Contrib Path>/modules -D BUILD_EXAMPLES=ON ..
+ 
+ *When you install OpenCV 3.0, you can set INSTALL_C_EXAMPLES as "ON". [#j555cc16]
+ 
+ Example
+  $ cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_C_EXAMPLES=OFF -D INSTALL_PYTHON_EXAMPLES=ON -D OPENCV_EXTRA_MODULES_PATH=~/vendor/opencv_contrib-3.1.0/modules -D BUILD_EXAMPLES=ON ..
+ 
+ If compilation terminated successfully, you will see something like the following standard out.
+ 
+  --   Python 2:
+  --     Interpreter:                 /usr/bin/python2.7 (ver 2.7.3)
+  --     Libraries:                   /usr/lib/libpython2.7.so (ver 2.7.3)
+  --     numpy:                       /usr/lib/pymodules/python2.7/numpy/core/incl                                                                                        ude (ver 1.6.2)
+  --     packages path:               lib/python2.7/dist-packages
+  --
+  --   Python 3:
+  --     Interpreter:                 /usr/bin/python3 (ver 3.2.3)
+  --     Libraries:                   /usr/lib/libpython3.2mu.so (ver 3.2.3)
+  --     numpy:                       /usr/lib/python3/dist-packages/numpy/core/in                                                                                        clude (ver 1.6.2)
+  --     packages path:               lib/python3.2/dist-packages
+ 
+  $ make -j4
+  $ sudo make install
+  $ sudo ldconfig
+ 
+ Then you can see if OpenCV has been installed successfully with the following command.
+ 
+  $ python
+  >>> import cv2
+  >>> cv2.__version__
+  '3.1.0'
+ 
+ 
+ **Ubuntu Server 14.04 [#vc50c2d2]
+ 
+ :Step.1|
+ Update modules
+ 
+  $ sudo apt-get update
+ 
+ :Step.2|
+ Install required modules for OpenCV.
+ 
+  $ sudo apt-get install build-essential git cmake
+-
+-* other necessary modules such as build-essential, git, pkg-config should have already been installed [#m534144e]
+-
+  $ sudo apt-get install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev
+-
+  $ sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+- $ sudo apt-get install libxvidcore-dev libx264-dev
++ $ sudo apt-get install libxvidcore-dev 
+  $ sudo apt-get install libgtk2.0-dev
+-
+-<under constructed below>
+  $ sudo apt-get install libatlas-base-dev gfortran
+ 
++* libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev, libpng12-dev, libx264-dev should have been installed [#z15bdbec]
++
++
+ :Step.3|
+ Install Python
+ 
+  $ sudo apt-get install python2.7-dev python3-dev
+  $ wget https://bootstrap.pypa.io/get-pip.py
+  $ sudo python get-pip.py
+  $ pip install numpy
+ 
+ :Step.4|
+ Download OpenCV
+ 
++ $ mkdir <OpenCV Install directory>
++ $ cd <OpenCV Install directory>
+  $ wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.1.0.zip
+- $ unzip 3.1.0.zip
++ $ unzip opencv.zip
+  $ wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.1.0.zip
+  $ unzip opencv_contrib.zip
+ 
+ :Step.5|
+ Compile OpenCV
+ 
+  $ cd opencv-3.1.0
+  $ mkdir build
+  $ cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_C_EXAMPLES=OFF -D INSTALL_PYTHON_EXAMPLES=ON -D OPENCV_EXTRA_MODULES_PATH=<OpenCV Contrib Path>/modules -D BUILD_EXAMPLES=ON ..
+ 
+ *When you install OpenCV 3.0, you can set INSTALL_C_EXAMPLES as "ON". [#j555cc16]
+ 
+ Example
+  $ cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_C_EXAMPLES=OFF -D INSTALL_PYTHON_EXAMPLES=ON -D OPENCV_EXTRA_MODULES_PATH=~/vendor/opencv_contrib-3.1.0/modules -D BUILD_EXAMPLES=ON ..
+ 
+ If compilation terminated successfully, you will see something like the following standard out.
+ 
+  --   Python 2:
+  --     Interpreter:                 /usr/bin/python2.7 (ver 2.7.3)
+  --     Libraries:                   /usr/lib/libpython2.7.so (ver 2.7.3)
+  --     numpy:                       /usr/lib/pymodules/python2.7/numpy/core/incl                                                                                        ude (ver 1.6.2)
+  --     packages path:               lib/python2.7/dist-packages
+  --
+  --   Python 3:
+  --     Interpreter:                 /usr/bin/python3 (ver 3.2.3)
+  --     Libraries:                   /usr/lib/libpython3.2mu.so (ver 3.2.3)
+  --     numpy:                       /usr/lib/python3/dist-packages/numpy/core/in                                                                                        clude (ver 1.6.2)
+  --     packages path:               lib/python3.2/dist-packages
+ 
+  $ make -j4
+  $ sudo make install
+  $ sudo ldconfig
+ 
+ Then you can see if OpenCV has been installed successfully with the following command.
+ 
+  $ python
+  >>> import cv2
+  >>> cv2.__version__
+  '3.1.0'
+ 
+ 
+ 
+ *HowToUse [#f3a8a6a3]
+ :Step.1|
+ xxx
+ 
+ *Author [#ua9ca22f]
+ S.Yatsuzuka

@@ -1,0 +1,59 @@
++#contents
+ 
++*Prerequisite [#sf8c2ca6]
++-Google App Engine SDK installation (You can refer [[HowToUse/Python/2.7/GoogleAppEngine/1.9/]])
++-Virtualenv installation (You can refer [[HowToUse/Python/2.7/Virtualenv/15.0/]])
++
++*Install&Setup [#s00b8cef]
++:Step.1|
++Prepare a directory for application root with virtualenv.
++
++:Step.2|
++Activate virtualenv.
++
++ $ cd <application root>
++ $ virtualenv .
++ $ source bin/activate
++
++*HowToUse [#m00d0660]
++:Step.1|
++Create gae.pth file.
++
++ $ vi $VIRTUAL_ENV/lib/python/2.7/site-packages/gae.pth
++
++ /opt/google_appengine
++ import dev_appserver; dev_appserver.fix_sys_path()
++ import sys; sys.path.insert(1, '<application root>')
++
++:Step.2|
++Check if gae.pth works as expected.
++
++ $ source bin/activate
++ $ python -c "import google"
++
++:Step.3|
++Install Django to application root.
++
++ $ pip install django -t <application root>
++
++:Step.4|
++Add the following line to gae.path
++
++  import sys; sys.path.insert(1, '<application root>')
++
++Then execute the following command to check if django is recognized successfully.
++
++ $ source bin/activate
++ $ python -c "import django; print django.get_version()"
++
++:Step.5|
++Create new project in application root.
++
++ $ django/bin/django-admin.py startproject <project>
++
++:Step.6|
++Create app.yaml and module, then launch the service.
++
++
++*Author [#qdfa9e59]
++S.Yatsuzuka

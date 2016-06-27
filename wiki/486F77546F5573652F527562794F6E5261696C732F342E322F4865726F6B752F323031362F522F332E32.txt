@@ -1,0 +1,40 @@
+#contents
+
+*Prerequisite [#g253e68e]
+-Ubuntu Server installation (You can refer [[HowToUse/UbuntuServer/14.04]])
+-Ruby On Rails setup on Heroku (You can refer [[HowToUse/RubyOnRails/4.2/Heroku/2015]]
+
+*HowToUse [#o5f63281]
+:Step.1|
+Prepare a new project, and add init.r to initialize R environment.
+You can refer sample of init.r [[here:https://github.com/nasebanal/nb-microfinance/blob/master/init.r]]
+.
+In order to make a communication between Rails app and R server, you need to install Rserve-client or [[HowToUse/RubyOnRails/4.2/RinRuby/2.0]].
+
+:Step.2|
+Create Heroku application.
+
+ $ heroku login
+ $ heroku create <Application Name> --stack cedar-14 --buildpack https://github.com/virtualstaticvoid/heroku-buildpack-r.git#cedar-14
+
+*By 2015, we used heroku-buildpack-multi for multiple buildpacks, but we don't need it in 2016. [#g7479c41]
+
+:Step.3|
+Add buildpacks for rails to the project.
+
+ $ heroku buildpacks:add heroku/ruby
+
+
+:Step.4|
+Push the files to Heroku server.
+
+ $ git push heroku master
+
+:Step.5|
+Launch R server on Heroku.
+
+ $ heroku run R
+
+
+*Author [#q301bafd]
+S.Yatsuzuka

@@ -2,6 +2,8 @@
  
  *Prerequisite [#oa14ea09]
  -Ubuntu Server installation (You can refer from [[HowToUse/UbuntuServer/14.04]])
+ or
+ -Amazon Web Service (Amazon Linux)
  
  
  *Install&Setup [#b2b2bcc6]
@@ -21,57 +23,87 @@
  
   $ sudo docker version
  
-+
+ 
+ **Amazon Web Service (Amazon Linux) [#wae1a6c9]
+ 
+ :Step.1|
+ Install Docker
+ 
+  $ sudo yum install -y docker
+ 
+ :Step.2|
+ Launch docker.
+ 
+  $ sudo service docker start
+ 
+ 
  *HowToUse [#mcd5e78b]
  **Download Docker image from Docker Hub Registry [#d73e2247]
  :Step.1|
-+ $ sudo docker pull <Docker Image Name>:<Tag>
+  $ sudo docker pull <Docker Image Name>:<Tag>
  
-+Example
+ Example
   $ sudo docker pull ubuntu:latest
  
- :Step.2|
+-:Step.2|
++**Launch Docker [#s6f2829c]
++
++:Step.1|
  Run Docker Image and create Docker Container.
  
-- $ sudo docker run -it --name ubuntu_work ubuntu /bin/bash
-+ $ sudo docker run -p 0.0.0.0:<port Num>:<Port Num> -it --name <Docker Container> <Docker Image> <Shell>
+  $ sudo docker run -p 0.0.0.0:<port Num>:<Port Num> -it --name <Docker Container> <Docker Image> <Shell>
  
-+Example
-+ $ sudo docker run -p 0.0.0.0:80:80 -it --name ubuntu_work ubuntu /bin/bash
+ Example
+  $ sudo docker run -p 0.0.0.0:80:80 -it --name ubuntu_work ubuntu /bin/bash
+ 
+-:Step.3|
++If you want to launch Docker process in background, you can use the following command.
 +
- :Step.3|
++ $ sudo docker run -p 0.0.0.0:<port Num>:<Port Num> -d -it --name <Docker Container> <Docker Image> /usr/sbin/sshd -D
++ 
++
++:Step.2|
  Install additional modules.
  
-+Example
+ Example
   # apt-get install -y nginx
  
- :Step.4|
+-:Step.4|
++:Step.3|
  Push Ctrl-d to shutdown Docker process.
  
- :Step.5|
+-:Step.5|
++:Step.4|
  Check the new Docker Container has been created.
  
   $ sudo docker ps -a
  
- :Step.6|
+-:Step.6|
++
++**Commit Docker image [#q7b05e20]
++
++:Step.1|
  Create new Docker image merging with Docker Container.
  
-+ $ sudo docker commit <Docker Container> <Docker Image>
-+
-+Example
+  $ sudo docker commit <Docker Container> <Docker Image>
+ 
+ Example
   $ sudo docker commit ubuntu_work syatsuzuka/nginx
  
- :Step.7|
+-:Step.7|
++:Step.2|
  Check the new Docker image has been created.
  
   $ sudo docker images
  
- :Step.8|
+-:Step.8|
++:Step.3|
  Delete unnecessary Docker Container and Image.
  
   $ sudo docker rm <Container ID>
   $ sudo docker rmi <Image ID>
  
++
  **Create Docker Image with Dockerfile [#r366c17a]
  :Step.1|
  Create Docker file.
@@ -85,9 +117,9 @@
  :Step.2|
  Create Docker image.
  
-+ $ sudo docker build -t <Docker Image>:<Tag> .
-+
-+Example
+  $ sudo docker build -t <Docker Image>:<Tag> .
+ 
+ Example
   $ sudo docker build -t syatsuzuka/nginx:1.0 .
  
  :Step.3|
@@ -107,9 +139,9 @@
  :Step.3|
  Push the Docker Image into Docker Hub.
  
-+ $ sudo docker push <Docker Image>
-+
-+Example
+  $ sudo docker push <Docker Image>
+ 
+ Example
   $ sudo docker push syatsuzuka/nginx
  
  

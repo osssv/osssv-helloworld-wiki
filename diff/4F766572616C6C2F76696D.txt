@@ -1,0 +1,24 @@
+-#contents
+ 
+-*Overall Feature [#a59fb671]
+->Vim is a clone of Bill Joy's vi editor for Unix. It was written by Bram Moolenaar based on source for a port of the Stevie editor to the Amiga and first released publicly in 1991. Vim is designed for use both from a command-line interface and as a standalone application in a graphical user interface. Vim is free and open source software and is released under a license that includes some charityware clauses, encouraging users who enjoy the software to consider donating to children in Uganda.
+-<
+-RIGHT:
+-cited from [[Wikipedia - vim:https://en.wikipedia.org/wiki/Vim_%28text_editor%29]]
+-
+-*Specification [#z40656eb]
+-|LEFT:100|LEFT:200|c
+-|CENTER:ITEM|CENTER:DESCRIPTION|h
+-|Main Developer|Bram Moolenaar|
+-|License|free software|
+-|OS|cross-platform|
+-|Written In|C, vim|
+-|Official Site|http://www.vim.org/|
+-
+-
+-*HowToUse [#z965f9c6]
+-#ls2(HowToUse/vim/)
+-
+-*Author [#m3f2e268]
+-S.Yatsuzuka
+-

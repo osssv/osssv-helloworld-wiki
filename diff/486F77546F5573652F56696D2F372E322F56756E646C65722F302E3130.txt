@@ -1,0 +1,71 @@
+ #contents
+ 
+ *Prerequisite [#uf233048]
+ -CentOS installation (You can refer [[HowToUse/CentOS/6.5]])
+ 
+ *Install&Setup [#xf77e1e4]
+ :Step.1|
+ Clone git repository for Vundler.
+ 
+  $ mkdir ~/.vim/bundle
+  $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+ 
+ :Step.2|
+ Prepare .vimrc
+ 
+  $ vi ~/.vimrc
+ 
+  set nocompatible
+  filetype off
+  
+  set rtp+=~/.vim/bundle/Vundle.vim
+  call vundle#begin()
+  
+  Plugin 'gmarik/Vundle.vim'
+  
+  call vundle#end()
+  filetype plugin indent on
+ 
++You can see sample from [[here:https://github.com/osssv/osssv-helloworld/blob/master/vim/.vimrc]]
++
+ :Step.3|
+ Install plugin.
+ 
+  $ vim
+ 
+  :PluginInstall
+ 
+ *HowToUse [#t63552d8]
+ **Add Plugins [#x8264c7c]
+ :Step.1|
+ Clone git repository for Vim plugin to your bundler directory.
+ 
+  $ git clone <Git repository>
+ 
+ (Example)
+  $ git clone https://github.com/davidhalter/jedi-vim ~/.vim/bundle/jedi-vim
+ 
+ :Step.2|
+ Add line in .vimrc
+ 
+  $ vi ~/.vimrc
+ 
+ (Example)
+  Plugin 'davidhalter/jedi-vim'
+ 
+ :Step.3|
+ Install Plugin.
+ 
+  $ vim
+ 
+  :PluginInstall
+ 
+ You can check installed plugin with the following command.
+ 
+  $ vim
+ 
+  :PluginList
+ 
+ 
+ *Author [#v4608b4d]
+ S.Yatsuzuka

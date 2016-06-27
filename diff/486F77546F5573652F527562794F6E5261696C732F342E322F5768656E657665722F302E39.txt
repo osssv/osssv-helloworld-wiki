@@ -1,0 +1,40 @@
+ #contents
+ 
+ *Prerequisite [#b1c81cce]
+ -Rails installation (You can refer [[HowToUse/RubyOnRails/4.1]])
+ 
+ *Install&Setup [#y49d8646]
+ :Step.1|
+-TBD
++Edit Gemfile and execute bundle install
+ 
++ $ vi Gemfile
++
++ gem 'whenever', require: false
++
++ $ bundle install
++
+ *HowToUse [#q08408fa]
+ :Step.1|
+-TBD
++Create config/schedule.rb
+ 
++ $ bundle exec wheneverize .
++
++:Step.2|
++Edit schedule.rb
++
++ $ vi config/schedule.rb
++
++You can see sample from [[here:https://github.com/nasebanal/nb-platform4iot/blob/master/config/schedule.rb]]
++
++:Step.3|
++Create setting in crontab
++
++ $ RAILS_ENV=development bundle exec whenever --update-crontab
++
++For detail information you can refer [[GitHub:https://github.com/javan/whenever]]
++
++
+ *Author [#v8ab94e6]
+ S.Yatsuzuka

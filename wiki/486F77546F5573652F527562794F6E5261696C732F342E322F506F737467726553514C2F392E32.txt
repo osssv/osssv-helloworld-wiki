@@ -1,0 +1,146 @@
+#contents
+
+*Prerequisite [#a0e41bc0]
+-Amazon Linux installation
+-Ruby On Rails installation (You can refer [[HowToUse/RubyOnRails/4.1]])
+-PostgreSQL installation (You can refer [[HowToUse/PostgreSQL/9.2]])
+
+*Install&Setup [#l8e46339]
+:Step.1|
+Check the version of installed postgresql.
+
+ $ su - postgres
+ $ psql --version
+
+:Step.2|
+Install module.
+
+ $ sudo yum install postgresql-devel
+
+
+*HowToUse [#b35e7ce1]
+:Step.1|
+Create rails project.
+
+ $ rails new <project name> --database=postgresql
+
+(Example)
+ $ rails new sample --database=postgresql
+
+:Step.2|
+Edit Gemfile.
+
+ $ vi Gemfile
+ 
+ gem 'therubyracer', platforms: :ruby
+ ...
+ gem 'execjs'
+
+
+:Step.3|
+Install gems.
+
+ $ bundle install
+
+:Step.4|
+Update pg_hba.conf from "peer" to "trust" so that other user than postgres can access database as exepected.
+
+ $ su - postgres
+ $ cd /var/lib/pgsql92/data/
+ $ vi pg_hba.conf
+
+ local   all             all                                     trust
+
+:Step.5|
+Restart postgres daemon.
+
+ $ /etc/init.d/postgres restart
+
+:Step.6|
+Create DB user for application.
+
+ $ su - postgres
+ $ psql -d postgres
+ postgres=# create role <user_name> login createdb;
+ postgres=# \q
+
+(Example)
+ postgres=# create role sample login createdb;
+
+:Step.7|
+Edit database configuration for rails application.
+Put the same user name as you created in postgres database.
+
+ $ vi config/database.yml
+
+ default:
+   ...
+   username: <user_name>
+
+(Example)
+   username: sample
+
+(You can see sample from [[here:https://github.com/osssv/osssv-helloworld/blob/master/rubyonrails/4.2/postgresql/9.3/sample/config/database.yml]])
+
+:Step.8|
+Create new controller for welcome page.
+
+(Example)
+ $ rails generate controller welcome
+
+:Step.9|
+Create welcome page.
+
+(Example)
+ $ vi app/views/welcome/index.html.erb 
+
+ <h2>Hello World</h2>
+ <p>
+ <a href="/users">user list</a>
+ <br>
+ <%= Time.now %>
+ </p>
+
+(You can see sample from [[here:https://github.com/osssv/osssv-helloworld/blob/master/rubyonrails/4.2/postgresql/9.3/sample/app/views/welcome/index.html.erb]])
+
+
+:Step.11|
+Create User list.
+
+(Example)
+ $ rails generate scaffold user
+
+:Step.10|
+Config routing setting
+
+ $ vi config/routes.rb
+
+ root 'welcome#index'
+
+
+Create and migrate initial database.
+
+ $ rake db:create
+ $ rake db:migrate
+
+:Step.9|
+Check if you can connect database from your rails application's user.
+
+ $ rails dbconsole
+
+:Step.10|
+Launch server instance.
+
+ $ rails s
+
+You will see the following window.
+
+#ref(CreateApps_fig1.png,,500x266,)
+
+And also, you can edit user list.
+
+#ref(CreateApps_fig2.png,,500x266,)
+
+
+*Author [#u1e091b7]
+S.Yatsuzuka

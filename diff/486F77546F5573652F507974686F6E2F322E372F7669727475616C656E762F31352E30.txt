@@ -1,0 +1,23 @@
+-#contents
+ 
+-*Prerequisite [#r59f577c]
+--Ubuntu Server installation (You can refer [[HowToUse/UbuntuServer/14.04]])
+-
+-*Install&Setup [#vdf18c59]
+-:Step.1|
+-Install virtualenv
+-
+- $ sudo pip install virtualenv
+-
+-*HowToUse [#q97864fe]
+-:Step.1|
+-Create project space.
+-
+- $ mkdir <project name> && cd <project name>
+-
+-:Step.2|
+-
+-
+-*Author [#x3fafb00]
+-S.Yatsuzuka
+-

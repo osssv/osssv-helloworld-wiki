@@ -1,7 +1,8 @@
 #contents
 
 *Prerequisite [#qb980aa1]
--Cent OS installation (You can refer [[Overall/CentOS]])
+-Installation of Cent OS installation (You can refer [[HowToUse/CentOS/6.5]])
+-Installation of PHP LDAP Admin
 
 *Install&Setup [#k3f4920b]
 :Step.1|
@@ -38,8 +39,33 @@ Launch ldap server.
  # chkconfig slapd on
 
 *HowToUse [#jc131a5c]
+**Create Account (Person) [#ua9471e6]
 :Step.1|
-xxx
+Access PHP LDAP Admin page.
+
+#ref(CreateAccount_fig1.png,,500x267,)
+
+:Step.2| 
+Login with DN Root.
+
+#ref(CreateAccount_fig2.png,,500x267,)
+
+#ref(CreateAccount_fig3.png,,500x267,)
+
+:Step.3|
+Create new ObjectClass "Person".
+
+#ref(CreateAccount_fig4.png,,500x267,)
+
+#ref(CreateAccount_fig5.png,,500x267,)
+
+#ref(CreateAccount_fig6.png,,500x267,)
+
+:Step.4|
+Click "Commit" button, then you will see new account was created.
+
+#ref(CreateAccount_fig7.png,,500x267,)
+
 
 *Author [#h3c81b45]
 S.Yatsuzuka

@@ -1,0 +1,31 @@
+ #contents
+ 
+ *Prerequisite [#fb156585]
+ -CentOS installation (You can refer [[HowToUse/CentOS/6.5]])
+ 
+ *Install&Setup [#q516e887]
+ :Step.1|
+ Download installer from [[here:https://store.enthought.com/downloads/#default]]
+ 
+ :Step.2|
+ Execute the following command.
+ 
+  $ chmod 755 <installer>
+  $ ./<installer>
+ 
+ :Step.3|
+ Setup environment
+ 
+  $ ~/Canopy/canopy
+ 
+ And click "Start using canopy" button.
+ 
+ *HowToUse [#e1d806c0]
+-:Step.1|
+-xxx
++**IPython [#r6440491]
++You can refer [[HowToUse/IPython/4.0]].
+ 
++
+ *Author [#ofae57d8]
+ S.Yatsuzuka

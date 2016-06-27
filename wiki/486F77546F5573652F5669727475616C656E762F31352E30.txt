@@ -1,0 +1,35 @@
+#contents
+
+*Prerequisite [#r59f577c]
+-Python installation (You can refer [[HowToUse/Python/2.7]])
+
+*Install&Setup [#vdf18c59]
+:Step.1|
+Install virtualenv
+
+ $ sudo pip install virtualenv
+
+*HowToUse [#q97864fe]
+**Start to work on virtualenv [#a19f35ee]
+:Step.1|
+Create project space.
+
+ $ mkdir <project name> && cd <project name>
+
+:Step.2|
+Setup Virtual environment and activate it.
+
+ $ virtualenv .
+ $ source ./bin/activate
+
+Then you can see the prompt is changed, which means work environment has been switched to virtualenv.
+
+
+**Finish to work on virtualenv [#na32927b]
+:Step.1|
+Execute the following command.
+
+ $deactivate
+
+*Author [#x3fafb00]
+S.Yatsuzuka

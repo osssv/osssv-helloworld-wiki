@@ -1,0 +1,25 @@
+ #contents
+ 
+ *Overall Feature [#f3d9fb82]
+ >An Enthought Canopy subscription provides Python 2.7.6, easy installation and updates of over 250 pre-built and tested scientific and analytic Python packages such as NumPy, Pandas, SciPy, Matplotlib, and IPython, PLUS an integrated analysis environment, graphical debugger, and online Python Essentials and Python Development Tools training courses. Academic users may request a free Canopy Academic license.
+ <
+ RIGHT:
+ cited from [[Wikipedia - Enthought:https://www.enthought.com/products/canopy/package-index/]]
+ 
+ *Specification [#m992ea0b]
+ |LEFT:100|LEFT:200|c
+ |CENTER:ITEM|CENTER:DESCRIPTION|h
+-|Main Developer|xxx|
+-|License|xxx|
++|Main Developer|Enthought|
++|License|Canopy Academic License|
+ |OS|cross-platform|
+ |Written In|Python|
+ |Official Site|https://www.enthought.com/products/canopy/|
+ 
+ 
+ *HowToUse [#i1e9aca7]
+ #ls2(HowToUse/EnthoughtCanopy/)
+ 
+ *Author [#d8ba92f8]
+ S.Yatsuzuka

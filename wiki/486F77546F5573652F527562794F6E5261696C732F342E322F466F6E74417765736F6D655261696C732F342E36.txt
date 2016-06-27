@@ -1,0 +1,28 @@
+#contents
+
+*Prerequisite [#a00090dc]
+-Rails installation (You can refer [[HowToUse/RubyOnRails/4.2]])
+
+*Install&Setup [#m4a226d3]
+:Step.1|
+Add font-awesome-rails to Gemfile.
+
+ gem "font-awesome-rails"
+
+:Step.2|
+Install new gem.
+
+ $ bundle install
+
+*HowToUse [#c5ee2765]
+:Step.1|
+Add the following line to your view file.
+
+ <%= fa_icon "github" %>
+
+Then, you can see the logo for GitHub. 
+
+
+
+*Author [#m7964266]
+S.Yatsuzuka

@@ -1,0 +1,67 @@
+#contents
+
+*Prerequisite [#k47e4c01]
+-xxx installation (You can refer [[Overall/xxx]])
+
+*HowToUse [#efea7e93]
+**Load GitHub project [#x04eb90e]
+:Step.1|
+Access CodeClimate (https://codeclimate.com/), login the service, and click "Add Open Source Repo" button.
+
+#ref(Install_fig1.png,,500x267,)
+
+
+:Step.2|
+Enter GitHub repo name, and click "Import Repo from GitHub" button.
+
+#ref(Install_fig2.png,,500x267,)
+
+:Step.3|
+After a while, the project was loaded to Code Climate and analyzed.
+
+#ref(Install_fig3.png,,500x267,)
+
+#ref(Install_fig4.png,,500x267,)
+
+#ref(Install_fig5.png,,500x267,)
+
+
+**Code Coverage [#s9689fe0]
+:Step.1|
+Click "Test Coverage" menu, and follow the instruction.
+
+:Step.2|
+Set CODECLIMATE_REPO_TOKEN on CI configuration file.
+
+ env:
+   global:
+     secure: <encryption>
+
+If you use travis-ci with rails, you can put token on .travis.yml with the following command.
+
+ $ gem install travis
+ $ travis encrypt CODECLIMATE_REPO_TOKEN=<secret key>
+
+You can see secret key from code climate's web page.
+
+
+:Step.3|Execute command to measure coverage.
+
+ $ CODECLIMATE_REPO_TOKEN=<secret key> bundle exec rake
+
+Then the report file is transfered to CodeClimate and you can see the coverage information from dashboard.
+
+**Add Badge to GitHub Readme file. [#ze793a9a]
+
+:Step.1|
+Click "Badges" button. 
+
+#ref(AddBadge_fig1.png,,500x267,)
+
+:Step.2|
+You can see Markdown by clicking "Markdown" menu. Copy it to Readme.md in GitHub.
+You can see sample from [[here:https://github.com/nasebanal/nb-bitcoin/blob/master/README.md]]
+
+
+*Author [#pf9104c7]
+S.Yatsuzuka

@@ -1,0 +1,63 @@
+-#contents
+ 
+-*Prerequisite [#lf263c4d]
+--Python installation (You can refer [[HowToUse/Python/2.7]])
+-
+-*Install&Setup [#c44f21ff]
+-:Step.1|
+-Access Travis-ci web site, and register account with GitHub account.
+-
+-:Step.2|
+-Click "+" on the right of "My Repositories" menu.
+-
+-#ref(Setup_fig2.png,,500x267,)
+-
+-:Step.3|
+-Choose target project to integrate with Travis CI.
+-
+-#ref(Setup_fig3.png,,500x267,)
+-
+-:Step.4|
+-Access to GitHub project, and choose "setting" menu.
+-
+-#ref(Setup_fig4.png,,500x267,)
+-
+-:Step.5|
+-click "Web Hook" menu".
+-
+-#ref(Setup_fig5.png,,500x267,)
+-
+-:Step.6|
+-click "Add Service" menu, and choose "Travis-ci".
+-
+-#ref(Setup_fig6.png,,500x267,)
+-
+-*HowToUse [#qc6fc894]
+-:Step.1|
+-Prepare .travis.yml in the project root directory.
+-
+- $ vi .travis.yml
+-
+-(Example)
+- language: python
+- python:
+- - "2.7"
+- # command to install dependencies
+- install: "pip install nose"
+- # command to run tests
+- script: nosetests
+-
+-:Step.2|
+-Prepare test script.
+-
+-:Step.3|
+-Check in .travis.yml to GitHub, then test will be autoran on travis-ci server.
+-
+-If you put the following line in your README.md file, you can see the status of Travis-ci from it.
+-
+- [![Build Status](https://travis-ci.org/nasebanal/hd-website.svg)](https://travis-ci.org/nasebanal/hd-website)
+-
+-
+-*Author [#n93be3cd]
+-S.Yatsuzuka
+-

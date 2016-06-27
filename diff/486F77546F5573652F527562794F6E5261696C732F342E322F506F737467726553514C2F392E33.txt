@@ -1,6 +1,7 @@
  #contents
  
  *Prerequisite [#w7a3b6fb]
++-Ubuntu Server installation (You can refer [[HowToUse/UbuntuServer/14.04]])
  -Ruby On Rails installation (You can refer [[HowToUse/RubyOnRails/4.1]])
  -PostgreSQL installation (You can refer [[HowToUse/PostgreSQL/9.3]])
  
@@ -35,8 +36,7 @@
   ...
   gem 'execjs'
  
--(You can see sample from [[here:https://github.com/osssv/osssv-helloworld/blob/master/rubyonrails/4.2/postgresql/9.3/sample/Gemfile]]
-+(You can see sample from [[here:https://github.com/osssv/osssv-helloworld/blob/master/rubyonrails/4.2/postgresql/9.3/sample/Gemfile]])
+ (You can see sample from [[here:https://github.com/osssv/osssv-helloworld/blob/master/rubyonrails/4.2/postgresql/9.3/sample/Gemfile]])
  
  :Step.3|
  Install gems.
@@ -47,7 +47,13 @@
  Update pg_hba.conf from "peer" to "trust" so that other user than postgres can access database as exepected.
  
   $ su - postgres
+ 
+-(Ubuntu Server)
   $ cd /etc/postgres/9.3/main
+-
+-(Redhat Linux)
+- $ cd /var/lib/pgsql92/data/
+-
   $ vi pg_hba.conf
  
   local   all             postgres                                trust
@@ -82,8 +88,7 @@
  (Example)
     username: sample
  
--(You can see sample from [[https://github.com/osssv/osssv-helloworld/blob/master/rubyonrails/4.2/postgresql/9.3/sample/config/database.yml]]
-+(You can see sample from [[here:https://github.com/osssv/osssv-helloworld/blob/master/rubyonrails/4.2/postgresql/9.3/sample/config/database.yml]])
+ (You can see sample from [[here:https://github.com/osssv/osssv-helloworld/blob/master/rubyonrails/4.2/postgresql/9.3/sample/config/database.yml]])
  
  :Step.8|
  Create new controller for welcome page.
@@ -104,8 +109,7 @@
   <%= Time.now %>
   </p>
  
--(You can see sample from [[https://github.com/osssv/osssv-helloworld/blob/master/rubyonrails/4.2/postgresql/9.3/sample/app/views/welcome/index.html.erb]]
-+(You can see sample from [[here:https://github.com/osssv/osssv-helloworld/blob/master/rubyonrails/4.2/postgresql/9.3/sample/app/views/welcome/index.html.erb]])
+ (You can see sample from [[here:https://github.com/osssv/osssv-helloworld/blob/master/rubyonrails/4.2/postgresql/9.3/sample/app/views/welcome/index.html.erb]])
  
  
  :Step.11|

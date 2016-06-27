@@ -1,0 +1,25 @@
++#contents
+ 
++*Prerequisite [#j0eac999]
++-Python installation (You can refer [[HowToUse/Python/2.7]])
++
++*Install&Setup [#p18c3e19]
++:Step.1|
++Install nose.
++
++ $ pip install nose
++
++*HowToUse [#u7dcacff]
++:Step.1|
++Prepare test scripts. unittest is commonly used.
++
++:Step.2|
++Run test script.
++
++ $ nosetests
++
++If you describe the command line in Travis-CI's configuration file, test would run after you commits new code to repository. You can refer [[Overall/Travis-CI]]
++
++
++*Author [#f43778f4]
++S.Yatsuzuka

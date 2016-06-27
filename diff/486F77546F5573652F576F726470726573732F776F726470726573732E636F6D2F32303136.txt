@@ -1,0 +1,221 @@
+ #contents
+ 
+ *Prerequisite [#f989ef43]
+ None
+ 
+ *Install&Setup [#jc22686a]
+ :Step.1|
+ Access [[here:https://wordpress.com/]] and click "Create Website".
+ 
+ #ref(Setup_fig1.png,,500x266,)
+ 
+ :Step.2|
+ Choose the type of your web site.
+ Probably, this selection doesn't affect the functionality of your web site.
+ 
+ #ref(Setup_fig2.png,,500x266,)
+ 
+ :Step.3| 
+ Choose the subcategory of your web site.
+ Probably, this selection doesn't affect the functionality of your web site.
+ 
+ #ref(Setup_fig3.png,,500x266,)
+ 
+ :Step.4|
+ Choose the theme of your web site.
+ You can change this setting later.
+ 
+ #ref(Setup_fig4.png,,500x266,)
+ 
+ :Step.5|
+ Enter your prospective web site URL and check if it is available.
+ 
+ #ref(Setup_fig5.png,,500x266,)
+ 
+ :Step.6|
+ Pick up the URL like.
+ You can choose *.wordpress.com as free domain.
+ 
+ #ref(Setup_fig6.png,,500x266,)
+ 
+ :Step.7|
+ Choose the service.
+ 
+ #ref(Setup_fig7.png,,500x266,)
+ 
+ :Step.8|
+ Register your email address. You can register your email address only for one web site.
+ 
+ #ref(Setup_fig8.png,,500x266,)
+ 
+ :Step.9|
+ Setup process proceeds in background.
+ Then you can see the dashboard window to edit and configure your web site.
+ 
+ #ref(Setup_fig9.png,,500x266,)
+ 
+ #ref(Setup_fig10.png,,500x266,)
+ 
+ 
+ 
+ *HowToUse [#ra31c600]
+ **Change Theme [#i7cb12fd]
+ :Step.1|
+ Click Theme menu from the left menu.
+ 
+ #ref(Setup_fig11.png,,500x266,)
+ 
+ :Step.2|
+ Choose your favorite Theme and click "Activate" button. Then you can see the design of your web site is changed.
+ 
+ #ref(Setup_fig12.png,,500x266,)
+ 
+ 
+ **Creating Post [#v8e62564]
+ :Step.1|
+ Click "Add" button on "Blog Posts" menu.
+ 
+ #ref(Setup_fig13.png,,500x266,)
+ 
+ :Step.2|
+ Put the page title and description of page in the form.
+ 
+ #ref(Setup_fig14.png,,500x266,)
+ 
+ :Step.3|
+ Click "Publish" button. after a while, you will see the message that page is published successfully.
+ 
+ #ref(Setup_fig15.png,,500x266,)
+ 
+ :Step.4|
+ When you access your web site, you can see your post is displayed on your top page automatically.
+ 
+ #ref(Setup_fig16.png,,500x266,)
+ 
+ 
+ **Creating Static page and Menu [#sf0a63cb]
+ :Step.1|
+ Click "Add" button on "Pages" menu.
+ 
+ #ref(Setup_fig17.png,,500x266,)
+ 
+ :Step.2|
+ Put the page tile and description for new page.
+ 
+ #ref(Setup_fig18.png,,500x266,)
+ 
+ :Step.3|
+ Click "Publish" button and you will see the message that your page is released successfully. 
+ 
+ #ref(Setup_fig19.png,,500x266,)
+ 
+ :Step.4|
+ In this time, you you can't see the link to this new page from your top page, so you need to put navigation menu for it.
+ Click "customize" button on your "Theme" menu.
+ 
+ 
+-#ref(Setup_fig24.png,,500x266,)
+-
+ :Step.5|
+ Click "Menu" menu.
+ 
+-#ref(Setup_fig25.png,,500x266,)
++#ref(Setup_fig24.png,,500x266,)
+ 
+ :Step.6|
+ Click "Add a menu" button.
+ 
+-#ref(Setup_fig26.png,,500x266,)
++#ref(Setup_fig25.png,,500x266,)
+ 
+ :Step.7|
+ Put the menu name and click "Create Menu" button. The name for menu is just for a marking, and it doesn't show up on your web site.
+ 
+-#ref(Setup_fig27.png,,500x266,)
++#ref(Setup_fig26.png,,500x266,)
+ 
+ :Step.8|
+ Check "Primary Menu", and "Automatically Add" checkbox and click "Add Items", so that the menu is shown on your web site automatically.
+ 
+-#ref(Setup_fig28.png,,500x266,)
++#ref(Setup_fig27.png,,500x266,)
+ 
+ :Step.9|
+ Click "Save" button.
+ 
+-#ref(Setup_fig29.png,,500x266,)
++#ref(Setup_fig28.png,,500x266,)
+ 
+ :Step.10|
+ Go back to your main maintenance page, and click "Menu" menu.
+ 
+-#ref(Setup_fig30.png,,500x266,)
++#ref(Setup_fig29.png,,500x266,)
+ 
+ :Step.11|
+ Choose newly created menu for "Primary Menu". Choose page name from radio button and click "Add item" button.
+ 
++#ref(Setup_fig30.png,,500x266,)
++
++:Step.12|
++Click "Save" button.
++
+ #ref(Setup_fig31.png,,500x266,)
+ 
+-:Step.12|
++:Step.13|
+ Click "Add menu item below".
+ 
+ #ref(Setup_fig32.png,,500x266,)
+ 
+-:Step.13|
++:Step.14|
+ Click page title and click "Add item" button repeatedly.
+ 
+ #ref(Setup_fig33.png,,500x266,)
+ 
+-:Step.14|
++:Step.15|
+ Click "Save" button, then you can see new menu is shown up in your web site.
+ 
+ #ref(Setup_fig34.png,,500x266,)
+ 
+ #ref(Setup_fig35.png,,500x266,)
+ 
+ 
+ **Change Widget [#hd5d550e]
+ :Step.1|
+ Click "Widget" menu.
+ 
+ #ref(Setup_fig36.png,,500x266,)
+ 
+ :Step.2|
+ Choose "First Footer Widget Area".
+ 
+ #ref(Setup_fig37.png,,500x266,)
+ 
+ :Step.3|
+ Click "Add a Widget" button.
+ 
+ #ref(Setup_fig38.png,,500x266,)
+ 
+ :Step.4|
+ Choose the widget type you want to add on widget area.
+ 
+ #ref(Setup_fig39.png,,500x266,)
+ 
+ :Step.5|
+ Click "Save and Publish" button, then you can see new widget is shown up on the bottom of your web site.
+ 
+ #ref(Setup_fig40.png,,500x266,)
+ 
+ #ref(Setup_fig41.png,,500x266,)
+ 
+ 
+ **Change php code [#hd5d550e]
+ :Step.1|
+ TBD
+ 
+ 
+ *Author [#wc7de301]
+ S.Yatsuzuka

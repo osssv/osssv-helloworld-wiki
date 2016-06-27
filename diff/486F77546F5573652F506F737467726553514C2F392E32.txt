@@ -1,0 +1,109 @@
+ #contents
+ 
+ *Prerequisite [#i4598436]
+ -Amazon Linux installation
+ 
+ *Install&Setup [#z080214c]
+ **Amazon Linux [#af160a4a]
+ :Step.1|
+ Install PostgreSQL.
+ 
+  $ sudo yum install postgresql postgresql-server postgresql-contrib pgadmin3
+ 
+ :Step.2|
+ Set up the initial password for postgres user.
+ 
+  $ sudo passwd postgres
+  <password>
+ 
+ :Step.3|
+ Initialize DB
+ 
+  $ sudo service postgresql initdb
+  $ sudo /etc/rc.d/init.d/postgresql start
+  $ sudo chkconfig postgresql on
+ 
+ :Step.4|
+ Setup the initial password for postgres DB user.
+ 
+  $ su - postgres
+  $ psql
+  postgres=# alter user postgres with password '<password>';
+ 
+ :Step.4|
+ Launch pgAdminIII.
+ 
+ #ref(Install_fig1.png,,500x266,)
+ #ref(Install_fig2.png,,500x266,)
+ 
+ :Step.5|
+ Access DB.
+ 
+ #ref(Install_fig3.png,,500x266,)
+ #ref(Install_fig4.png,,500x266,)
+ 
+ 
+ *HowToUse [#maf95962]
+ *HowToUse [#uf9e096b]
+ **Connect Database [#d8f3c5f3]
+ :Step.1|
+ Execute the following command.
+ 
+  $ psql -U <User Name> -d <Database Name>
+ 
+ example)
+ 
+  $ psql -U postgres -d sample_development
+ 
+ 
+ **Fundamental commands [#cdaa7e34]
+ (Get User list)
+  # select * from pg_user;
+ 
+ (Get Database list)
+  # \l
+ 
+ or
+ 
+  # select * from pg_database;
+ 
+ (Get Table list)
+  # \d
+ 
+ or 
+ 
+  # select * from pg_class;
+ 
+ (Get Table Columns)
+  # \d <table name>
+ 
+ 
+-*Backup Database [#c9518b79]
++**Backup & Restore Database [#c9518b79]
++
++***SQL dump [#kd35d823]
+ :Step.1|
+-Execute the following command.
++Backup database with the following command.
+ 
+  $ pg_dump <Database Name> -U <User Name> > <Dump File Name>
+ 
++:Step.2|
++Restore database with the following command.
+ 
++ $ drop database <Database Name>
++ $ create database <Database Name>
++ $ psql <Database Name> < <Dump File Name>
++
++***File Level Backup [#ba38ff3c]
++Backup PGDATA directory. In general it is /var/lib/psql/data, but my case is /var/lib/postgresql/9.3/main.
++
++ $ tar -cf <backup file name> <PGDATA directory path>
++
++(Example)
++ $ tar -cf backup.tar /var/lib/psql/data
++
++
++
+ *Author [#yddb7860]
+ S.Yatsuzuka

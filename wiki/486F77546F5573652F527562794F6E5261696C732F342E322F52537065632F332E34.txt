@@ -1,0 +1,49 @@
+#contents
+
+*Prerequisite [#padb2cbe]
+-Rails installation (You can refer [[HowToUse/RubyOnRails/4.2]])
+
+*Install&Setup [#obc36972]
+:Step.1|
+Edit Gemfile.
+
+ group :development, :test do
+   gem 'rspec-rails'
+ end
+
+:Step.2|
+Install rspec-rails.
+
+ $ bundle install
+
+
+*HowToUse [#r2e0b857]
+:Step.1|
+Generate spec files.
+
+ $ rails generate rspec:install
+
+
+:Step.2|
+For integration test, you need to add the following configurations in spec_helper.rb as below.
+
+ require File.expand_path("../../config/environment", __FILE__)
+ require 'rspec/rails'
+ config.infer_spec_type_from_file_location!
+
+You can refer sample from [[here:https://github.com/nasebanal/nb-bitcoin/blob/master/spec/spec_helper.rb]]
+
+
+:Step.3|
+Prepare spec file. 
+
+You can refer sample from [[here:https://github.com/nasebanal/nb-bitcoin/blob/master/spec/routing/root_routing_spec.rb]]
+
+:Step.4|
+Execute rspec.
+
+ $ rspec
+
+
+*Author [#ra62a8f6]
+S.Yatsuzuka

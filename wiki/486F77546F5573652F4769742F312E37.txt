@@ -4,7 +4,73 @@
 **Install Git from Cygwin [#k4e04c5b]
 (TBD)
 
+**Configuration [#p822417b]
+Step.1) Setup configuration as needed.
+
+Example)
+
+ $ git config --global color.ui true
+ $ git config --global user.name "<User Name>"
+ $ git config --global user.email "<Email address>"
+ $ git config --global core.editor <Editor>
+ $ git config --global alias.mylog "log --pretty=format:'%h %s [%an]' --graph"
+
+Step.2) Setup .ignore as needed.
+
+Example)
+
+ logs/*.log
+
 *HowToUse [#hd885861]
+**General Operation [#q9061a8b]
+:Step.1|
+Clone the repository
+
+ $ git clone <Remote Repository>
+
+:Step.2|
+Create a new branch.
+
+ $ git checkout -b <Branch Name>
+
+:Step.3|
+Edit files.
+
+:Step.4|
+Stage updated files.
+
+ $ git add .
+
+You can reset the updated files.
+
+ $ git reset HEAD
+
+:Step.5|
+Commit the files.
+
+ $ git commit -m "<commit message>" 
+
+If you are using GitHub, you can close the issue with the following commit message.
+
+ $ git commit -m "Close #<issue no>"
+
+:Step.6|
+Merge the commited files into master.
+
+ $ git checkout master
+ $ git merge <Branch Name>
+
+:Step.7|
+Remove the branch.
+
+ $ git branch -d <Branch Name>
+
+:Step.8|
+Push the files to remote server.
+
+ $ git push
+
+
 **Use original Git Server [#r8596e41]
 ***Setup the Git Server [#pcb92f91]
 Refer [[HowToUse/Git Daemon/1.7]]
@@ -90,7 +156,7 @@ Refer [[HowToUse/Git Daemon/1.7]]
 #ref(BitBucket_fig5.png,,500x266,)
 
 
-**Maintain the files in Repository [#ia5caee3]
+***Maintain the files in remote Repository [#ia5caee3]
 :Step.1|Clone the remote repository.
  # git clone <Repository Path>
 
@@ -110,8 +176,17 @@ Refer [[HowToUse/Git Daemon/1.7]]
 Eclipse Plugin sometimes doesn't have full functionalities for the external utilities such as maven or git, so I recommend you to use command line for fundamental operations except for editing files.
  # git add <Modified Files>
  # git commit -m '<Commit Log>'
+ # git tag -a <version> -m '<description>'
  # git pull origin
  # git push origin
+
+
+**Further Operation [#z2d0b6d6]
+***Maintain submodule [#n36c1f6e]
+:Step.1|Get submodule in the workspace.
+ # git submodule <repository path> <submodule directory>
+
+Then you can include submodules to your project without maintaining version control for its submodule code.
 
 
 *Author [#v4f30f2e]

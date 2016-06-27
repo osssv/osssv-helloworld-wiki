@@ -1,0 +1,15 @@
++#contents
+ 
++*Prerequisite [#y1a06bda]
++-Ubuntu Server installation (You can refer [[HowToUse/UbuntuServer/14.04]])
++
++*Install&Setup [#i0176d28]
++:Step.1|
++xxx
++
++*HowToUse [#ia4f2220]
++:Step.1|
++xxx
++
++*Author [#p1f36c53]
++S.Yatsuzuka

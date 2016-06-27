@@ -11,7 +11,6 @@
 :Step.1|
 Get sourcecode from git server.
 
- $
  $ cd /var/www/html
  $ sudo git clone --depth=1 -b MOODLE_29_STABLE git://git.moodle.org/moodle.git  
  $ sudo chown -R root moodle

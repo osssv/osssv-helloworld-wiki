@@ -3,31 +3,21 @@
  * Introduction [#kf464079]
  :Objective|
  To share information for Open Source Software and its community to public on a volunteer basis.
--Don't expect too much please.
-+Don't expect too much.
+ Don't expect too much.
  
- :Activities|
- --Monthly Interview
----Study Session
- --Sharing Information (News, Event information, etc)
+-:Activities|
+---Monthly Interview
+---Sharing Information (News, Event information, etc)
  
--:Message|
--Enthusiastic volunteer who has passion for Open Source Software is always welcome even though you are not engineer.
--
--
  * Link [#k43ad822]
  [https://www.facebook.com/groups/OSS.SiliconValley/ OSSSV FB Group]
  
--[https://www.facebook.com/groups/OSS.SiliconValley.Staff/ OSSSV FB Group(for Volunteer)]
--
  [http://osssv.wordpress.com/ OSSSV Blog]
  
--[http://virago.sakura.ne.jp/osssv/public/index.php?cmd=rss10 RSS feed - OSSSV Public Memorandum]
-+[http://virago.sakura.ne.jp/osssv/public/index.php?cmd=rss10 RSS feed - Hello World from OSS Silicon Valley]
+ [http://virago.sakura.ne.jp/osssv/public/index.php?cmd=rss10 RSS feed - Hello World from OSS Silicon Valley]
  
  [http://osssv.wordpress.com/feed/ RSS feed - OSSSV Blog]
  
  #popular(20,FrontPage)
  
--#recent
-+#recent(20)
+ #recent(20)

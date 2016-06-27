@@ -1,0 +1,73 @@
+ #contents
+ 
+ *Prerequisite [#i469bbfe]
+ -Ubuntu Server installation (You can refer [[HowToUse/UbuntuServer/14.04]])
+ 
+ *Install&Setup [#w796d593]
+ :Step.1|
+ Install GoogleAppEngine SDK.
+ 
+ *HowToUse [#zb58dae2]
+ **Create application [#t0f57043]
+ :Step.1|
+ Create app.yaml
+ 
+  $ mkdir <project directory>
+  $ cd <project directory>
+  $ vi app.yaml
+ 
+ You can refer sample [[here:https://github.com/osssv/osssv-helloworld/blob/master/gae/1.9/helloworld/app.yaml]]
+ 
+ :Step.2|
+ Create main.py
+ 
+  $ vi main.py
+ 
+ You can refer sample [[here:https://github.com/osssv/osssv-helloworld/blob/master/gae/1.9/helloworld/main.py]]
+ 
+ :Step.3|
+ Launch instance.
+ 
+  $ dev_appserver.py .
+ 
+ Then you can see the sample web site from http://localhost:8080
++If you want to have portforwarding in virtual environment, you can use the following command.
+ 
++ $ dev_appserver.py --host 0.0.0.0 .
++
+ **Deploy application to Google App Engine [#ye377fd4]
+ :Step.1|
+ Access[[console site:https://appengine.google.com/]] to register application.
+ 
+ #ref(DeployApp_fig1.png,,500x269,)
+ 
+ 
+ :Step.2|
+ Click "Google Developers Console" link.
+ 
+ #ref(DeployApp_fig2.png,,500x269,)
+ 
+ :Step.3|
+ Click "Create project" button, and determine application ID.
+ 
+ :Step.4|
+ Update "application" in app.yaml to the same string of application ID, and execute the following command.
+ 
+  $ appcfg.py update .
+ 
+ Then the application is deployed and you can access from [http://<application ID>.appspot.com].
+ 
+ 
+ **Create application with Jinja2 [#f57c3ae5]
+ :Step.1|
+ Add jinja2 to app.yaml. You can see sample from [[here:https://github.com/osssv/osssv-helloworld/blob/master/gae/1.9/jinja2/app.yaml]]
+ 
+ :Step.2|
+ Prepare view file. You can see sample from [[here:https://github.com/osssv/osssv-helloworld/blob/master/gae/1.9/jinja2/main.py]]
+ 
+ :Step.3|
+ Prepare control file. You can see sample from [[here:https://github.com/osssv/osssv-helloworld/blob/master/gae/1.9/jinja2/main.py]]
+ 
+ 
+ *Author [#vbadca3a]
+ S.Yatsuzuka

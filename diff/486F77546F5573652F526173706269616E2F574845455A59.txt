@@ -1,0 +1,86 @@
+ #contents
+ 
+ *Prerequisite [#aa6f396b]
+ (None)
+ 
+ *Install&Setup [#x4b81906]
+ :Step.1|
+ Download Image file from [[Rasberry Pi Official Web site:https://www.raspberrypi.org/downloads/raspbian/]]
+ 
+ :Step.2|
+ Copy image file into micro SD card.
+ 
+ :Step.3|
+ Insert micro SD card into Rasberry Pi and boot it.
+ 
+ :Step.4|
+-Setup config.
++Expand Filesystem from "1 Expand Filesystem" in raspi-config menu.
+ 
++:Step.5|
++Change User password from "2 Change User Passowrd" in raspi-config menu.
++
++
++:Step.6|
++Enable Boot Desktop/Scratch from "3 Enable Boot Desktop/Scratch" in raspi-config menu.
++
++:Step.7|
++Change Locale from "4 Internationalisation Options" in raspi-config menu.
++
++:Step.8|
++Change Timezone from "4 Internationalisation Options" in raspi-config menu.
++
++:Step.9|
++Change Keyboard Layout from "4 Internationalisation Options" in raspi-config menu.
++
++:Step.10|
++Setup network interface.
++
++ $ sudo vi /etc/network/interface
++
++ auto lo 
++ iface l0 inet loopback
++
++ auto eth0
++ allow-hotplug eth0
++ iface eth0 inet static
++ address 192.168.1.1
++ netmask 255.255.255.0
++ 
++ auto wlan0
++ allow-hotplug wlan0
++ iface wlan0 inet manual
++ wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
++ 
++ #auto wlan1
++ #allow-hotplug wlan1
++ #iface wlan1 inet manual
++ #wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
++
++
+ *HowToUse [#z2fb0b80]
++**Remote Desktop from Windows PC [#s2701947]
+ :Step.1|
+-TBD
++Install xrdp
+ 
++ $ sudo apt-get install xrdp
++
++Then you will be able to connect with Rasberry PI via "Remote Desktop".
++
++**Rasberry PI Camera [#y14618bf]
++:Step.1|
++Connect Rasberry PI Camera with Rasberry PI and launch raspi-config
++
++ $ sudo raspi-config
++
++:Step.2|
++Enable Camera from "5 Enable Camera" in raspi-config menu.
++
++:Step.3|
++Reboot the system and check if the camera is recognized on Rasberry PI from the following commandline.
++
++ $ raspistill -v -o test.jpg
++
+ *Author [#s79ccab6]
+ S.Yatsuzuka

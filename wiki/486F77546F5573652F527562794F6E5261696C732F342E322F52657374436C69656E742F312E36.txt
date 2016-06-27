@@ -1,0 +1,32 @@
+#contents
+
+*Prerequisite [#jbca06ec]
+-Rails installation (You can refer [[Overall/RubyOnRails]])
+
+*Install&Setup [#n3549a0f]
+:Step.1|
+Edit Gemfile.
+
+ $ vi Gemfile
+
+ # RestClient
+ gem 'mime-types'
+ gem 'netrc'
+ gem 'http-cookie'
+ gem 'rest-client'
+
+:Step.2|
+Install gem files.
+
+ $ bundle install
+
+
+*HowToUse [#ia13cc0b]
+:Step.1|
+Call RestClient in controller.
+
+ response = RestClient.get '<URL>'
+
+
+*Author [#y2ec1239]
+S.Yatsuzuka

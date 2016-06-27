@@ -36,8 +36,61 @@ Access DB.
 
 
 *HowToUse [#uf9e096b]
+**Connect Database [#d8f3c5f3]
 :Step.1|
-xxx
+Execute the following command.
+
+ $ psql -U <User Name> -d <Database Name>
+
+example)
+
+ $ psql -U postgres -d sample_development
+
+
+**Fundamental commands [#cdaa7e34]
+(Get User list)
+ # select * from pg_user;
+
+(Get Database list)
+ # \l
+
+or
+
+ # select * from pg_database;
+
+(Get Table list)
+ # \d
+
+or 
+
+ # select * from pg_class;
+
+(Get Table Columns)
+ # \d <table name>
+
+
+*Backup Database [#c9518b79]
+***SQL dump [#h119641c]
+:Step.1|
+Backup database with the following command.
+
+ $ pg_dump <Database Name> -U <User Name> > <Dump File Name>
+
+:Step.2|
+Restore database with the following command.
+
+ $ drop database <Database Name>
+ $ create database <Database Name>
+ $ psql <Database Name> < <Dump File Name>
+
+***File Level Backup [#y6ba512c]
+Backup PGDATA directory. In general it is /var/lib/psql/data, but my case is /var/lib/postgresql/9.3/main.
+
+ $ tar -cf <backup file name> <PGDATA directory path>
+
+(Example)
+ $ tar -cf backup.tar /var/lib/psql/data
+
 
 *Author [#j2888479]
 S.Yatsuzuka

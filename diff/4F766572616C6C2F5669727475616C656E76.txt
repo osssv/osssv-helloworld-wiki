@@ -1,0 +1,22 @@
++#contents
+ 
++*Overall Feature [#dadfa226]
++>Virtualenv is a tool to create isolated Python environments.
++<
++RIGHT:
++cited from [[Virtualenv.org:https://virtualenv.pypa.io/en/latest/#]]
++
++
++*Specification [#i05d51dc]
++|LEFT:100|LEFT:200|c
++|CENTER:ITEM|CENTER:DESCRIPTION|h
++|OS|Cross-platform|
++|Written In|Python|
++|Official Site|https://virtualenv.pypa.io/en/latest/#|
++
++
++*HowToUse [#ofafc6f6]
++#ls2(HowToUse/Virtualenv)
++
++*Author [#q1078f02]
++S.Yatsuzuka

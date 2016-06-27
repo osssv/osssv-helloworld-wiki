@@ -7,9 +7,3 @@ Overall
 HowToUse
 
 #ls2(HowToUse/)
-
-Template
-
-#ls2(Template/)
-
-&edit(MenuBar,noicon){edit};

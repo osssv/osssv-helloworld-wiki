@@ -1,0 +1,32 @@
+-#contents
+ 
+-*Prerequisite [#r0d667db]
+--Rails installation (You can refer [[HowToUse/RubyOnRails/4.2]])
+-
+-*Install&Setup [#k3467623]
+-:Step.1|
+-Add Capybara in Gemfile
+-
+- group :test do
+-  ...
+-  gem 'capybara'
+- end
+-
+-:Step.2|
+-Install Capybara
+-
+- $ bundle install
+-
+-
+-*HowToUse [#d2c7d470]
+-:Step.1|
+-Prepare Test Script
+-
+-:Step.2|
+-Execute test.
+-
+- $ rake test
+-
+-*Author [#r862eea3]
+-S.Yatsuzuka
+-

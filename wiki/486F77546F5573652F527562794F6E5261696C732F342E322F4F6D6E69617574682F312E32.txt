@@ -98,11 +98,11 @@ Edit routes.
  get 'welcome/index'
  ...
  root 'welcome#index'
- get '/auth/:provider/callback', :to => 'sessions#callback'
- post '/auth/:provider/callback', :to => 'sessions#callback'
+ get '/auth/:provider/callback', :to => 'sessions#create'
+ post '/auth/:provider/callback', :to => 'sessions#create'
  get '/logout' => 'sessions#destroy', :as => :logout
 
-(You can see sample from [[here:https://github.com/nasebanal/nb-socialcoding/blob/master/config/routes.rb]].)
+(You can see sample from [[here:https://github.com/nasebanal/nb-platform4biz/blob/master/config/routes.rb]].)
 
 You can check the configuration result from the following command.
 
@@ -133,7 +133,7 @@ Edit Application controller.
    end
  end
 
-(You can see sample from [[here:https://github.com/nasebanal/nb-socialcoding/blob/master/app/controllers/base_controller.rb]].)
+(You can see sample from [[here:https://github.com/nasebanal/nb-platform4biz/blob/master/app/controllers/application_controller.rb]].)
 
 :Step.7|
 Edit Session controller.
@@ -141,7 +141,7 @@ Edit Session controller.
  $ vi app/controllers/session_controller.rb
 
  class SessionsController < ApplicationController
-   def callback
+   def create
      auth = request.env['omniauth.auth']
      user =  User.find_by_provider_and_uid(auth['provider'], auth['uid']) || User.create_with_omniauth(auth)
      session[:user_id] = user.id
@@ -154,9 +154,18 @@ Edit Session controller.
    end
  end
 
-(You can see sample from [[here:https://github.com/nasebanal/nb-socialcoding/blob/master/app/controllers/session_controller.rb]].)
+(You can see sample from [[here:https://github.com/nasebanal/nb-platform4biz/blob/master/app/controllers/session_controller.rb]].)
+
 
 :Step.8|
+Edit controller file which should have authentication.
+
+ class XXXController < BaseController
+  before_action :login_required
+
+(You can see sample from [[here:https://github.com/nasebanal/nb-platform4biz/blob/master/app/controllers/events_controller.rb]].)
+
+:Step.9|
 Edit view file.
 
  $ vi app/view/layout/application.rb
@@ -166,6 +175,8 @@ Edit view file.
  <% else %>
    <%= link_to 'Login', '/auth/github' %>
  <% end %>
+
+(You can see sample from [[here:https://github.com/nasebanal/nb-platform4biz/blob/master/app/views/layout/application.html.rb]].)
 
 
 *Author [#s17e9cc9]

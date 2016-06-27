@@ -1,0 +1,41 @@
+ #contents
+ 
+ *Prerequisite [#w591b473]
+ -Ubuntu Server installation (You can refer [[HowToUse/UbuntuServer/14.04]])
+--Google App Engine SDK installation (You can refer [[HowToUse/Python/2.7/GoogleAppEngine/1.9/]])
++-Google App Engine SDK installation (You can refer [[HowToUse/Python/2.7/GoogleAppEngine/1.9]])
+ 
+ 
+ *Install&Setup [#uae90a84]
+ :Step.1|
+ Get source code.
+ 
+  $ git clone <Hacker Dojo project>
+ 
+ (Example)
+ 
+  $ git clone https://github.com/hackerdojo/hd-events
+ 
+ :Step.2|
+ Test in local environment.
+ 
+  $ dev_appserver.py .
+ 
+ :Step.3|
+ Create new project on the console of Google App Engine, and determine the unique name for the application.
+ 
+ :Step.4|
+ Update the application name in app.yaml determined in Step.3.
+ 
+ :Step.5|
+ Deploy the application.
+ 
+  $ appcfg.py update .
+ 
+ 
+ *HowToUse [#t77b21be]
+ TBD
+ 
+ 
+ *Author [#x60d7768]
+ S.Yatsuzuka

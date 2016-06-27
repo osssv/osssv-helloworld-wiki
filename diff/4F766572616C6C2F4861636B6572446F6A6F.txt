@@ -1,0 +1,24 @@
++#contents
+ 
++*Overall Feature [#r0570bab]
++>Hacker Dojo is a 16,600-square-foot (1,540 m2) community center and hackerspace. They release their software for operation as an open source software in GitHub.
++<
++RIGHT:
++cited from [[Wikipedia - Hacker:https://en.wikipedia.org/wiki/Hacker_Dojo]]
++
++
++*Specification [#jf8b811a]
++|LEFT:100|LEFT:200|c
++|CENTER:ITEM|CENTER:DESCRIPTION|h
++|Main Developer|Hacker Dojo|
++|License|(undefined)|
++|OS|(Google App Engine)|
++|Written In|Python|
++|Official Site|https://github.com/hackerdojo|
++
++
++*HowToUse [#s46f9590]
++#ls2(HowToUse/HackerDojo)
++
++*Author [#h37e0fae]
++S.Yatsuzuka

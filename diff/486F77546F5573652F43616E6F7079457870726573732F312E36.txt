@@ -1,0 +1,22 @@
+-#contents
+ 
+-*Prerequisite [#fb156585]
+--CentOS installation (You can refer [[HowToUse/CentOS/6.5]])
+-
+-*Install&Setup [#q516e887]
+-:Step.1|
+-Download installer from [[here:https://store.enthought.com/downloads/#default]]
+-
+-:Step.2|
+-Execute the following command.
+-
+- $ chmod 755 <installer>
+- $ ./<installer>
+-
+-*HowToUse [#e1d806c0]
+-:Step.1|
+-xxx
+-
+-*Author [#ofae57d8]
+-S.Yatsuzuka
+-
