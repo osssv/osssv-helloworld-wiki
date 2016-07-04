@@ -1,3 +1,4 @@
+-2016-07-04 (Mon) 01:56:15 - [[FrontPage]]
 -2016-06-27 (Mon) 04:56:04 - [[HowToUse/RubyOnRails/4.1]]
 -2016-06-27 (Mon) 04:55:33 - [[HowToUse/RubyOnRails/4.2]]
 -2016-06-27 (Mon) 02:56:18 - [[HowToUse/PostgreSQL/9.3]]
@@ -32,7 +33,6 @@
 -2016-03-03 (Thu) 20:37:58 - [[HowToUse/Wordpress/wordpress.com/2016]]
 -2016-02-28 (Sun) 03:40:46 - [[HowToUse/RubyOnRails/4.2/PostgreSQL/9.3]]
 -2016-02-28 (Sun) 03:39:49 - [[HowToUse/RubyOnRails/4.2/PostgreSQL/9.2]]
--2016-02-23 (Tue) 02:45:47 - [[FrontPage]]
 -2016-02-23 (Tue) 02:04:41 - [[Overall/Wordpress]]
 -2016-02-02 (Tue) 17:12:38 - [[HowToUse/OpenCV/3.1]]
 -2016-01-20 (Wed) 07:44:12 - [[HowToUse/OpenLDAP/2.4]]

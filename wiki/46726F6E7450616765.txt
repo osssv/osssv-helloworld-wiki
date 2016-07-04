@@ -18,3 +18,5 @@ Don't expect too much.
 #popular(20,FrontPage)
 
 #recent(20)
+
+#norelated

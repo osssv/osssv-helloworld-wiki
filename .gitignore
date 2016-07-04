@@ -1,2 +1,4 @@
 cache/
 backup/
+attach/*.log
+counter/*.count
