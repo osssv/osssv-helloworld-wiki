@@ -1,0 +1,47 @@
++#contents
+ 
++*Prerequisite [#cfe15fc3]
++-Apache installation (You can refer [[HowToUse/Apache/2.4]])
++-Git installation (You can refer [[HowToUse/Git/1.7]])
++
++*Install&Setup [#n2125441]
++:Step.1|
++Change directory to document root.
++
++ $ cd /var/www
++
++:Step.2|
++Download files.
++
++ $ git clone https://github.com/osssv/osssv-helloworld-wiki.git <directory name>
++
++:Step.3|
++Launch HTTP server
++
++:Step.4|
++Create a maintenance page to update contents.
++
++ $ cp index.php update.php
++
++
++*HowToUse [#ua4aae8e]
++**Create/Update pages [#d757214b]
++:Step.1|
++Access update page (http://<domain name>/update.php)
++
++:Step.2|
++Click "New" link to create new page. Click "Edit" link to update existing page.
++
++
++**Contribute to share your pages to master repository [#i8676eeb]
++:Step.1|
++Fork original project to your work space.
++
++:Step.2|
++Edit contents and commit it to your work space.
++
++:Step.3|
++Create Pull Request.
++
++*Author [#u823b537]
++S.Yatsuzuka

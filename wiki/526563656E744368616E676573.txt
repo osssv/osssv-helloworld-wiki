@@ -1,3 +1,5 @@
+-2016-07-04 (Mon) 02:45:46 - [[Overall/osssv_wiki]]
+-2016-07-04 (Mon) 02:34:03 - [[HowToUse/osssv_wiki/0.1]]
 -2016-07-04 (Mon) 01:56:15 - [[FrontPage]]
 -2016-06-27 (Mon) 04:56:04 - [[HowToUse/RubyOnRails/4.1]]
 -2016-06-27 (Mon) 04:55:33 - [[HowToUse/RubyOnRails/4.2]]
@@ -56,6 +58,4 @@
 -2015-12-29 (Tue) 03:52:02 - [[HowToUse/RubyOnRails/4.2/Heroku/2015/R/3.2]]
 -2015-12-26 (Sat) 05:05:02 - [[HowToUse/RubyOnRails/4.2/Rserve/3.2]]
 -2015-12-26 (Sat) 02:32:22 - [[HowToUse/R/3.2]]
--2015-12-26 (Sat) 02:11:57 - [[Overall/R]]
--2015-12-19 (Sat) 07:31:57 - [[HowToUse/RubyOnRails/4.2/Bootstrap/3.3]]
 #norelated
