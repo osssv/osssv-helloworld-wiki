@@ -52,7 +52,7 @@
  Create objects withs scaffold.
   $ rails generate scaffold <Object Name>
  (Example)
-  $ rails generate scaffold scaffold_test
+  $ rails generate scaffold TestObject name:string
  
  :Step.2|
  Prepare database.
@@ -111,7 +111,7 @@
   </table>
  
  
- **Add table columns [#q88124d1]
+ **Change table structures [#q88124d1]
  :Step.1|
  Create migration script
  
@@ -125,7 +125,7 @@
  
   $ vi db/migrate/<Migration Script File Name>
  
- (Example)
+ (Example - change column)
   $ rails g migration db/migrate/20150927000024_add_column_workorders.rb
  
   class AddColumnWorkorders < ActiveRecord::Migration
@@ -135,10 +135,33 @@
     end
   end
  
- :Step.3|
- Execute migration
++
+ (Example - add foreign key)
  
-  $ rails db:migrate
+  class AddForeignKeyStatements < ActiveRecord::Migration
+    def change
+      add_foreign_key :<referring table name>, :<referred table name>
+    end
+  end
+ 
+ If you set "statements" as referring table, and "calendars" as refered table, then your calendar_id in statements table will be set for foreign_key.
+ 
+ 
+ (Example - remove foreign key)
+ 
+  class RemoveForeignKeyStatements < ActiveRecord::Migration
+    def change
+      remove_foreign_key :<referring table name>, :<referred table name>
+    end
+  end
+ 
+ 
+ 
+ :Step.3|
+ Setup database
+ 
+  $ rake db:create
+  $ rake db:migrate
  
  :Step.4|
  Edit index.html.erb
@@ -176,21 +199,21 @@
  
   $ rake db:schema:dump
  
-+(Drop Database)
-+
-+ $ rake db:drop
-+
+ (Drop Database)
+ 
+  $ rake db:drop
+ 
  (Load Dump file)
  
   $ rake db:setup
  
-+(Reset DB)
+ (Reset DB)
  
-+ $ rake db:reset
-+
-+This is equivalent to "rake db:drop" with "rake db:setup".
-+
-+
+  $ rake db:reset
+ 
+ This is equivalent to "rake db:drop" with "rake db:setup".
+ 
+ 
  **Testing [#l2ff40b5]
  :Step.1|
  Prepare test script.

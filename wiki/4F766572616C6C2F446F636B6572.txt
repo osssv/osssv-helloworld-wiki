@@ -31,7 +31,8 @@ refered from [[Wikipedia - Docker:http://en.wikipedia.org/wiki/Docker_%28softwar
 
 
 *HowToUse [#h6a00ead]
-#ls2(HowToUse/Docker)
+#ls2(HowToUse/Docker/)
+#ls2(HowToUse/DockerCompose/)
 
 *Author [#r05291da]
 S.Yatsuzuka

@@ -1,0 +1,42 @@
+#contents
+
+*Prerequisite [#ed8d6f7b]
+-DockerHub account creation
+-GitHub account creation
+
+*Install&Setup [#xc9921a6]
+TBD
+
+*HowToUse [#xf3392d9]
+**Linking GitHub [#k9ccf80e]
+:Step.1|
+Access Docker Hub web site.
+
+:Step.2|
+Choose "Setting" menu and click "Linked Account & Services" link.
+
+:Step.3|
+Click "Link GitHub" and select "Public and Private (recommend)".
+
+#ref(LinkGitHub_fig1.png,,500x269,)
+
+:Step.4|
+Create a project which contains Docker file and push it to your GitHub space.
+
+:Step.5|
+Access Github web site, and move to your project space.
+
+:Step.6|
+Select "Setting" menu and click "Integration and service" link.
+
+:Step.7|
+Choose "Docker" from "Add service" menu.
+
+#ref(LinkGitHub_fig2.png,,500x269,)
+
+
+*Author [#cd07bb23]
+S.Yatsuzuka
+
+
+#back(back,center,0)

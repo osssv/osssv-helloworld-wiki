@@ -1,0 +1,24 @@
+#contents
+
+*Overall Feature [#faca641e]
+>Make is a build automation tool that automatically builds executable programs and libraries from source code by reading files called Makefiles which specify how to derive the target program.
+<
+RIGHT:
+cited from [[Wikipedia - Make:https://en.wikipedia.org/wiki/Make_(software)]]
+
+
+*Specification [#s5d2f3ad]
+|LEFT:100|LEFT:200|c
+|CENTER:ITEM|CENTER:DESCRIPTION|h
+|Main Developer|Stuart Feldman|
+|License|GPLv3|
+|OS|UNIX-like OS|
+|Written In|C|
+|Official Site|-|
+
+
+*HowToUse [#i8469b98]
+#ls2(HowToUse/Make)
+
+*Author [#s43dd275]
+S.Yatsuzuka

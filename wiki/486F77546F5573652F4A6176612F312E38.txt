@@ -1,0 +1,22 @@
+#contents
+
+*Prerequisite [#u5a7167a]
+-CentOS installation (You can refer [[HowToUse/CentOS/6.5]])
+
+*Install&Setup [#l9ec83be]
+**OpenJDK [#ta4d8aba]
+:Step.1|
+Execute the following command.
+
+ $ sudo yum install java-1.8.*-openjdk*
+
+
+*HowToUse [#r2e24762]
+**Launch Java application [#g173e127]
+:Step.1|
+
+ $ java <Application Name>
+
+
+*Author [#r40bfc7d]
+S.Yatsuzuka

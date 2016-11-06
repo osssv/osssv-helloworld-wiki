@@ -1,0 +1,93 @@
+#contents
+
+*Prerequisite [#g61c02ce]
+-Ubuntu Server installation (You can refer [[HowToUse/UbuntuServer/14.04]])
+
+-RVM installation (You can refer [[HowToUse/RVM/1.25]])
+
+*Install&Setup [#sef7df08]
+**Install Chef [#qf1de5c0]
+:Step.1|
+ $ su -
+ # curl -L https://www.opscode.com/chef/install.sh | bash
+
+:Step.2|
+ # Ctrl-d
+ $ knife configure
+
+**Install knife-solo [#xe54028d]
+:Step.1|
+Install Ruby 2.3.1 on RVM (Berkshelf 5.1.0 requires ruby >= 2.2.0)
+
+ $ rvm install 2.3.1
+
+:Step.2|
+install knife-solo
+
+ $ gem install knife-solo
+
+:Step.3|
+Create chef repository
+
+ $ mkdir chef-repo
+ $ cd chef-repo
+ $ knife solo init .
+
+*HowToUse [#pdf1ba26]
+**Hello World [#dd1d6273]
+:Step.1|
+Create cookbook.
+
+ $ cd chef-repo
+ $ knife cookbook create hello -o cookbooks
+
+:Step.2|
+Edit cookbook.
+
+ $ vi cookbooks/hello/recipes/default.rb
+
+ log "Hello, World!"
+ 
+ package "zsh" do
+   action :install
+ end
+
+:Step.3|
+Create json file
+
+ $ cd <work directory>
+ $ vi localhost.json
+
+ {
+   "run_list" : [
+     "recipe[hello]"
+   ]
+ }
+
+:Step.4|
+Create cookbook setting file.
+
+ $ vi solo.rb
+
+ file_cache_path "/tmp/chef-solo"
+ cookbook_path ["/home/syatsuzuka/work/chef-repo/cookbooks"]
+
+:Step.5|
+Execute chef-solo.
+
+ $ sudo chef-solo -c solo.rb -j ./localhost.json
+
+
+**knife-solo [#c888470f]
+:Step.1|
+Create repository for knife-solo
+
+ # git clone git://github.com/matschaffer/knife-solo.git
+ # cd knife-solo
+ # gem install bundler
+ # git submodule init
+ # git submodule update
+ # rake install
+
+*Author [#j45c771f]
+S.Yatsuzuka

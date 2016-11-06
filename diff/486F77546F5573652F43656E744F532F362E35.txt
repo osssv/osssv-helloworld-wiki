@@ -157,9 +157,20 @@
  
  
  *HowToUse [#g58bf7ef]
++**Setting sudo [#ea30a36a]
  :Step.1|
- xxx
+-xxx
++Execute the following command to edit sudoer file.
  
++ $ su -
++ # visudo
  
++ <User Name> ALL=(ALL)  ALL
++
++Example
++
++ hadoop ALL=(ALL)   ALL
++
++
  *Author [#e7e6a355]
  S.Yatsuzuka

@@ -1,0 +1,24 @@
+#contents
+
+*Overall Feature [#hc5f1e8a]
+>Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented,and specifically designed to have as few implementation dependencies as possible. 
+<
+RIGHT:
+cited from [[Wikipedia - Java:https://en.wikipedia.org/wiki/Java_(programming_language)]]
+
+
+*Specification [#b08c88c9]
+|LEFT:100|LEFT:200|c
+|CENTER:ITEM|CENTER:DESCRIPTION|h
+|Main Developer|Oracle|
+|License|GPL|
+|OS|multi-platform|
+|Written In|-|
+|Official Site|https://www.java.com/|
+
+
+*HowToUse [#ub8df32d]
+#ls2(HowToUse/Java)
+
+*Author [#w70da0fb]
+S.Yatsuzuka

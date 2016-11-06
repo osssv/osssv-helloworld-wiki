@@ -2,6 +2,7 @@
 
 *Prerequisite [#r59f577c]
 -Python installation (You can refer [[HowToUse/Python/2.7]])
+-Pip installation (You can refer [[HowToUse/Python/2.7/pip/8.1]])
 
 *Install&Setup [#vdf18c59]
 :Step.1|
@@ -14,7 +15,8 @@ Install virtualenv
 :Step.1|
 Create project space.
 
- $ mkdir <project name> && cd <project name>
+ $ mkdir <project name>
+ $ cd <project name>
 
 :Step.2|
 Setup Virtual environment and activate it.
@@ -29,7 +31,8 @@ Then you can see the prompt is changed, which means work environment has been sw
 :Step.1|
 Execute the following command.
 
- $deactivate
+ $ deactivate
+
 
 *Author [#x3fafb00]
 S.Yatsuzuka

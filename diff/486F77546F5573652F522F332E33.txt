@@ -1,0 +1,109 @@
+ #contents
+ 
+ *Prerequisite [#iebde9f2]
+ -Windows installation
+ 
+ *Install&Setup [#md3ecffc]
+ **Install on Windows [#q07cac9c]
+ :Step.1|
+ Access the [[download site:https://cran.rstudio.com/]] and download installer.
+ 
+ #ref(Install_fig1.png,,500x269,)
+ 
+ :Step.2|
+ Choose language.
+ 
+ 
+ #ref(Install_fig2.png)
+ 
+ :Step.3|
+ Click "Next" button.
+ 
+ #ref(Install_fig3.png)
+ 
+ :Step.4|
+ Click "Next" button.
+ 
+ #ref(Install_fig4.png)
+ 
+ :Step.5|
+ Click "Next" button.
+ 
+ #ref(Install_fig5.png)
+ 
+ :Step.6|
+ Click "Next" button.
+ 
+ #ref(Install_fig6.png)
+ 
+ :Step.7|
+ Click "Next" button.
+ 
+ #ref(Install_fig7.png)
+ 
+ :Step.8|
+ Click "Next" button.
+ 
+ #ref(Install_fig8.png)
+ 
+ :Step.9|
+ Click "Next" button.
+ 
+ #ref(Install_fig9.png)
+ 
+ #ref(Install_fig10.png)
+ 
+ :Step.10|
+ Click "Finish" button.
+ 
+ #ref(Install_fig11.png)
+ 
+ 
+ 
+ 
+ *HowToUse [#lb7555a3]
+ **Install modules [#cbfd1075]
+ :Step.1|
+ Install modules.
+ 
+  > install.packages(<Package Name>)
+ 
+ (Example)
+  > install.packages("ggplot2")
+ 
++You can see installed packages with the following command.
++
++ > installed.packages()
++
+ :Step.2|
+ Load modules.
+ 
+  > library("ggplot2")
+ 
+ You can see library list as below.
+ 
+  > library
+ 
+ **Read data [#dc63d093]
+ :Step.1|
+ Import data.
+ 
+  > data<-read.csv("<CSV file>", header=TRUE)
+ 
+ :Step.2|
+ Create scatter plot.
+ 
+  > plot (data$X, data$Y)
+ 
+ **Execute R script file. [#i60d9364]
+ Execute the following command to run R script file.
+ 
+  $ R CMD <R Script File Name>
+ 
+ (Example)
+ 
+  $ R CMD init.r
+ 
+ 
+ *Author [#ad81976a]
+ S.Yatsuzuka

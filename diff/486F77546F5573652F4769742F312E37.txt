@@ -4,25 +4,26 @@
  **Install Git from Cygwin [#k4e04c5b]
  (TBD)
  
-+**Configuration [#p822417b]
-+Step.1) Setup configuration as needed.
-+
-+Example)
-+
-+ $ git config --global color.ui true
-+ $ git config --global user.name "<User Name>"
-+ $ git config --global user.email "<Email address>"
-+ $ git config --global core.editor <Editor>
-+ $ git config --global alias.mylog "log --pretty=format:'%h %s [%an]' --graph"
-+
-+Step.2) Setup .ignore as needed.
-+
-+Example)
-+
-+ logs/*.log
-+
+ **Configuration [#p822417b]
+ Step.1) Setup configuration as needed.
+ 
+ Example)
+ 
+  $ git config --global color.ui true
+  $ git config --global user.name "<User Name>"
+  $ git config --global user.email "<Email address>"
+  $ git config --global core.editor <Editor>
+  $ git config --global alias.mylog "log --pretty=format:'%h %s [%an]' --graph"
+ 
+ Step.2) Setup .ignore as needed.
+ 
+ Example)
+ 
+  logs/*.log
+ 
  *HowToUse [#hd885861]
  **General Operation [#q9061a8b]
++
  :Step.1|
  Clone the repository
  
@@ -71,11 +72,36 @@
   $ git push
  
  
- **Use original Git Server [#r8596e41]
- ***Setup the Git Server [#pcb92f91]
+-**Use original Git Server [#r8596e41]
+-***Setup the Git Server [#pcb92f91]
++**Setup Repository server [#pcb92f91]
++***Original Git Server [#r8596e41]
  Refer [[HowToUse/Git Daemon/1.7]]
  
- ***Create Repository [#o328d5d8]
+-***Create Repository [#o328d5d8]
++***GitHub [#i8b73466]
++:Step.1|Access the GitHub web site and sign up(https://github.com/).
++#ref(GitHub_fig1.png,,500x266,)
++#ref(GitHub_fig2.png,,500x266,)
++
++:Step.2|Click "create" button and create new repository.
++#ref(GitHub_fig3.png,,500x266,)
++#ref(GitHub_fig4.png,,500x266,)
++
++
++***BitBucket [#n0e61de8]
++:Step.1|Access the BitBucket web site and sign up(https://bitbucket.org/).
++#ref(BitBucket_fig1.png,,500x266,)
++#ref(BitBucket_fig2.png,,500x266,)
++
++:Step.2|Click "create" button and create new repository.
++#ref(BitBucket_fig3.png,,500x266,)
++#ref(BitBucket_fig4.png,,500x266,)
++
++
++
++**Create Repository [#o328d5d8]
++***Original Git Server [#v031ee11]
  :Step.1|Create your local repository.
  
   # mkdir <Local Repository>
@@ -94,18 +120,19 @@
   # git push -u origin master
  
  
- **Use GitHub [#w505603b]
- ***Sign up the GitHub [#ha159fd9]
- :Step.1|Access the GitHub web site and sign up(https://github.com/).
- #ref(GitHub_fig1.png,,500x266,)
- #ref(GitHub_fig2.png,,500x266,)
- 
- :Step.2|Click "create" button and create new repository.
- #ref(GitHub_fig3.png,,500x266,)
- #ref(GitHub_fig4.png,,500x266,)
- 
- 
- ***Create Repository [#eeb45dca]
+-**Use GitHub [#w505603b]
+-***Sign up the GitHub [#ha159fd9]
+-:Step.1|Access the GitHub web site and sign up(https://github.com/).
+-#ref(GitHub_fig1.png,,500x266,)
+-#ref(GitHub_fig2.png,,500x266,)
+-
+-:Step.2|Click "create" button and create new repository.
+-#ref(GitHub_fig3.png,,500x266,)
+-#ref(GitHub_fig4.png,,500x266,)
+-
+-
+-***Create Repository [#eeb45dca]
++***GitHub [#w505603b]
  :Step.1|Create your local repository.
  
   # mkdir <Local Repository>
@@ -125,18 +152,19 @@
  #ref(GitHub_fig5.png,,500x266,)
  
  
- **Use BitBucket [#j1eba035]
- ***Sign up the BitBucket [#n0e61de8]
- :Step.1|Access the BitBucket web site and sign up(https://bitbucket.org/).
- #ref(BitBucket_fig1.png,,500x266,)
- #ref(BitBucket_fig2.png,,500x266,)
- 
- :Step.2|Click "create" button and create new repository.
- #ref(BitBucket_fig3.png,,500x266,)
- #ref(BitBucket_fig4.png,,500x266,)
- 
- 
- ***Create Repository [#fd616f93]
+-**Use BitBucket [#j1eba035]
+-***Sign up the BitBucket [#n0e61de8]
+-:Step.1|Access the BitBucket web site and sign up(https://bitbucket.org/).
+-#ref(BitBucket_fig1.png,,500x266,)
+-#ref(BitBucket_fig2.png,,500x266,)
+-
+-:Step.2|Click "create" button and create new repository.
+-#ref(BitBucket_fig3.png,,500x266,)
+-#ref(BitBucket_fig4.png,,500x266,)
+-
+-
+-***Create Repository [#fd616f93]
++***BitBucket [#m2115638]
  :Step.1|Create your local repository.
  
   # mkdir <Local Repository>
@@ -156,7 +184,36 @@
  #ref(BitBucket_fig5.png,,500x266,)
  
  
- ***Maintain the files in remote Repository [#ia5caee3]
+-***Maintain the files in remote Repository [#ia5caee3]
++**Maintain files [#va661c8e]
++***Comand Line [#o747a64f]
++:Step.1|Clone the existing repository to local
++
++ $ git pull <Repository Path>
++
++:Step.2|Edit and check in the files to local repository
++ (edit files)
++ $ git add .
++ $ git commit -m '<message>'
++
++:Step.3|Push the updated file to remote repository
++ # git tag -a <version> -m '<description>'
++ # git pull origin
++ # git push origin
++
++When you encounter "Fatal Error" to upload files to GitHub, you may be able to deal with the following operations.
++
++ $ git remote set-url origin https://<your github account>@<your github repository path>
++
++(Example)
++ $ git remote set-url origin https://syatsuzuka@github.com/nasebanal/co-working.git
++
++ $ unset SSH_ASKPASS
++ $ git push origin
++
++
++
++***Eclipse [#pd8cafe5]
  :Step.1|Clone the remote repository.
   # git clone <Repository Path>
  
@@ -174,14 +231,15 @@
  
  :Step.5|Commit and push the modified files.
  Eclipse Plugin sometimes doesn't have full functionalities for the external utilities such as maven or git, so I recommend you to use command line for fundamental operations except for editing files.
-  # git add <Modified Files>
-  # git commit -m '<Commit Log>'
-  # git tag -a <version> -m '<description>'
-  # git pull origin
-  # git push origin
+- # git add <Modified Files>
+- # git commit -m '<Commit Log>'
+- # git tag -a <version> -m '<description>'
+- # git pull origin
+- # git push origin
  
  
- **Further Operation [#z2d0b6d6]
+-**Further Operation [#z2d0b6d6]
++**Other operations [#s86f627a]
  ***Maintain submodule [#n36c1f6e]
  :Step.1|Get submodule in the workspace.
   # git submodule <repository path> <submodule directory>

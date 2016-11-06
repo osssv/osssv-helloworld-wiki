@@ -1,0 +1,30 @@
++#contents
+ 
++*Prerequisite [#x6827e89]
++-Python installation (You can refer [[HowToUse/Python/2.7]])
++
++If your installed python is newer than 2.7.9, you should have pip by default.
++
++*Install&Setup [#rac19c24]
++:Step.1|
++Download installer.
++
++ $ wget https://bootstrap.pypa.io/get-pip.py
++
++:Step.2|
++Install pip.
++ $ sudo python get-pip.py 
++
++
++*HowToUse [#j4cdc648]
++:Step.1|
++Install module with pip.
++
++ $ pip install <module name>
++
++Ex)
++ $ pip install virtualenv
++
++
++*Author [#l1f2202e]
++S.Yatsuzuka

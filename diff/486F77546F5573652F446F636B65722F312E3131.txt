@@ -1,0 +1,129 @@
++#contents
+ 
++*Prerequisite [#q9f688ce]
++-Ubuntu Server installation (You can refer from [[HowToUse/UbuntuServer/16.04]])
++
++
++*Install&Setup [#g2797605]
++**Ubuntu [#t2336046]
++:Step.1|
++Install Docker
++
++ $ sudo apt-get install docker.io
++
++:Step.2|
++Launch docker automatically
++
++ $ sudo update-rc.d docker.io defaults
++
++:Step.3|
++Check the docker version
++
++ $ sudo docker version
++
++
++*HowToUse [#d20ceb7a]
++**Download Docker image from Docker Hub Registry [#h3759fb4]
++:Step.1|
++ $ sudo docker pull <Docker Image Name>:<Tag>
++
++Example
++ $ sudo docker pull ubuntu:latest
++
++**Launch Docker [#q73ab9a3]
++
++:Step.1|
++Run Docker Image and create Docker Container.
++
++ $ sudo docker run -p 0.0.0.0:<port Num>:<Port Num> -it --name <Docker Container> <Docker Image> <Shell>
++
++Example
++ $ sudo docker run -p 0.0.0.0:80:80 -it --name ubuntu_work ubuntu /bin/bash
++
++If you want to launch Docker process in background, you can use the following command.
++
++ $ sudo docker run -p 0.0.0.0:<port Num>:<Port Num> -d -it --name <Docker Container> <Docker Image> /usr/sbin/sshd -D
++ 
++
++:Step.2|
++Install additional modules.
++
++Example
++ # apt-get install -y nginx
++
++:Step.3|
++Push Ctrl-d to shutdown Docker process.
++
++:Step.4|
++Check the new Docker Container has been created.
++
++ $ sudo docker ps -a
++
++
++**Commit Docker image [#f035b8ef]
++
++:Step.1|
++Create new Docker image merging with Docker Container.
++
++ $ sudo docker commit <Docker Container> <Docker Image>
++
++Example
++ $ sudo docker commit ubuntu_work syatsuzuka/nginx
++
++:Step.2|
++Check the new Docker image has been created.
++
++ $ sudo docker images
++
++:Step.3|
++Delete unnecessary Docker Container and Image.
++
++ $ sudo docker rm <Container ID>
++ $ sudo docker rmi <Image ID>
++
++
++**Create Docker Image with Dockerfile [#q1d8f12e]
++:Step.1|
++Create Docker file.
++ 
++ $ mkdir nginx
++ $ vi Dockerfile
++
++ FROM ubuntu
++ RUN apt-get install -y nginx
++
++:Step.2|
++Create Docker image.
++
++ $ sudo docker build -t <Docker Image>:<Tag> .
++
++Example
++ $ sudo docker build -t syatsuzuka/nginx:1.0 .
++
++:Step.3|
++Check the Docker image.
++
++ $ sudo docker images
++
++**Upload Docker Image into Docker Hub [#a2524ef2]
++:Step.1|
++Sign up Docker Hub.
++
++:Step.2|
++Login Docker Hub.
++
++ $ sudo docker login
++
++:Step.3|
++Push the Docker Image into Docker Hub.
++
++ $ sudo docker push <Docker Image>
++
++Example
++ $ sudo docker push syatsuzuka/nginx
++
++
++
++*Author [#oe65e365]
++S.Yatsuzuka
++

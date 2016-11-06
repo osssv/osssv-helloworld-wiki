@@ -21,6 +21,7 @@
  :Step.3|
  Check the docker version
  
++ $ sudo ln -s /usr/bin/docker.io /usr/local/bin/docker
   $ sudo docker version
  
  
@@ -45,10 +46,9 @@
  Example
   $ sudo docker pull ubuntu:latest
  
--:Step.2|
-+**Launch Docker [#s6f2829c]
-+
-+:Step.1|
+ **Launch Docker [#s6f2829c]
+ 
+ :Step.1|
  Run Docker Image and create Docker Container.
  
   $ sudo docker run -p 0.0.0.0:<port Num>:<Port Num> -it --name <Docker Container> <Docker Image> <Shell>
@@ -56,33 +56,29 @@
  Example
   $ sudo docker run -p 0.0.0.0:80:80 -it --name ubuntu_work ubuntu /bin/bash
  
--:Step.3|
-+If you want to launch Docker process in background, you can use the following command.
-+
-+ $ sudo docker run -p 0.0.0.0:<port Num>:<Port Num> -d -it --name <Docker Container> <Docker Image> /usr/sbin/sshd -D
-+ 
-+
-+:Step.2|
+ If you want to launch Docker process in background, you can use the following command.
+ 
+  $ sudo docker run -p 0.0.0.0:<port Num>:<Port Num> -d -it --name <Docker Container> <Docker Image> /usr/sbin/sshd -D
+  
+ 
+ :Step.2|
  Install additional modules.
  
  Example
   # apt-get install -y nginx
  
--:Step.4|
-+:Step.3|
+ :Step.3|
  Push Ctrl-d to shutdown Docker process.
  
--:Step.5|
-+:Step.4|
+ :Step.4|
  Check the new Docker Container has been created.
  
   $ sudo docker ps -a
  
--:Step.6|
-+
-+**Commit Docker image [#q7b05e20]
-+
-+:Step.1|
+ 
+ **Commit Docker image [#q7b05e20]
+ 
+ :Step.1|
  Create new Docker image merging with Docker Container.
  
   $ sudo docker commit <Docker Container> <Docker Image>
@@ -90,20 +86,18 @@
  Example
   $ sudo docker commit ubuntu_work syatsuzuka/nginx
  
--:Step.7|
-+:Step.2|
+ :Step.2|
  Check the new Docker image has been created.
  
   $ sudo docker images
  
--:Step.8|
-+:Step.3|
+ :Step.3|
  Delete unnecessary Docker Container and Image.
  
   $ sudo docker rm <Container ID>
   $ sudo docker rmi <Image ID>
  
-+
+ 
  **Create Docker Image with Dockerfile [#r366c17a]
  :Step.1|
  Create Docker file.

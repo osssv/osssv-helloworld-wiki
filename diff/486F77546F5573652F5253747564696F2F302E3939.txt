@@ -1,0 +1,69 @@
+ #contents
+ 
+ *Prerequisite [#t40acca6]
+ -Windows 10 installation
+ -R installation (You can refer [[HowToUse/R/3.3]])
+--Git installation if you want to work on GitHub (You can refer [[[HowToUse/Git/2.10]])
++-Git installation if you want to work on GitHub (You can refer [[HowToUse/Git/2.10]])
+ -GitHub account setting if you want to work on GitHub (You can refer [[HowToUse/Git/1.7]])
+ 
+ *Install&Setup [#i2199596]
+ :Step.1|
+ Download RStudio from [[official site:https://www.rstudio.com/products/rstudio/download/]]
+ 
+ :Step.2|
+ Double click the download file, and proceed installation.
+ 
+ :Step.3|
+ Launch RStudio, and choose the version of R to use.
+ 
+ #ref(Install_fig1.png)
+ 
+ 
+ 
+ *HowToUse [#o774ed0e]
+ **Run R script [#l8b0fee8]
+ :Step.1|
+ Copy the following script to the script window.
+ 
+  height<-c(58,59,60,61,62,63,64,65,66,67,68,69,70,71,72)
+  weight<-c(115,117,120,123,126,129,132,135,139,142,146,150,154,159,164)
+  mean(height)
+  sd(weight)
+  cor(weight,height)
+  plot(weight,height)
+ 
+ :Step.2|
+ Select all source and click "Run" button. Then you will see the following output.
+ 
+ #ref(RunR_fig1.png,,500x269,)
+ 
+ 
+ **Work on GitHub repository [#qebf73e8]
+ :Step.1|
+ Prepare a project on GitHub.
+ 
+ :Step.2|
+ Launch RStudio.
+ 
+ #ref(UseGitHub_fig1.png,,500x375,)
+ 
+ :Step.3|
+ Click "new project" (File -> New Project)
+ 
+ :Step.4|
+ Choose "Version Control->Git"
+ 
+ #ref(UseGitHub_fig2.png,,500x375,)
+ 
+ #ref(UseGitHub_fig3.png,,500x375,)
+ 
+ :Step.5|
+ Enter GitHub repository information and click "Create project" button.
+ 
+ #ref(UseGitHub_fig4.png,,500x375,)
+ 
+ 
+ 
+ *Author [#x9e0643a]
+ S.Yatsuzuka

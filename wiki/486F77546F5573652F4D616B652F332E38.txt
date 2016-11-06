@@ -1,0 +1,27 @@
+#contents
+
+*Prerequisite [#hc5b6702]
+-Cent OS installation (You can refer [[HowToUse/CentOS/6.5]])
+
+*Install&Setup [#u1b5888b]
+:Step.1|
+Cent OS 6.5 includes make by default.
+
+*HowToUse [#c5d19ad9]
+:Step.1|
+Prepare Makefile in the same directory as source code.
+
+ $ vi Makefile
+
+You can refer sample code from [[here:https://github.com/syatsuzuka/sample_nqueen/blob/master/src/Makefile]]
+
+:Step.2|
+Execute make command.
+
+ $ make
+
+Then defined compilation will run.
+
+
+*Author [#sc72e4f1]
+S.Yatsuzuka

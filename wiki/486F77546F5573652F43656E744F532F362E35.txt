@@ -157,8 +157,18 @@ Now, you can connect with SSH server specifying IP address as 192.168.56.101.
 
 
 *HowToUse [#g58bf7ef]
+**Setting sudo [#ea30a36a]
 :Step.1|
-xxx
+Execute the following command to edit sudoer file.
+
+ $ su -
+ # visudo
+
+ <User Name> ALL=(ALL)  ALL
+
+Example
+
+ hadoop ALL=(ALL)   ALL
 
 
 *Author [#e7e6a355]

@@ -1,0 +1,144 @@
+ #contents
+ 
+ *Prerequisite [#s6b92995]
+ -CentOS installation (You can refer [[HowToUse/CentOS/6.5]])
+ -Java installation (You can refer [[HowToUse/Java/1.8]])
+ 
+ *Install&Setup [#md469a67]
+ :Step.1|
+ Create user account for Hadoop.
+ 
+  $ sudo useradd hadoop
+  $ sudo passwd hadoop
+ 
+ :Step.2|
+ Download source files from [[here:http://hadoop.apache.org/]] and unarchive the file.
+ 
+  $ wget http://ftp.meisei-u.ac.jp/mirror/apache/dist/hadoop/common/hadoop-3.0.0-alpha1/hadoop-3.0.0-alpha1.tar.gz
+  $ tar xzvf hadoop-3.0.0-alpha1.tar.gz
+  $ mv hadoop-3.0.0-alpha1 /usr/local
+  $ chown -R hadoop:hadoop /usr/local/hadoop-3.0.0-alpha1
+ 
+ :Step.3|
+ Setup environmental variables in .bashrc.
+ 
+  $ vi ~/.bashrc
+ 
+  export JAVA_HOME=/usr/lib/jvm/java-1.8.0
+  export HADOOP_INSTALL=/usr/share/hadoop-3.0.0-alpha1
+  export PATH=$HADOOP_INSTALL/bin:$JAVA_HOME/bin:$PATH
+  export HADOOP_CLASSPATH=${JAVA_HOME}/lib/tools.jar
+ 
+ 
+ *HowToUse [#sa395ad0]
++**Run Standalone mode [#o3068ad3]
++:Step.1|
++Prepare input files.
+ 
++ $ mkdir input
++ $ vi input/file01
++
++ Hello world!
++
++:Step.2|
++Execute hadoop process using sample jar file.
++
++ $ hadoop jar /usr/share/hadoop-3.0.0-alpha1/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.0.0-alpha1.jar grep input output 'Hello+'
++
++
++**Run Pseudo-distributed mode [#na44bfde]
+ :Step.1|
++Edit conf files.
++
++ $ vi $HADOOP_INSTALL/etc/hadoop/core-site.xml
++
++ <configuration>
++    <property>
++        <name>fs.defaultFS</name>
++        <value>hdfs://localhost:9000</value>
++    </property>
++ </configuration>
++
++ $ vi $HADOOP_INSTALL/etc/hadoop/hdfs-site.xml
++
++ <configuration>
++    <property>
++        <name>dfs.replication</name>
++        <value>1</value>
++    </property>
++ </configuration>
++
++You can refer sample from [[here:https://github.com/osssv/osssv-helloworld/tree/master/hadoop/3.0/conf]]
++
++:Step.2|
++Setup key and check if you can access localhost without password.
++
++ $ ssh-keygen -t rsa
++ $ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
++ $ chmod 600 ~/.ssh/authorized_keys
++
++ $ ssh localhost
++
++:Step.3|
++Format file systems for hdfs.
++
++ $ hdfs namenode -format
++
++Then you can find new files below.
++
++ $ ls /tmp/hadoop-hadoop/dfs/name/
++
++:Step.4|
++Start NameNode daemon and DataNode daemon.
++
++ $ $HADOOP_INSTALL/sbin/start-dfs.s
++
++:Step.5|
++Access web interface from http://localhost:9870/
++
++
++**Create Sample Code [#l8262093]
++:Step.1|
+ Create Hadoop code.
+ 
+  $ vi WordCount.java
+ 
+ You can see sample code from [[here:https://github.com/osssv/osssv-helloworld/blob/master/hadoop/3.0/src/WordCount.java]]
+ 
+ :Step.2|
+ Compile sample code and create jar file.
+ 
+  $ hadoop com.sun.tools.javac.Main WordCount.java
+  $ jar cf wc.jar WordCount*.class
+ 
+ :Step.3|
+ Prepare input files for WordCount.
+ 
+  $ mkdir input
+  $ vi input/file01
+  $ vi input/file02
+ 
+ You can see sample code from [[here:https://github.com/osssv/osssv-helloworld/tree/master/hadoop/3.0/input]]
+ 
+ :Step.4|
+ Execute hadoop job for WordCount.
+ 
+  $ hadoop jar wc.jar WordCount ../input/ ../output
+ 
+ Then you will see output in output directory as below.
+ 
+  [hadoop@localhost work]$ ls output/
+  _SUCCESS  part-r-00000
+ 
+ 
+  $ vi output/part-r-00000
+ 
+  Bye     1
+  Goodbye 1
+  Hadoop  2
+  Hello   2
+  World   2
+ 
+ 
+ *Author [#p28646ff]
+ S.Yatsuzuka

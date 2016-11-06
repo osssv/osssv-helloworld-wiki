@@ -1,8 +1,8 @@
  #contents
  
-+*Prerequisite [#l46840d8]
-+-xxx installation (You can refer [[Overall/xxx]])
-+
+ *Prerequisite [#l46840d8]
+ -xxx installation (You can refer [[Overall/xxx]])
+ 
  *Install&Setup [#rf0a78ee]
  :Step.1|
  xxx
@@ -13,3 +13,7 @@
  
  *Author [#idc78b35]
  (author of this page)
+ 
++
++#back(back,center,0)
++

@@ -1,0 +1,52 @@
++#contents
+ 
++*Prerequisite [#mb23a069]
++-Ubuntu Server installation (You can refer [[HowToUse/UbuntuServer/16.04]])
++-Docker installation (You can refer [[HowToUse/Docker/1.11]])
++
++*Install&Setup [#w8517c83]
++:Step.1|
++Download installer.
++
++ $ sudo curl -L https://github.com/docker/compose/releases/download/1.8.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
++ $ sudo chmod +x /usr/local/bin/docker-compose
++
++:Step.2|
++Check if installation is completed successfully.
++
++ $ docker-compose
++
++
++*HowToUse [#uf264b07]
++:Step.1|
++Prepare project directory.
++
++ $ mkdir <project name>
++
++:Step.2|
++Prepare docker-compose.yml
++
++ $ cd <project name>
++ $ vi docker-compose.yml
++
++ webserver:
++   image: ubuntu
++
++ apserver:
++   build: .
++
++:Step.3|
++Prepare Dockerfile in project directory.
++
++ $ vi Dockerfile
++
++ FROM ubuntu
++
++:Step.4|
++Launch docker instance.
++
++ $ sudo docker-compose up
++
++
++*Author [#y466f85b]
++S.Yatsuzuka

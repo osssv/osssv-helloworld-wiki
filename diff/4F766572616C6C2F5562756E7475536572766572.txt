@@ -1,30 +1,37 @@
-+#contents
+ #contents
  
-+*Overall Feature [#f9fc03cb]
-+>TBD
-+<
-+RIGHT:
-+refered from [[Wikipedia - XXX:http://en.wikipedia.org/wiki/]]
-+
-+
-+:File Composition|
-+#ref(overall_fig1.png)
-+
-+:Window Image|
-+#ref(overall_fig2.png)
-+
-+*Specification [#ae92323d]
-+|LEFT:100|LEFT:200|c
-+|CENTER:ITEM|CENTER:DESCRIPTION|h
-+|Main Developer|xxx|
-+|License|xxx|
-+|OS|xxx|
-+|Written In|xxx|
-+|Official Site|xxx|
-+
-+
-+*HowToUse [#qf3d9f5a]
-+#ls2(HowToUse/UbuntuServer)
-+
-+*Author [#i9671dae]
-+S.Yatsuzuka
+ *Overall Feature [#f9fc03cb]
+->TBD
++>Ubuntu is a Debian-based Linux operating system and distribution for personal computers, smartphones and network servers. It uses Unity as its default user interface. It is based on free software and named after the Southern African philosophy of ubuntu , which Canonical Ltd suggests can be loosely translated as "humanity to others" or "I am what I am because of who we all are"
+ <
+ RIGHT:
+-refered from [[Wikipedia - XXX:http://en.wikipedia.org/wiki/]]
++refered from [[Wikipedia - Ubuntu:https://en.wikipedia.org/wiki/Ubuntu_(operating_system)]]
+ 
+ 
+-:File Composition|
+-#ref(overall_fig1.png)
+ 
+-:Window Image|
+-#ref(overall_fig2.png)
+-
+ *Specification [#ae92323d]
+ |LEFT:100|LEFT:200|c
+ |CENTER:ITEM|CENTER:DESCRIPTION|h
+-|Main Developer|xxx|
+-|License|xxx|
+-|OS|xxx|
+-|Written In|xxx|
+-|Official Site|xxx|
++|Main Developer|Canonical Ltd|
++|License|mainly GPL|
++|OS|-|
++|Written In|-|
++|Official Site|http://www.ubuntu.com/|
+ 
+ 
+ *HowToUse [#qf3d9f5a]
+ #ls2(HowToUse/UbuntuServer)
+ 
+ *Author [#i9671dae]
+ S.Yatsuzuka

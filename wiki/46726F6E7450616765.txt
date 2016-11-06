@@ -1,10 +1,10 @@
 #contents
 
-* Introduction [#kf464079]
-:Objective|
-To share information for Open Source Software and its community to public on a volunteer basis.
-Don't expect too much.
+* Objective [#kf464079]
+To share information on Open Source Software and its community to public on a volunteer basis. Don't expect too much.
 
+* How to contribute [#zba713ef]
+You can clone this web site from [[here:https://github.com/osssv/osssv-helloworld-wiki]]. We welcome your pull-requests to merge your contents into here.
 
 * Link [#k43ad822]
 [https://www.facebook.com/groups/OSS.SiliconValley/ OSSSV FB Group]

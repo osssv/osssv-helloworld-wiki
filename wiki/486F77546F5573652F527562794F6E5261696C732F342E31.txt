@@ -50,7 +50,7 @@ http://stackoverflow.com/questions/27799260/rails-4-2-server-port-forwarding-on-
 Create objects withs scaffold.
  $ rails generate scaffold <Object Name>
 (Example)
- $ rails generate scaffold scaffold_test
+ $ rails generate scaffold TestObject name:string
 
 :Step.2|
 Prepare database.
@@ -109,7 +109,7 @@ Put it to view file.
  </table>
 
 
-**Add table columns [#vc6eb3b5]
+**Change table structures [#vc6eb3b5]
 :Step.1|
 Create migration script
 
@@ -123,7 +123,7 @@ Edit migration script.
 
  $ vi db/migrate/<Migration Script File Name>
 
-(Example)
+(Example - change column)
  $ rails g migration db/migrate/20150927000024_add_column_workorders.rb
 
  class AddColumnWorkorders < ActiveRecord::Migration
@@ -133,10 +133,33 @@ Edit migration script.
    end
  end
 
-:Step.3|
-Execute migration
 
- $ rails db:migrate
+(Example - add foreign key)
+
+ class AddForeignKeyStatements < ActiveRecord::Migration
+   def change
+     add_foreign_key :<referring table name>, :<referred table name>
+   end
+ end
+
+If you set "statements" as referring table, and "calendars" as refered table, then your calendar_id in statements table will be set for foreign_key.
+
+
+(Example - remove foreign key)
+
+ class RemoveForeignKeyStatements < ActiveRecord::Migration
+   def change
+     remove_foreign_key :<referring table name>, :<referred table name>
+   end
+ end
+
+
+
+:Step.3|
+Setup database
+
+ $ rake db:create
+ $ rake db:migrate
 
 :Step.4|
 Edit index.html.erb

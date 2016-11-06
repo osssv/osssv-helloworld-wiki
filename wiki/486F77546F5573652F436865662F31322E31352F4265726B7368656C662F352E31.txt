@@ -1,0 +1,31 @@
+#contents
+
+*Prerequisite [#p3ce5ba5]
+-Chef installation (You can refer [[HowToUse/Chef/12.15]])
+-Ruby 2.3.1 installation
+
+*Install&Setup [#b12ed7e0]
+:Step.1|
+Install berkshelf gem. Berkshelf requires ruby >= 2.2.0.
+
+ $ gem install berks
+
+*HowToUse [#o5bb6176]
+:Step.1|
+Open Berkshelf file in chef project directory and add cookbook name you wish to install.
+
+ $ vi Berksfile
+
+ site :opscode
+ cookbook 'yum'
+
+:Step.2|
+Execute berk command.
+
+ $ berks vendor cookbooks
+
+If you ommit "cookbooks", the directory "berks-cookbooks" would be created.
+
+
+*Author [#jabff1dc]
+S.Yatsuzuka

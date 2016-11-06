@@ -5,6 +5,9 @@
 via wiki form. This contents are derived from PukiWiki 1.4.7 under GPLv2.
 <
 
+:Window Image|
+#ref(Overall_fig1.png,,500x266,)
+
 
 *Specification [#ledeff4f]
 |LEFT:100|LEFT:200|c

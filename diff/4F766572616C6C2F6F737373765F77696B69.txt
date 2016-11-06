@@ -1,24 +1,27 @@
-+#contents
+ #contents
  
-+*Overall Feature [#z5d6c98f]
-+>This is an open source project to share the information on open source software
-+via wiki form. This contents are derived from PukiWiki 1.4.7 under GPLv2.
-+<
+ *Overall Feature [#z5d6c98f]
+ >This is an open source project to share the information on open source software
+ via wiki form. This contents are derived from PukiWiki 1.4.7 under GPLv2.
+ <
+ 
++:Window Image|
++#ref(Overall_fig1.png,,500x266,)
+ 
 +
-+
-+*Specification [#ledeff4f]
-+|LEFT:100|LEFT:200|c
-+|CENTER:ITEM|CENTER:DESCRIPTION|h
-+|Main Developer|S.Yatsuzuka|
-+|License|GPLv2|
-+|OS|multi-platform|
-+|Written In|php|
-+|Official Site|This web site|
-+
-+
-+*HowToUse [#y6faf07a]
-+#ls2(HowToUse/osssv_wiki/)
-+
-+
-+*Author [#t2be7847]
-+S.Yatsuzuka
+ *Specification [#ledeff4f]
+ |LEFT:100|LEFT:200|c
+ |CENTER:ITEM|CENTER:DESCRIPTION|h
+ |Main Developer|S.Yatsuzuka|
+ |License|GPLv2|
+ |OS|multi-platform|
+ |Written In|php|
+ |Official Site|This web site|
+ 
+ 
+ *HowToUse [#y6faf07a]
+ #ls2(HowToUse/osssv_wiki/)
+ 
+ 
+ *Author [#t2be7847]
+ S.Yatsuzuka

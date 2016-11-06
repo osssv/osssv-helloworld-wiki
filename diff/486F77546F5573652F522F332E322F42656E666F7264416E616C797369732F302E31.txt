@@ -1,0 +1,28 @@
++#contents
+ 
++*Prerequisite [#c5ee7b29]
++-RStudio installation (You can refer [[HowToUse/RStudio/0.99]])
++
++*Install&Setup [#de72043f]
++:Step.1|
++Launch RStudio.
++
++:Step.2|
++Open a new project and setup GitHub account information.
++
++
++*HowToUse [#e54f4502]
++**Load Data [#c1cf3155]
++:Step.1|
++Execute the following command.
++
++ > load("data/census.2009.rda")
++
++Then you can access data as below.
++
++ > census.2009
++
++
++
++*Author [#e142ea01]
++S.Yatsuzuka

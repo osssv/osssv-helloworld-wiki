@@ -21,6 +21,7 @@ Launch docker automatically
 :Step.3|
 Check the docker version
 
+ $ sudo ln -s /usr/bin/docker.io /usr/local/bin/docker
  $ sudo docker version
 
 

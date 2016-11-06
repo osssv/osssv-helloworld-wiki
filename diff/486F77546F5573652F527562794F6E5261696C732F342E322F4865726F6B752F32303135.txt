@@ -47,11 +47,11 @@
  
   $ heroku create
  
-+You can destroy app with the following command.
+ You can destroy app with the following command.
  
-+ $ heroku apps:destroy --app <App name>
-+
-+
+  $ heroku apps:destroy --app <App name>
+ 
+ 
  :Step.4|
  Prepare sample project.
  
@@ -98,6 +98,38 @@
  
   $ heroku config:set GITHUB_KEY="xxx"
   $ heroku config:set GITHUB_SECRET="xxx"
+ 
+ :Step.3|
+ Load seed data
+ 
+  $ heroku run rake db:seed
+ 
+ 
+ **Upload module from other work environment [#m787dc94]
+-:Step.1
++
++:Step.1|
+ Login to Heroku environment.
+ 
+  $ heroku login
+ 
+-:Step.2
++:Step.2|
+ Add remote path.
+ 
+  $ heroku git:remote -a <application ID>
+ 
+-:Step.3
++:Step.3|
+ Push modules.
+ 
+  $ git push heroku master
+ 
+ In case you encounter the problem on "Permission denied", you can refer [[This Posting:http://stackoverflow.com/questions/12206779/git-push-heroku-master-permission-denied-publickey-fatal-the-remote-end-hung]].
+ 
+  $ heroku keys:add ~/.ssh/id_rsa.pub
+ 
+ 
  
  **Task Scheduller [#jcadae67]
  

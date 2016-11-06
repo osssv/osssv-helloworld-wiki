@@ -5,7 +5,7 @@
 
 *Install&Setup [#q516e887]
 :Step.1|
-Download installer from [[here:https://store.enthought.com/downloads/#default]]
+Download installer from [[Official Website:https://store.enthought.com/downloads/#default]]. Download includes GUI operation, so you can not simply download with wget.
 
 :Step.2|
 Execute the following command.

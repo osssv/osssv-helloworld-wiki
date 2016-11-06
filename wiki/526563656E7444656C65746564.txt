@@ -1,5 +1,7 @@
 #freeze
 #norelated
+-2016-10-02 (Sun) 10:17:56 - [[Overview/Hadoop]]
+-2016-09-09 (Fri) 08:26:53 - [[HowToUse/Docker/1.7]]
 -2016-06-27 (Mon) 00:22:11 - [[HowTOUse/RubyOnRails/4.2/FontAwesomeRails/4.6]]
 -2016-06-17 (Fri) 07:21:56 - [[HowTOUse/RubyOnRails/4.2/Capybara/2.7]]
 -2016-06-17 (Fri) 07:21:29 - [[HowTOUse/RubyOnRails/4.2]]
@@ -58,5 +60,3 @@
 -2015-08-11 (Tue) 05:00:46 - [[Sushi Blues In Raleigh, North Carolina]]
 -2015-08-11 (Tue) 05:00:31 - [[Making The Most Of Totally Free Credit Score]]
 -2015-08-11 (Tue) 05:00:18 - [[Free Issues To Do In Washington, Dc]]
--2015-08-11 (Tue) 05:00:06 - [[Kids Learning Songs Assisting Guidance For Mothers And Fathers]]
--2015-08-11 (Tue) 04:59:52 - [[Fourth Of July Occasions In The Outer Banks Of North Carolina]]

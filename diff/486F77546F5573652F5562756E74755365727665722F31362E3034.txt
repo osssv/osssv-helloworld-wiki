@@ -1,0 +1,135 @@
+ #contents
+ 
+ *Prerequisite [#k180a882]
+ -VirtualBox installation (You can refer [[HowToUse/VirtualBox/4.3]])
+ 
+ *Install&Setup [#gb6640bc]
+ **Install UbuntuServer [#g30a9533]
+ :Step.1|
+ Select Language
+ #ref(Install_fig1.png,,500x375,)
+ 
+ :Step.2|
+ Start installation
+ #ref(Install_fig2.png,,500x375,)
+ 
+ :Step.3|
+ Select Language and location
+ #ref(Install_fig3.png,,500x375,)
+ 
+ #ref(Install_fig4.png,,500x375,)
+ 
+ :Step.4|
+ Setup Keyboard layout
+ #ref(Install_fig5.png,,500x375,)
+ 
+ #ref(Install_fig6.png,,500x375,)
+ 
+ #ref(Install_fig7.png,,500x375,)
+ 
+ :Step.5|
+ Setup network and user account
+ #ref(Install_fig8.png,,500x375,)
+ 
+ #ref(Install_fig9.png,,500x375,)
+ 
+ #ref(Install_fig10.png,,500x375,)
+ 
+ #ref(Install_fig11.png,,500x375,)
+ 
+ #ref(Install_fig12.png,,500x375,)
+ 
+ #ref(Install_fig13.png,,500x375,)
+ 
+ #ref(Install_fig14.png,,500x375,)
+ 
+ :Step.6|
+ Setup partitioning
+ #ref(Install_fig15.png,,500x375,)
+ 
+ #ref(Install_fig16.png,,500x375,)
+ 
+ #ref(Install_fig17.png,,500x375,)
+ 
+ #ref(Install_fig18.png,,500x375,)
+ 
+ :Step.7|
+ Setup package manager
+ #ref(Install_fig19.png,,500x375,)
+ 
+ #ref(Install_fig20.png,,500x375,)
+ 
+ #ref(Install_fig21.png,,500x375,)
+ 
+ #ref(Install_fig22.png,,500x375,)
+ 
+ :Step.8|
+ Finish installation
+ 
+ #ref(Install_fig23.png,,500x375,)
+ 
+ 
+ **Setup GUI [#a3d227cc]
+ 
+ :Step.1|
+ Launch and login the system.
+ 
+ :Step.2|
+ Install Ubuntu Desktop.
+ 
+- $ sudo apt-get -y install ubuntu-desktop
++ $ sudo apt-get install ubuntu-desktop
+ 
+ #ref(SetupGUI_fig1.png,,500x375,)
+ 
+ 
+-**Setup Network Adapter [#y03fe3a5]
++**Install utilities [#i2a1f1c3]
++
+ :Step.1|
+-Edit network adapter definition file.
++Install sysv-rc-conf
+ 
+- # vi /etc/network/interfaces
++ $ sudo apt-get install sysv-rc-conf
+ 
+- # The loopback network interface
+- auto lo
+- iface lo inet loopback
+-  
+- # The primary network interface
+- auto eth0
+- allow-hotplug eth0
+- iface eth0 inet dhcp
+-  
+- # The secondary network interface
+- auto eth1
+- allow-hotplug eth1
+- iface eth1 inet static
+- address 192.168.56.101
+- netmask 255.255.255.0
+ 
+ :Step.2|
+-restart networking module
++Install openssh-server.
+ 
+- # /etc/init.d/networking restart
++ $ sudo apt-get install openssh-server
+ 
++In case you use virtualbox, if you set portforwarding for 22port, you can access ubuntu server from your terminal, now.
++
++
+ *HowToUse [#ka47eeb9]
++**Install additional modules [#ba8e1e62]
+ :Step.1|
+-xxx
+ 
++ $ sudo apt-get install <module name>
++
++If you wish to launch that module as a daemon service, you can execute the following command.
++
++ $ sudo update-rc.d <service name> default
++
++
+ *Author [#b49fdc5a]
+ S.Yatsuzuka
